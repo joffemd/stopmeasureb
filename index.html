@@ -1,1 +1,287 @@
-<html></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Stop Measure B | Contra Costa County</title>
+
+<link rel="icon" type="image/svg+xml"
+href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23ffffff' stroke='%23c0392b' stroke-width='4'/%3E%3Ctext x='32' y='38' text-anchor='middle' font-size='30' font-family='Arial' font-weight='700' fill='%2310233f'%3EB%3C/text%3E%3Cline x1='16' y1='16' x2='48' y2='48' stroke='%23c0392b' stroke-width='6'/%3E%3C/svg%3E">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+font-family:Inter,system-ui;
+margin:0;
+color:#18212f;
+background:#f4f7fb;
+}
+
+header{
+background:white;
+border-bottom:1px solid #ddd;
+padding:14px 20px;
+position:sticky;
+top:0;
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:20px;
+}
+
+.brand{
+font-weight:800;
+font-size:20px;
+}
+
+.hero{
+padding:50px 20px;
+background:white;
+}
+
+.hero h1{
+font-family:Merriweather,serif;
+font-size:42px;
+margin-bottom:15px;
+}
+
+.hero p{
+font-size:18px;
+color:#555;
+}
+
+.button{
+display:inline-block;
+background:#10233f;
+color:white;
+padding:12px 20px;
+border-radius:6px;
+margin-top:15px;
+text-decoration:none;
+}
+
+.section{
+padding:40px 20px;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:20px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:8px;
+box-shadow:0 3px 10px rgba(0,0,0,0.08);
+}
+
+.card h3{
+margin-top:0;
+}
+
+.volunteer{
+background:white;
+padding:30px;
+border-radius:10px;
+box-shadow:0 3px 10px rgba(0,0,0,0.08);
+}
+
+input,select,textarea{
+width:100%;
+padding:10px;
+margin-top:6px;
+margin-bottom:15px;
+border-radius:5px;
+border:1px solid #ccc;
+font-family:inherit;
+}
+
+button{
+background:#1e4f8f;
+color:white;
+border:none;
+padding:12px 20px;
+border-radius:6px;
+font-size:16px;
+cursor:pointer;
+}
+
+footer{
+padding:30px;
+text-align:center;
+font-size:14px;
+color:#666;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="container">
+<div class="brand">Stop Measure B — Contra Costa County</div>
+</div>
+</header>
+
+<section class="hero">
+<div class="container">
+
+<h1>Measure B means higher sales taxes.</h1>
+
+<p>
+Measure B would raise the county sales tax for five years.
+This site highlights basic public facts voters can review now.
+</p>
+
+<a href="#facts" class="button">See the Facts</a>
+
+</div>
+</section>
+
+<section id="facts" class="section">
+<div class="container">
+
+<h2>Public facts voters should know</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Sales taxes could reach 10.875%</h3>
+<p>
+Measure B would increase the county sales tax by
+<strong>0.625%</strong>. Based on current CDTFA rate tables,
+that would raise the total sales tax to
+<strong>10.875%</strong> in some Contra Costa cities.
+</p>
+</div>
+
+<div class="card">
+<h3>Another sales tax could appear in November</h3>
+<p>
+A regional transit funding measure authorized by state law
+could place a <strong>0.5%</strong> sales tax proposal on the
+<strong>November 2026 ballot</strong> in Contra Costa County.
+</p>
+</div>
+
+<div class="card">
+<h3>Supervisors proceeded after revised projections</h3>
+<p>
+Published reports on March 3 indicated the projected federal
+funding loss estimate had been revised downward before the
+Board of Supervisors voted to place Measure B on the ballot.
+</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+
+<h2>Check back on March 19 for more information</h2>
+
+<p>
+Additional information about Measure B and the campaign
+will be posted here soon.
+</p>
+
+</div>
+</section>
+
+<section id="volunteer" class="section">
+<div class="container">
+
+<div class="volunteer">
+
+<h2>Volunteer for the No campaign</h2>
+
+<form id="volunteerForm">
+
+<label>Name</label>
+<input type="text" id="name" required>
+
+<label>Email</label>
+<input type="email" id="email" required>
+
+<label>City</label>
+<input type="text" id="city" required>
+
+<label>How would you like to help?</label>
+<select id="interest">
+
+<option>Research</option>
+<option>Letter Writing</option>
+<option>Social Media Posting</option>
+<option>Host a Neighborhood Meeting</option>
+<option>Post Signs</option>
+
+</select>
+
+<label>Message</label>
+<textarea id="message"></textarea>
+
+<button type="submit">Volunteer</button>
+
+</form>
+
+</div>
+
+</div>
+</section>
+
+<footer>
+
+Stop Measure B — A
+<a href="https://www.cocotax.org" target="_blank">CoCoTax Initiative</a>
+
+</footer>
+
+<script>
+
+(function(){
+
+const form=document.getElementById("volunteerForm");
+const email=['marc','@','cocotax.org'].join('');
+
+form.addEventListener("submit",function(e){
+
+e.preventDefault();
+
+const name=document.getElementById("name").value;
+const userEmail=document.getElementById("email").value;
+const city=document.getElementById("city").value;
+const interest=document.getElementById("interest").value;
+const message=document.getElementById("message").value;
+
+const subject=encodeURIComponent("Volunteer for No on Measure B");
+
+const body=encodeURIComponent(
+"Volunteer signup from StopMeasureB.com\n\n"+
+"Name: "+name+"\n"+
+"Email: "+userEmail+"\n"+
+"City: "+city+"\n"+
+"Interest: "+interest+"\n\n"+
+message
+);
+
+window.location.href="mailto:"+email+"?subject="+subject+"&body="+body;
+
+});
+
+})();
+
+</script>
+
+</body>
+</html>
