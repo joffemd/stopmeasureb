@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Myths v Facts | Stop Measure B</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23ffffff' stroke='%23c0392b' stroke-width='4'/%3E%3Ctext x='32' y='38' text-anchor='middle' font-size='30' font-family='Arial, Helvetica, sans-serif' font-weight='700' fill='%2310233f'%3EB%3C/text%3E%3Cline x1='16' y1='16' x2='48' y2='48' stroke='%23c0392b' stroke-width='6'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #10233f;
+      --blue: #1e4f8f;
+      --text: #18212f;
+      --muted: #5f6b7a;
+      --white: #ffffff;
+      --card: rgba(255,255,255,0.92);
+      --border: rgba(16,35,63,0.12);
+      --shadow: 0 18px 40px rgba(16,35,63,0.12);
+      --radius: 22px;
+      --max: 1080px;
+      --myth-bg: #fff4f2;
+      --myth-border: #f5c3ba;
+      --fact-bg: #f2fbf6;
+      --fact-border: #bfe7cd;
+      --red: #b42318;
+      --green: #157347;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(246,196,83,0.18), transparent 28%),
+        radial-gradient(circle at top right, rgba(90,149,230,0.14), transparent 26%),
+        linear-gradient(180deg, #f8fbff 0%, #eef5fd 42%, #ffffff 100%);
+      line-height: 1.65;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(calc(100% - 2rem), var(--max));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(12px);
+      background: rgba(255,255,255,0.82);
+      border-bottom: 1px solid rgba(16,35,63,0.08);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.9rem 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      font-weight: 800;
+      color: var(--navy);
+    }
+
+    .brand-badge {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #f6c453, #ffe3a0);
+      color: var(--navy);
+      box-shadow: 0 12px 24px rgba(246,196,83,0.32);
+      font-weight: 800;
+      letter-spacing: 0.04em;
+    }
+
+    .brand small {
+      display: block;
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a.cta {
+      color: var(--white);
+      background: var(--navy);
+      padding: 0.8rem 1rem;
+      border-radius: 999px;
+      box-shadow: 0 10px 22px rgba(16,35,63,0.18);
+    }
+
+    .hero {
+      padding: 4rem 0 2rem;
+    }
+
+    .hero-card,
+    .claim-card,
+    .sources-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card {
+      padding: 2rem;
+    }
+
+    h1, h2 {
+      font-family: 'Merriweather', Georgia, serif;
+      color: var(--navy);
+      letter-spacing: -0.02em;
+    }
+
+    h1 {
+      margin: 0 0 0.75rem;
+      font-size: clamp(2.3rem, 4.5vw, 4rem);
+      line-height: 1.08;
+    }
+
+    .hero-card p {
+      color: var(--muted);
+      max-width: 52rem;
+      margin: 0.7rem 0 0;
+      font-size: 1.04rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 1.25rem;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0.85rem 1.15rem;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: transform 0.2s ease;
+    }
+
+    .button:hover { transform: translateY(-1px); }
+
+    .button-primary {
+      background: linear-gradient(135deg, var(--navy), var(--blue));
+      color: white;
+    }
+
+    .button-secondary {
+      background: rgba(255,255,255,0.92);
+      border: 1px solid rgba(16,35,63,0.1);
+      color: var(--navy);
+    }
+
+    main section {
+      padding: 0 0 1.4rem;
+    }
+
+    .claim-card {
+      padding: 1.5rem;
+      margin-top: 1.15rem;
+    }
+
+    .claim-title {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .claim-number {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #e8f3ff, #fff6de);
+      color: var(--navy);
+      font-weight: 800;
+      flex: 0 0 auto;
+    }
+
+    .claim-title h2 {
+      margin: 0;
+      font-size: 1.35rem;
+      line-height: 1.2;
+    }
+
+    .myth-fact-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .panel {
+      border-radius: 20px;
+      padding: 1.15rem 1.2rem;
+      border: 1px solid transparent;
+    }
+
+    .panel h3 {
+      margin: 0 0 0.55rem;
+      font-size: 0.95rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .panel p:last-child {
+      margin-bottom: 0;
+    }
+
+    .myth {
+      background: var(--myth-bg);
+      border-color: var(--myth-border);
+    }
+
+    .myth h3 {
+      color: var(--red);
+    }
+
+    .fact {
+      background: var(--fact-bg);
+      border-color: var(--fact-border);
+    }
+
+    .fact h3 {
+      color: var(--green);
+    }
+
+    .sources-card {
+      padding: 1.5rem;
+      margin-top: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .sources-card ul {
+      margin: 0.8rem 0 0;
+      padding-left: 1.15rem;
+      color: var(--muted);
+    }
+
+    .sources-card li + li {
+      margin-top: 0.45rem;
+    }
+
+    footer {
+      padding: 0 0 3rem;
+      color: var(--muted);
+    }
+
+    .footer-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.1rem 1.2rem;
+      background: rgba(255,255,255,0.78);
+      border: 1px solid rgba(16,35,63,0.08);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    @media (max-width: 760px) {
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .footer-card {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="Stop Measure B home">
+        <div class="brand-badge">NO</div>
+        <div>
+          Stop Measure B
+          <small>Contra Costa County</small>
+        </div>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="index.html#facts">Public Facts</a>
+        <a href="index.html#lookup">Tax Rate Lookup</a>
+        <a class="cta" href="index.html#volunteer">Volunteer</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-card">
+          <h1>Myths v Facts</h1>
+          <p><strong>HR1 and Contra Costa County funding</strong></p>
+          <p>
+            County officials cite federal and state health-funding changes as the main justification for Measure B. This page lays out several common claims and the campaign’s factual responses, based on the document you provided.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="index.html">Back to Home</a>
+            <a class="button button-secondary" href="index.html#lookup">Use Tax Rate Lookup</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+
+        <article class="claim-card">
+          <div class="claim-title">
+            <div class="claim-number">1</div>
+            <h2>The “$300 Million” Figure</h2>
+          </div>
+          <div class="myth-fact-grid">
+            <div class="panel myth">
+              <h3>Myth</h3>
+              <p>Contra Costa County faces more than $300 million per year in losses from federal cuts, creating an ongoing structural deficit that only a new sales tax can address.</p>
+            </div>
+            <div class="panel fact">
+              <h3>Fact</h3>
+              <p>The $300 million figure is a cumulative total projected through 2029 — not an annual loss. Supervisor Candace Andersen, the lone no vote on Measure B, caught this error before the board vote. She noted that county staff had posted on the county website that the county faced “$307 million ongoing” annual losses, when the Contra Costa Taxpayers Association pointed out — and county staff confirmed — that the figure is cumulative across four years.</p>
+              <p>The corrected estimate for cumulative losses through 2029 was later revised to approximately $229 million. Framing a multi-year cumulative loss as an annual deficit makes the funding gap appear seven to eight times larger than it actually is in the near term.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="claim-card">
+          <div class="claim-title">
+            <div class="claim-number">2</div>
+            <h2>All of the Cuts Are From HR1</h2>
+          </div>
+          <div class="myth-fact-grid">
+            <div class="panel myth">
+              <h3>Myth</h3>
+              <p>The county’s revenue shortfall is entirely the result of federal policy under HR1.</p>
+            </div>
+            <div class="panel fact">
+              <h3>Fact</h3>
+              <p>The county’s own materials are titled “HR1 and State Budget Impacts.” A portion of the projected funding loss comes from decisions made by the California state legislature — including state-level Medi-Cal eligibility and reimbursement changes in the 2025–26 California budget — not from Congress.</p>
+              <p>Lumping state-driven cuts together with federal cuts, and then blaming only Washington, gives voters a misleading picture of where decisions were actually made and who could reverse them.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="claim-card">
+          <div class="claim-title">
+            <div class="claim-number">3</div>
+            <h2>DSH Hospital Cuts Are HR1’s Fault</h2>
+          </div>
+          <div class="myth-fact-grid">
+            <div class="panel myth">
+              <h3>Myth</h3>
+              <p>Cuts to hospital funding are part of the HR1 package and represent a new Trump-era attack on public hospitals.</p>
+            </div>
+            <div class="panel fact">
+              <h3>Fact</h3>
+              <p>Disproportionate Share Hospital (DSH) payments are federal supplemental payments made to hospitals that serve a disproportionately high share of Medicaid and uninsured patients — hospitals like Contra Costa Regional Medical Center. These payments help offset the financial burden of uncompensated care that such safety-net hospitals would otherwise absorb entirely.</p>
+              <p>DSH cuts have nothing to do with HR1. They were originally mandated by the Affordable Care Act in 2010, on the theory that expanding health coverage would reduce uncompensated care and therefore reduce the need for DSH payments. Congress has since delayed those cuts more than a dozen times on a bipartisan basis because the expected reduction in uncompensated care never fully materialized.</p>
+              <p>Most recently, the Consolidated Appropriations Act of 2026 (H.R. 7148), signed into law in February 2026, postponed the scheduled $24 billion in DSH reductions until September 30, 2028. This pattern of repeated, bipartisan postponements has now stretched across four presidential administrations. Given this track record, there is every reason to expect Congress will address DSH cuts again before 2028 — and no basis for attributing them to HR1.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="claim-card">
+          <div class="claim-title">
+            <div class="claim-number">4</div>
+            <h2>HR1 Cuts Are Locked In</h2>
+          </div>
+          <div class="myth-fact-grid">
+            <div class="panel myth">
+              <h3>Myth</h3>
+              <p>Federal funding changes under HR1 are permanent and inevitable. There is nothing voters or future elected officials can do about them.</p>
+            </div>
+            <div class="panel fact">
+              <h3>Fact</h3>
+              <p>HR1 passed through a special budget reconciliation process that required only a simple Senate majority. A future Congress can modify, delay, or repeal any of its provisions by the same process. Congressional midterms in November 2026 will determine control of the House starting in January 2027.</p>
+              <p>If Democrats win the House, the new majority could revisit Medicaid funding levels in the next reconciliation bill. Many of HR1’s most significant Medicaid changes do not fully phase in until 2027 or 2028, meaning a course correction is politically possible before the largest impacts are felt. Committing Contra Costa taxpayers to five years of higher sales taxes based on projections that may never materialize is premature.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="claim-card">
+          <div class="claim-title">
+            <div class="claim-number">5</div>
+            <h2>There Are No Other Revenue Options on the Horizon</h2>
+          </div>
+          <div class="myth-fact-grid">
+            <div class="panel myth">
+              <h3>Myth</h3>
+              <p>The county cannot afford to wait — there is no other realistic source of replacement revenue for Medi-Cal losses, and the June sales tax is the only responsible choice.</p>
+            </div>
+            <div class="panel fact">
+              <h3>Fact</h3>
+              <p>California voters may be asked in November 2026 to approve a one-time 5% wealth tax on the roughly 200 billionaires living in the state, specifically designed to offset Medicaid cuts. Sponsored by SEIU-UHW and backed by U.S. Sen. Bernie Sanders and Rep. Ro Khanna, the measure is collecting signatures to qualify for the ballot. If it qualifies and passes, it is projected to raise approximately $100 billion directed primarily toward health care.</p>
+              <p>Supervisor Gioia dismissed waiting to see whether this measure passes, but now that we know HR1-related losses in 2026 and 2027 are limited and phased in gradually, the county has time to monitor both the November ballot and Congressional developments before committing to a permanent tax structure.</p>
+              <p><strong>Note:</strong> The billionaire tax faces real opposition, including from Gov. Gavin Newsom, and its passage is uncertain. But it is a genuine alternative worth waiting to assess before locking in a five-year sales tax.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="claim-card">
+          <div class="claim-title">
+            <div class="claim-number">6</div>
+            <h2>The County Has No Choice but to Raise Taxes on Everyone</h2>
+          </div>
+          <div class="myth-fact-grid">
+            <div class="panel myth">
+              <h3>Myth</h3>
+              <p>The only way to protect the county health system is to raise the sales tax paid by all Contra Costa residents and businesses.</p>
+            </div>
+            <div class="panel fact">
+              <h3>Fact</h3>
+              <p>A significant portion of projected Medi-Cal enrollment and cost increases involves coverage for undocumented immigrants, which California funds through state-only dollars. Asking undocumented and non-citizen enrollees to share some costs through modest deductibles and copayments — as most insured Americans already do — is a reasonable policy conversation the county has not had publicly.</p>
+              <p>Such cost-sharing would not eliminate coverage but would reduce the county’s net costs. Rather than asking all residents to pay more, the county could explore whether those receiving services can contribute to them, consistent with standard practice in most health plans.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="claim-card">
+          <div class="claim-title">
+            <div class="claim-number">7</div>
+            <h2>More Frequent Eligibility Checks Are Cruel and Unnecessary</h2>
+          </div>
+          <div class="myth-fact-grid">
+            <div class="panel myth">
+              <h3>Myth</h3>
+              <p>Requiring Medi-Cal eligibility to be verified every six months instead of once a year is a punitive attack on vulnerable people designed to strip them of coverage.</p>
+            </div>
+            <div class="panel fact">
+              <h3>Fact</h3>
+              <p>More frequent eligibility checks are a commonsense anti-waste measure. People die, move out of state, find jobs that raise them above the income threshold, or gain employer coverage — and programs that only check once a year continue paying for ineligible enrollees for months.</p>
+              <p>HR1 requires semi-annual redeterminations starting in 2027 and mandates quarterly cross-checks against the Social Security Death Master File to remove deceased enrollees. These are straightforward data-matching tasks that can and should be automated, limiting the administrative burden on enrollees and county staff. Keeping eligibility rolls accurate protects program integrity and preserves resources for those who genuinely qualify.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="claim-card">
+          <div class="claim-title">
+            <div class="claim-number">8</div>
+            <h2>Work Requirements Will Kick Sick and Vulnerable People Off Medi-Cal</h2>
+          </div>
+          <div class="myth-fact-grid">
+            <div class="panel myth">
+              <h3>Myth</h3>
+              <p>HR1’s “work requirements” will force the sick and disabled off their health coverage, sending them to emergency rooms for free care and raising costs for everyone.</p>
+            </div>
+            <div class="panel fact">
+              <h3>Fact</h3>
+              <p>The HR1 work requirement — officially called a “community engagement requirement” — is far more flexible than critics suggest, and carries an extensive list of exemptions. It applies only to non-disabled adults aged 19–64 enrolled through the ACA Medicaid expansion, and can be satisfied by any combination of: employment, job training, school enrollment (at least half time), or volunteer work — 80 hours per month total.</p>
+              <p>Fully exempt from the requirement are: pregnant women and new mothers (up to 12 months postpartum); parents and caregivers of children age 13 or younger; foster youth under age 26; veterans with a total disability rating; people who are medically frail (including those with mental illness, substance use disorders, or physical and developmental disabilities); people receiving SSI or SSDI; anyone already meeting SNAP or TANF work requirements; and people in substance use treatment programs. States may add additional hardship exceptions.</p>
+              <p>The people most likely to be affected are able-bodied working-age adults without young children — a group that should generally be able to satisfy 80 hours of qualifying activity per month. A legitimate concern, supported by experience in Arkansas and Georgia, is that some eligible people may lose coverage due to paperwork complexity rather than actual ineligibility. The county and state should focus on automated verification and clear outreach to minimize that risk.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="claim-card">
+          <div class="claim-title">
+            <div class="claim-number">9</div>
+            <h2>The County Must Act Now, Before Seeing the Full Picture</h2>
+          </div>
+          <div class="myth-fact-grid">
+            <div class="panel myth">
+              <h3>Myth</h3>
+              <p>The fiscal situation is so dire that the county cannot responsibly wait for more information before asking voters for a new tax.</p>
+            </div>
+            <div class="panel fact">
+              <h3>Fact</h3>
+              <p>Most of HR1’s major Medicaid changes do not take effect until 2027 or later — work requirements by January 2027, the six-month redetermination cycle in 2027, and immigrant eligibility restrictions in October 2026. The county has already lost about $24 million in the current fiscal year, a real but manageable sum relative to its reserves and budget. Federal implementation guidance from CMS was still being issued as of late 2025, and state-level rules remain pending.</p>
+              <p>Asking voters to approve a five-year, countywide tax based on projections that the county itself had to correct — before final rules are written, before the November 2026 ballot is set, and before the next Congress is seated — is putting the cart well before the horse. Voters deserve more time and more accurate information.</p>
+            </div>
+          </div>
+        </article>
+
+        <section class="sources-card">
+          <h2>Sources listed in the memo</h2>
+          <ul>
+            <li>Contra Costa County Board of Supervisors meeting coverage, Local News Matters and ContraCosta.news (March 2026)</li>
+            <li>Contra Costa Health press release on HR1 impacts (November 2025)</li>
+            <li>Consolidated Appropriations Act, 2026 (H.R. 7148), signed February 2026 — DSH delay to September 30, 2028</li>
+            <li>Congressional Budget Office estimates on HR1 Medicaid provisions</li>
+            <li>KFF analysis of HR1 work requirements and eligibility changes</li>
+            <li>Congressional Research Service reports on Medicaid DSH history (Congress.gov IF10422)</li>
+            <li>UC Berkeley / Politico poll on California Billionaire Tax Act, January 2026</li>
+            <li>Ballotpedia, California One-Time Wealth Tax Initiative (2026)</li>
+            <li>American Action Forum, “Health Care Extenders: Key Provisions in the Consolidated Appropriations Act, 2026”</li>
+          </ul>
+        </section>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-card">
+        <div>
+          <strong>Stop Measure B</strong><br>
+          <span>Myths v Facts page</span>
+        </div>
+        <div>Paid for by Contra Costa Taxpayers Association.</div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
