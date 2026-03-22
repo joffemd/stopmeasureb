@@ -11,28 +11,17 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --navy: #10233f;
-      --blue: #1e4f8f;
-      --sky: #dfeeff;
-      --gold: #f6c453;
-      --text: #18212f;
-      --muted: #5f6b7a;
-      --white: #ffffff;
-      --card: rgba(255,255,255,0.88);
-      --border: rgba(16,35,63,0.12);
+      --navy: #10233f; --blue: #1e4f8f; --gold: #f6c453;
+      --text: #18212f; --muted: #5f6b7a; --white: #ffffff;
+      --card: rgba(255,255,255,0.88); --border: rgba(16,35,63,0.12);
       --shadow: 0 18px 40px rgba(16,35,63,0.12);
-      --radius: 22px;
-      --max: 1180px;
-      --red: #b42318;
-      --green: #16794a;
+      --radius: 22px; --max: 1180px; --red: #b42318; --green: #16794a;
     }
-
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-
     body {
       margin: 0;
-      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
       color: var(--text);
       background:
         radial-gradient(circle at top left, rgba(246,196,83,0.22), transparent 28%),
@@ -40,321 +29,82 @@
         linear-gradient(180deg, #f8fbff 0%, #eef5fd 42%, #ffffff 100%);
       line-height: 1.6;
     }
-
     a { color: inherit; text-decoration: none; }
+    .container { width: min(calc(100% - 2rem), var(--max)); margin: 0 auto; }
 
-    .container {
-      width: min(calc(100% - 2rem), var(--max));
-      margin: 0 auto;
-    }
-
-    /* ── HEADER ── */
+    /* HEADER */
     .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 50;
+      position: sticky; top: 0; z-index: 50;
       backdrop-filter: blur(12px);
       background: rgba(255,255,255,0.93);
       border-bottom: 2px solid rgba(180,35,24,0.14);
     }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      padding: 0.7rem 0;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 0.9rem;
-      font-weight: 800;
-      color: var(--navy);
-    }
-
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.7rem 0; }
+    .brand { display: flex; align-items: center; gap: 0.9rem; font-weight: 800; color: var(--navy); }
     .brand-badge {
-      width: 60px;
-      height: 60px;
-      border-radius: 16px;
-      display: grid;
-      place-items: center;
-      background: linear-gradient(135deg, #c0392b, #96281b);
-      color: white;
+      width: 60px; height: 60px; border-radius: 16px; display: grid; place-items: center;
+      background: linear-gradient(135deg, #c0392b, #96281b); color: white;
       box-shadow: 0 10px 28px rgba(192,57,43,0.35);
-      font-weight: 900;
-      font-size: 1.55rem;
-      letter-spacing: 0.02em;
-      font-family: 'Merriweather', Georgia, serif;
+      font-weight: 900; font-size: 1.55rem; font-family: 'Merriweather', Georgia, serif;
     }
-
     .brand-text { font-size: 1.1rem; }
-
-    .brand small {
-      display: block;
-      color: var(--muted);
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.02em;
-    }
-
-    .nav-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.7rem;
-      align-items: center;
-    }
-
-    .nav-links a {
-      color: var(--muted);
-      font-weight: 600;
-      font-size: 0.87rem;
-    }
-
+    .brand small { display: block; color: var(--muted); font-size: 0.78rem; font-weight: 600; }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 0.7rem; align-items: center; }
+    .nav-links a { color: var(--muted); font-weight: 600; font-size: 0.87rem; }
     .nav-links a.cta {
-      color: var(--white);
-      background: linear-gradient(135deg, #c0392b, #96281b);
-      padding: 0.7rem 1.05rem;
-      border-radius: 999px;
-      box-shadow: 0 8px 20px rgba(192,57,43,0.28);
+      color: var(--white); background: linear-gradient(135deg, #c0392b, #96281b);
+      padding: 0.7rem 1.05rem; border-radius: 999px; box-shadow: 0 8px 20px rgba(192,57,43,0.28);
     }
 
-    /* ── HERO ── */
-    .hero {
-      position: relative;
-      overflow: hidden;
-      padding: 4.4rem 0 3rem;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 2rem;
-      align-items: center;
-    }
-
+    /* HERO */
+    .hero { position: relative; overflow: hidden; padding: 4.4rem 0 3rem; }
+    .hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 2rem; align-items: center; }
     h1 {
-      margin: 1rem 0 1rem;
-      font-family: 'Merriweather', Georgia, serif;
-      font-size: clamp(2.4rem, 5vw, 4.6rem);
-      line-height: 1.05;
-      color: var(--navy);
-      letter-spacing: -0.03em;
+      margin: 1rem 0; font-family: 'Merriweather', Georgia, serif;
+      font-size: clamp(2.4rem, 5vw, 4.6rem); line-height: 1.05;
+      color: var(--navy); letter-spacing: -0.03em;
     }
-
-    .hero p.lead {
-      max-width: 40rem;
-      font-size: 1.12rem;
-      color: var(--muted);
-      margin: 0 0 1.4rem;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.9rem;
-      margin-top: 1.6rem;
-    }
-
+    .hero p.lead { max-width: 40rem; font-size: 1.12rem; color: var(--muted); margin: 0 0 1.4rem; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 0.9rem; margin-top: 1.6rem; }
     .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.6rem;
-      min-height: 52px;
-      padding: 0.9rem 1.2rem;
-      border-radius: 999px;
-      font-weight: 700;
-      border: 0;
-      cursor: pointer;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      font-family: inherit;
-      font-size: 1rem;
+      display: inline-flex; align-items: center; justify-content: center;
+      gap: 0.6rem; min-height: 52px; padding: 0.9rem 1.2rem;
+      border-radius: 999px; font-weight: 700; border: 0; cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease; font-family: inherit; font-size: 1rem;
     }
-
     .button:hover { transform: translateY(-1px); }
-
-    .button-primary {
-      background: linear-gradient(135deg, var(--navy), var(--blue));
-      color: var(--white);
-      box-shadow: 0 14px 28px rgba(30,79,143,0.25);
-    }
-
-    .button-danger {
-      background: linear-gradient(135deg, #c0392b, #96281b);
-      color: var(--white);
-      box-shadow: 0 14px 28px rgba(192,57,43,0.28);
-    }
-
-    .button-secondary {
-      background: rgba(255,255,255,0.86);
-      color: var(--navy);
-      border: 1px solid rgba(16,35,63,0.1);
-      box-shadow: var(--shadow);
-    }
-
-    .hero-card {
-      background: linear-gradient(160deg, rgba(255,255,255,0.95), rgba(230,241,255,0.92));
-      border: 1px solid rgba(16,35,63,0.08);
-      border-radius: 28px;
-      box-shadow: var(--shadow);
-      padding: 1.25rem;
-      position: relative;
-    }
-
-    .hero-art {
-      border-radius: 22px;
-      overflow: hidden;
-      background: linear-gradient(135deg, #0f2a4e, #285fa8 58%, #7eb8ff 100%);
-      padding: 1.25rem;
-      min-height: 420px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      color: white;
-    }
-
+    .button-primary { background: linear-gradient(135deg, var(--navy), var(--blue)); color: var(--white); box-shadow: 0 14px 28px rgba(30,79,143,0.25); }
+    .button-danger { background: linear-gradient(135deg, #c0392b, #96281b); color: var(--white); box-shadow: 0 14px 28px rgba(192,57,43,0.28); }
+    .button-secondary { background: rgba(255,255,255,0.86); color: var(--navy); border: 1px solid rgba(16,35,63,0.1); box-shadow: var(--shadow); }
+    .hero-card { background: linear-gradient(160deg, rgba(255,255,255,0.95), rgba(230,241,255,0.92)); border: 1px solid rgba(16,35,63,0.08); border-radius: 28px; box-shadow: var(--shadow); padding: 1.25rem; }
+    .hero-art { border-radius: 22px; overflow: hidden; background: linear-gradient(135deg, #0f2a4e, #285fa8 58%, #7eb8ff 100%); padding: 1.25rem; min-height: 420px; display: flex; flex-direction: column; justify-content: space-between; color: white; }
     .hero-art h2 { margin: 0; font-size: clamp(1.4rem, 2.2vw, 2rem); line-height: 1.15; }
     .hero-art p { margin-top: 0.75rem; color: rgba(255,255,255,0.82); max-width: 25rem; }
-
-    .icon-row {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0.8rem;
-      margin-top: 1rem;
-    }
-
-    .mini-stat {
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.16);
-      border-radius: 18px;
-      padding: 0.85rem;
-      backdrop-filter: blur(8px);
-    }
-
+    .icon-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8rem; margin-top: 1rem; }
+    .mini-stat { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.16); border-radius: 18px; padding: 0.85rem; }
     .mini-stat strong { display: block; font-size: 1.2rem; margin-bottom: 0.15rem; }
     .mini-stat span { font-size: 0.88rem; color: rgba(255,255,255,0.8); }
-
-    .county-scene {
-      margin-top: 1rem;
-      background: rgba(255,255,255,0.08);
-      border-radius: 22px;
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.14);
-    }
+    .county-scene { margin-top: 1rem; background: rgba(255,255,255,0.08); border-radius: 22px; overflow: hidden; border: 1px solid rgba(255,255,255,0.14); }
 
     section { padding: 2rem 0; }
-
     .section-title { margin-bottom: 1.2rem; }
-    .section-title h2 {
-      margin: 0 0 0.35rem;
-      font-family: 'Merriweather', Georgia, serif;
-      font-size: clamp(1.85rem, 3.5vw, 2.7rem);
-      color: var(--navy);
-    }
+    .section-title h2 { margin: 0 0 0.35rem; font-family: 'Merriweather', Georgia, serif; font-size: clamp(1.85rem, 3.5vw, 2.7rem); color: var(--navy); }
     .section-title p { margin: 0; color: var(--muted); max-width: 44rem; }
 
-    /* ── TOP 3 REASONS ── */
-    .reasons-section {
-      background: linear-gradient(145deg, #0d1f3a 0%, #1a3b6e 100%);
-      padding: 3.5rem 0;
-      position: relative;
-      overflow: hidden;
-    }
-    .reasons-section::before {
-      content: '';
-      position: absolute;
-      top: -80px; right: -80px;
-      width: 350px; height: 350px;
-      border-radius: 50%;
-      background: rgba(246,196,83,0.07);
-      pointer-events: none;
-    }
-    .reasons-section .section-title h2 { color: white; }
-    .reasons-section .section-title p { color: rgba(255,255,255,0.66); }
-
-    .reasons-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.25rem;
-      margin-top: 1.5rem;
-    }
-
-    .reason-card {
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.13);
-      border-radius: 24px;
-      padding: 1.6rem;
-      backdrop-filter: blur(8px);
-      transition: background 0.2s ease;
-    }
-    .reason-card:hover { background: rgba(255,255,255,0.12); }
-
-    .reason-number {
-      font-size: 3rem;
-      font-weight: 900;
-      color: var(--gold);
-      line-height: 1;
-      margin-bottom: 0.55rem;
-      font-family: 'Merriweather', Georgia, serif;
-    }
-    .reason-card h3 { color: white; margin: 0 0 0.65rem; font-size: 1.08rem; line-height: 1.3; }
-    .reason-card p { color: rgba(255,255,255,0.75); margin: 0 0 0.7rem; font-size: 0.94rem; }
-    .reason-card a.detail-link {
-      color: var(--gold);
-      font-weight: 700;
-      font-size: 0.9rem;
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-    .reasons-cta { margin-top: 2rem; text-align: center; }
-
-    /* ── FACTS GRID ── */
-    .facts-grid, .tools-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.15rem;
-      margin-top: 1.2rem;
-    }
-
-    .fact-card, .quote-card, .volunteer-card, .notice-card, .tool-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
+    /* FACTS GRID */
+    .facts-grid, .tools-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.15rem; margin-top: 1.2rem; }
+    .fact-card, .quote-card, .volunteer-card, .notice-card, .tool-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); }
     .fact-card, .tool-card { padding: 1.35rem; }
-
-    .fact-number, .tool-icon {
-      display: inline-grid;
-      place-items: center;
-      width: 44px;
-      height: 44px;
-      border-radius: 14px;
-      background: linear-gradient(135deg, #e8f3ff, #fff6de);
-      color: var(--navy);
-      font-weight: 800;
-      margin-bottom: 0.9rem;
-    }
+    .fact-number, .tool-icon { display: inline-grid; place-items: center; width: 44px; height: 44px; border-radius: 14px; background: linear-gradient(135deg, #e8f3ff, #fff6de); color: var(--navy); font-weight: 800; margin-bottom: 0.9rem; }
     .fact-card h3, .tool-card h3 { margin: 0 0 0.55rem; font-size: 1.15rem; color: var(--navy); line-height: 1.2; }
     .fact-card p, .tool-card p { margin: 0; color: var(--muted); }
 
-    /* ── VIDEO ── */
+    /* VIDEO */
     .video-section { padding: 1.5rem 0; }
-    .video-wrapper {
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-      overflow: hidden;
-      border-radius: 20px;
-      box-shadow: var(--shadow);
-      border: 1px solid var(--border);
-      background: #000;
-    }
+    .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 20px; box-shadow: var(--shadow); border: 1px solid var(--border); background: #000; }
     .video-wrapper iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 
-    /* ── LOOKUP ── */
+    /* LOOKUP */
     .lookup-card { padding: 1.5rem; margin-top: 1.2rem; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); }
     .lookup-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 1.25rem; align-items: stretch; }
     .lookup-results { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.9rem; margin-top: 1rem; }
@@ -367,230 +117,87 @@
     .rate-box p { margin: 0.45rem 0 0; color: var(--muted); font-size: 0.92rem; }
     .lookup-notes { color: var(--muted); font-size: 0.94rem; margin-top: 0.9rem; }
 
-    /* ── LEGAL & CAP ── */
-    .legal-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 1.25rem;
-      align-items: start;
-      margin-top: 1.5rem;
+    /* ABOUT THOSE FEDERAL CUTS (dark section) */
+    .cuts-section {
+      background: linear-gradient(145deg, #0d1f3a 0%, #1a3b6e 100%);
+      padding: 3.5rem 0; position: relative; overflow: hidden;
     }
+    .cuts-section::before {
+      content: ''; position: absolute; top: -80px; right: -80px;
+      width: 350px; height: 350px; border-radius: 50%;
+      background: rgba(246,196,83,0.07); pointer-events: none;
+    }
+    .cuts-section .section-title h2 { color: white; }
+    .cuts-section .section-title p { color: rgba(255,255,255,0.66); }
+    .cuts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 1.5rem; }
+    .cut-card { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.13); border-radius: 24px; padding: 1.6rem; transition: background 0.2s ease; }
+    .cut-card:hover { background: rgba(255,255,255,0.12); }
+    .cut-num { font-size: 3rem; font-weight: 900; color: var(--gold); line-height: 1; margin-bottom: 0.55rem; font-family: 'Merriweather', Georgia, serif; }
+    .cut-card h3 { color: white; margin: 0 0 0.65rem; font-size: 1.08rem; line-height: 1.3; }
+    .cut-card p { color: rgba(255,255,255,0.75); margin: 0 0 0.7rem; font-size: 0.94rem; }
+    .cut-card a.detail-link { color: var(--gold); font-weight: 700; font-size: 0.9rem; text-decoration: underline; text-underline-offset: 3px; }
+    .cuts-cta { margin-top: 2rem; text-align: center; }
 
-    .legal-card {
-      background: linear-gradient(155deg, rgba(180,35,24,0.05) 0%, rgba(255,255,255,0.96) 60%);
-      border: 1px solid rgba(180,35,24,0.18);
-      border-left: 5px solid var(--red);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 1.75rem;
-    }
-    .cap-card {
-      background: linear-gradient(155deg, rgba(22,121,74,0.05) 0%, rgba(255,255,255,0.96) 60%);
-      border: 1px solid rgba(22,121,74,0.18);
-      border-left: 5px solid var(--green);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 1.75rem;
-    }
-
-    .badge-pill {
-      display: inline-block;
-      color: white;
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-      padding: 0.28rem 0.7rem;
-      border-radius: 999px;
-      margin-bottom: 0.75rem;
-    }
-    .badge-danger { background: var(--red); }
-    .badge-success { background: var(--green); }
-
-    .legal-card h3, .cap-card h3 {
-      margin: 0 0 0.6rem;
-      font-size: 1.3rem;
-      color: var(--navy);
-      font-family: 'Merriweather', Georgia, serif;
-    }
-    .case-num {
-      display: inline-block;
-      font-family: 'Courier New', monospace;
-      font-size: 0.9rem;
-      background: rgba(180,35,24,0.08);
-      color: var(--red);
-      padding: 0.28rem 0.65rem;
-      border-radius: 8px;
-      font-weight: 700;
-      margin: 0.25rem 0 0.9rem;
-    }
-    .legal-card p, .cap-card p { color: var(--muted); margin: 0 0 0.75rem; }
-    .legal-card p:last-child, .cap-card p:last-child { margin-bottom: 0; }
-
-    /* ── TIMELINE ── */
-    .timeline-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 1.75rem;
-      overflow: hidden;
-    }
+    /* TIMELINE */
+    .timeline-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); padding: 1.75rem; overflow: hidden; }
     .timeline-card h3 { margin: 0 0 0.4rem; color: var(--navy); font-family: 'Merriweather', Georgia, serif; font-size: 1.2rem; }
     .timeline-card > p { color: var(--muted); margin: 0 0 1.25rem; }
 
-    /* ── SPLIT ── */
-    .split {
-      display: grid;
-      grid-template-columns: 1fr 0.95fr;
-      gap: 1.25rem;
-      align-items: stretch;
-      margin-top: 1.4rem;
-    }
-    .quote-card {
-      padding: 1.5rem;
-      background: linear-gradient(145deg, rgba(16,35,63,0.98), rgba(30,79,143,0.96));
-      color: white;
-      position: relative;
-      overflow: hidden;
-    }
-    .quote-card::after {
-      content: "";
-      position: absolute;
-      inset: auto -40px -40px auto;
-      width: 200px; height: 200px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.08);
-    }
+    /* SPLIT */
+    .split { display: grid; grid-template-columns: 1fr 0.95fr; gap: 1.25rem; align-items: stretch; margin-top: 1.4rem; }
+    .quote-card { padding: 1.5rem; background: linear-gradient(145deg, rgba(16,35,63,0.98), rgba(30,79,143,0.96)); color: white; position: relative; overflow: hidden; }
+    .quote-card::after { content: ""; position: absolute; inset: auto -40px -40px auto; width: 200px; height: 200px; border-radius: 50%; background: rgba(255,255,255,0.08); }
     .quote-card h3 { margin-top: 0; font-size: 1.2rem; }
     .quote-card li { color: rgba(255,255,255,0.88); }
-
     .notice-card { padding: 1.45rem; }
     .notice-card h3 { margin-top: 0; font-size: 1.15rem; color: var(--navy); }
     .notice-card p { color: var(--muted); }
     .notice-card ul { margin: 0.8rem 0 0; padding-left: 1.1rem; color: var(--muted); }
     .notice-card li + li { margin-top: 0.5rem; }
 
-    /* ── NEWS ── */
-    .news-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 1.1rem;
-      margin-top: 1.2rem;
-    }
-    .news-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 1.25rem;
-      display: flex;
-      flex-direction: column;
-    }
-    .news-source {
-      font-size: 0.77rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.07em;
-      color: var(--blue);
-      margin-bottom: 0.5rem;
-    }
+    /* NEWS */
+    .news-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.1rem; margin-top: 1.2rem; }
+    .news-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); padding: 1.25rem; display: flex; flex-direction: column; }
+    .news-source { font-size: 0.77rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--blue); margin-bottom: 0.5rem; }
     .news-card h3 { margin: 0 0 0.5rem; font-size: 1rem; color: var(--navy); line-height: 1.35; flex: 1; }
     .news-card p { margin: 0 0 0.75rem; font-size: 0.9rem; color: var(--muted); }
     .news-card a.read-more { color: var(--blue); font-weight: 700; font-size: 0.9rem; margin-top: auto; }
 
-    /* ── VOLUNTEER ── */
-    .volunteer-wrap {
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 1.25rem;
-      margin-top: 1.4rem;
-      align-items: stretch;
-    }
+    /* VOLUNTEER */
+    .volunteer-wrap { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 1.25rem; margin-top: 1.4rem; align-items: stretch; }
     .volunteer-card { padding: 1.5rem; }
     .volunteer-card h3 { margin-top: 0; color: var(--navy); font-size: 1.3rem; }
     .volunteer-card p { color: var(--muted); margin-bottom: 1rem; }
-
     .pill-list { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1rem; }
-    .pill {
-      padding: 0.6rem 0.85rem;
-      border-radius: 999px;
-      background: #eef5fd;
-      border: 1px solid rgba(30,79,143,0.08);
-      color: var(--blue);
-      font-weight: 700;
-      font-size: 0.92rem;
-    }
-
+    .pill { padding: 0.6rem 0.85rem; border-radius: 999px; background: #eef5fd; border: 1px solid rgba(30,79,143,0.08); color: var(--blue); font-weight: 700; font-size: 0.92rem; }
     form { display: grid; gap: 0.9rem; }
     .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; }
-
     label { display: block; font-size: 0.92rem; font-weight: 700; color: var(--navy); margin-bottom: 0.35rem; }
-
-    input, textarea, select {
-      width: 100%;
-      border: 1px solid rgba(16,35,63,0.14);
-      background: rgba(255,255,255,0.92);
-      border-radius: 16px;
-      padding: 0.9rem 0.95rem;
-      font: inherit;
-      color: var(--text);
-      outline: none;
-      transition: border-color 0.2s ease, box-shadow 0.2s ease;
-    }
-    input:focus, textarea:focus, select:focus {
-      border-color: rgba(30,79,143,0.45);
-      box-shadow: 0 0 0 4px rgba(30,79,143,0.10);
-    }
+    input, textarea, select { width: 100%; border: 1px solid rgba(16,35,63,0.14); background: rgba(255,255,255,0.92); border-radius: 16px; padding: 0.9rem 0.95rem; font: inherit; color: var(--text); outline: none; transition: border-color 0.2s ease, box-shadow 0.2s ease; }
+    input:focus, textarea:focus, select:focus { border-color: rgba(30,79,143,0.45); box-shadow: 0 0 0 4px rgba(30,79,143,0.10); }
     textarea { resize: vertical; min-height: 132px; }
-
-    .contact-alt {
-      margin-top: 0.9rem;
-      padding: 0.85rem 1rem;
-      background: rgba(30,79,143,0.06);
-      border-radius: 14px;
-      font-size: 0.9rem;
-      color: var(--muted);
-      border: 1px solid rgba(30,79,143,0.1);
-    }
+    .contact-alt { margin-top: 0.9rem; padding: 0.85rem 1rem; background: rgba(30,79,143,0.06); border-radius: 14px; font-size: 0.9rem; color: var(--muted); border: 1px solid rgba(30,79,143,0.1); }
     .contact-alt a { color: var(--blue); font-weight: 700; }
 
-    /* ── FOOTER ── */
+    /* FOOTER */
     .footer { padding: 2.25rem 0 3rem; color: var(--muted); }
-    .footer-card {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      padding: 1.1rem 1.2rem;
-      background: rgba(255,255,255,0.78);
-      border: 1px solid rgba(16,35,63,0.08);
-      border-radius: 20px;
-      box-shadow: var(--shadow);
-    }
+    .footer-card { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.1rem 1.2rem; background: rgba(255,255,255,0.78); border: 1px solid rgba(16,35,63,0.08); border-radius: 20px; box-shadow: var(--shadow); }
     .disclaimer { font-size: 0.92rem; color: var(--muted); }
 
-    /* ── RESPONSIVE ── */
     @media (max-width: 960px) {
-      .hero-grid, .facts-grid, .tools-grid,
-      .lookup-grid, .lookup-results, .split,
-      .volunteer-wrap, .field-row,
-      .reasons-grid, .legal-grid {
-        grid-template-columns: 1fr;
-      }
+      .hero-grid, .facts-grid, .tools-grid, .lookup-grid, .lookup-results,
+      .split, .volunteer-wrap, .field-row, .cuts-grid { grid-template-columns: 1fr; }
       .hero { padding-top: 3rem; }
       .nav { align-items: flex-start; flex-direction: column; }
       .footer-card { flex-direction: column; align-items: flex-start; }
     }
-
     @media (max-width: 640px) {
       .nav-links { gap: 0.5rem; }
       .nav-links a { font-size: 0.84rem; }
       .hero-card, .quote-card, .notice-card, .volunteer-card,
-      .fact-card, .lookup-card, .tool-card,
-      .legal-card, .cap-card, .timeline-card, .news-card { padding: 1.1rem; }
+      .fact-card, .lookup-card, .tool-card, .timeline-card, .news-card { padding: 1.1rem; }
       .icon-row { grid-template-columns: 1fr; }
-      .reasons-section { padding: 2.5rem 0; }
+      .cuts-section { padding: 2.5rem 0; }
     }
   </style>
 </head>
@@ -599,17 +206,13 @@
     <div class="container nav">
       <a class="brand" href="#top" aria-label="Stop Measure B home">
         <div class="brand-badge">NO</div>
-        <div class="brand-text">
-          Stop Measure B
-          <small>Contra Costa County</small>
-        </div>
+        <div class="brand-text">Stop Measure B<small>Contra Costa County</small></div>
       </a>
       <nav class="nav-links" aria-label="Primary">
-        <a href="#top-reasons">3 Reasons to Vote No</a>
         <a href="#facts">Key Facts</a>
         <a href="myths-facts.html">Myths v Facts</a>
         <a href="#lookup">Tax Rate Lookup</a>
-        <a href="#legal">Legal Challenge</a>
+        <a href="#federal-cuts">Federal Cuts</a>
         <a href="#volunteer">Volunteer</a>
         <a class="cta" href="#volunteer">Join the Campaign</a>
       </nav>
@@ -618,48 +221,42 @@
 
   <main id="top">
 
-    <!-- ═══ HERO ═══ -->
+    <!-- HERO -->
     <section class="hero">
       <div class="container hero-grid">
         <div>
           <h1>Measure B means a higher sales tax for Contra Costa.</h1>
           <p class="lead">
-            Measure B would raise the county sales tax by five-eighths of a cent for five years — based on funding projections the county's own Board had to correct the same day they voted.
+            Measure B would raise the county sales tax by five-eighths of a cent for five years &#8212; based on funding projections the county&#8217;s own Board had to correct the same day it voted.
           </p>
           <div class="hero-actions">
-            <a class="button button-danger" href="#top-reasons">3 Reasons to Vote No</a>
+            <a class="button button-danger" href="#federal-cuts">About Those Federal Cuts</a>
             <a class="button button-secondary" href="#lookup">Look Up Your Rate</a>
             <a class="button button-secondary" href="myths-facts.html">Read Myths v Facts</a>
           </div>
         </div>
 
         <div class="hero-card">
-          <div class="hero-art" role="img" aria-label="Illustration of a sales receipt, county skyline, and tax-rate callouts">
+          <div class="hero-art" role="img" aria-label="Tax rate callouts over a county skyline illustration">
             <div>
               <h2>Sales taxes add up fast.</h2>
               <p>Measure B would stack on top of existing county and city taxes, with another regional transit tax proposal also possible this November.</p>
             </div>
             <div class="icon-row" aria-hidden="true">
               <div class="mini-stat"><strong>+0.625%</strong><span>Measure B increase</span></div>
-              <div class="mini-stat"><strong>10.875%</strong><span>Possible total in the county's highest-tax cities</span></div>
+              <div class="mini-stat"><strong>10.875%</strong><span>Possible total in the county&#8217;s highest-tax cities</span></div>
               <div class="mini-stat"><strong>+0.5%</strong><span>Possible November transit measure</span></div>
             </div>
             <div class="county-scene" aria-hidden="true">
               <svg viewBox="0 0 800 360" xmlns="http://www.w3.org/2000/svg">
                 <defs>
-                  <linearGradient id="skyGrad" x1="0" x2="1" y1="0" y2="1">
-                    <stop offset="0%" stop-color="#9fd0ff" stop-opacity="0.95"/>
-                    <stop offset="100%" stop-color="#154782" stop-opacity="0.95"/>
-                  </linearGradient>
-                  <linearGradient id="goldGrad" x1="0" x2="1">
-                    <stop offset="0%" stop-color="#ffd26d"/>
-                    <stop offset="100%" stop-color="#f6c453"/>
-                  </linearGradient>
+                  <linearGradient id="skyGrad" x1="0" x2="1" y1="0" y2="1"><stop offset="0%" stop-color="#9fd0ff" stop-opacity="0.95"/><stop offset="100%" stop-color="#154782" stop-opacity="0.95"/></linearGradient>
+                  <linearGradient id="goldGrad" x1="0" x2="1"><stop offset="0%" stop-color="#ffd26d"/><stop offset="100%" stop-color="#f6c453"/></linearGradient>
                 </defs>
                 <rect width="800" height="360" fill="url(#skyGrad)"/>
                 <circle cx="635" cy="72" r="42" fill="#fff3c0" opacity="0.8"/>
-                <path d="M0 260 C110 214, 200 308, 320 270 C420 239, 498 284, 610 256 C685 236, 745 267, 800 247 L800 360 L0 360 Z" fill="#103463" opacity="0.55"/>
-                <path d="M0 278 C108 248, 228 336, 350 295 C468 257, 577 314, 800 270 L800 360 L0 360 Z" fill="#0c2848" opacity="0.68"/>
+                <path d="M0 260 C110 214,200 308,320 270 C420 239,498 284,610 256 C685 236,745 267,800 247 L800 360 L0 360 Z" fill="#103463" opacity="0.55"/>
+                <path d="M0 278 C108 248,228 336,350 295 C468 257,577 314,800 270 L800 360 L0 360 Z" fill="#0c2848" opacity="0.68"/>
                 <rect x="68" y="170" width="76" height="122" rx="8" fill="#d8ecff" opacity="0.92"/>
                 <rect x="162" y="120" width="88" height="172" rx="8" fill="#eaf4ff" opacity="0.93"/>
                 <rect x="274" y="146" width="95" height="146" rx="8" fill="#d1e8ff" opacity="0.93"/>
@@ -676,13 +273,13 @@
                 </g>
                 <g transform="translate(525 44)">
                   <rect x="0" y="0" width="194" height="92" rx="18" fill="#ffffff" opacity="0.96"/>
-                  <text x="24" y="38" font-size="22" font-family="Inter, Arial, sans-serif" font-weight="800" fill="#10233f">Measure B</text>
-                  <text x="24" y="67" font-size="28" font-family="Inter, Arial, sans-serif" font-weight="800" fill="#c0392b">+0.625%</text>
+                  <text x="24" y="38" font-size="22" font-family="Inter,Arial,sans-serif" font-weight="800" fill="#10233f">Measure B</text>
+                  <text x="24" y="67" font-size="28" font-family="Inter,Arial,sans-serif" font-weight="800" fill="#c0392b">+0.625%</text>
                 </g>
                 <g transform="translate(44 42)">
                   <rect x="0" y="0" width="220" height="86" rx="18" fill="url(#goldGrad)" opacity="0.98"/>
-                  <text x="24" y="36" font-size="21" font-family="Inter, Arial, sans-serif" font-weight="800" fill="#10233f">Highest city rate</text>
-                  <text x="24" y="67" font-size="28" font-family="Inter, Arial, sans-serif" font-weight="800" fill="#10233f">10.875%</text>
+                  <text x="24" y="36" font-size="21" font-family="Inter,Arial,sans-serif" font-weight="800" fill="#10233f">Highest city rate</text>
+                  <text x="24" y="67" font-size="28" font-family="Inter,Arial,sans-serif" font-weight="800" fill="#10233f">10.875%</text>
                 </g>
               </svg>
             </div>
@@ -691,94 +288,49 @@
       </div>
     </section>
 
-    <!-- ═══ TOP 3 REASONS ═══ -->
-    <section class="reasons-section" id="top-reasons">
-      <div class="container">
-        <div class="section-title">
-          <h2>Top 3 Reasons to Vote No</h2>
-          <p>The county's own record tells a damning story. These are the facts voters need most before June.</p>
-        </div>
-
-        <div class="reasons-grid">
-          <div class="reason-card">
-            <div class="reason-number">1</div>
-            <h3>The Board corrected its own $300M figure — and voted anyway</h3>
-            <p>County staff originally posted that Contra Costa faced <strong style="color:var(--gold)">$307&nbsp;million in ongoing annual losses</strong>. Supervisor Andersen, the lone no vote, flagged the error before the vote: county staff confirmed the figure is a <strong style="color:var(--gold)">cumulative 4-year total</strong>, later revised down to $229&nbsp;million. Framing it as annual makes the funding gap appear 7–8&times; larger than it is in the near term. The board voted to place Measure B on the ballot the same day, without correcting the record.</p>
-            <a href="myths-facts.html" class="detail-link">Read the full breakdown →</a>
-          </div>
-
-          <div class="reason-card">
-            <div class="reason-number">2</div>
-            <h3>Most HR1 provisions don't kick in until 2027 or 2028</h3>
-            <p>Work requirements begin in <strong style="color:var(--gold)">January 2027</strong>. Six-month eligibility redeterminations begin in <strong style="color:var(--gold)">2027</strong>. DSH hospital funding cuts were extended by Congress through <strong style="color:var(--gold)">September 2028</strong>. Measure B would start collecting taxes in <strong style="color:var(--gold)">October 2026</strong> — locking in five years of higher taxes before the full picture is even known.</p>
-            <a href="#timeline" class="detail-link">See the timeline →</a>
-          </div>
-
-          <div class="reason-card">
-            <div class="reason-number">3</div>
-            <h3>DSH hospital cuts predate HR1 by 15 years and have been delayed 12+ times</h3>
-            <p>The Disproportionate Share Hospital cuts the county cites were mandated by the <strong style="color:var(--gold)">Affordable Care Act in 2010</strong> — not HR1. Congress has delayed them on a bipartisan basis more than a dozen times across four presidential administrations. The latest delay, signed February 2026, extends them to <strong style="color:var(--gold)">September 2028</strong>.</p>
-            <a href="myths-facts.html" class="detail-link">Read the DSH facts →</a>
-          </div>
-        </div>
-
-        <div class="reasons-cta">
-          <a class="button button-secondary" href="myths-facts.html">Read All 9 Myths v Facts →</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══ THINGS YOU SHOULD KNOW ═══ -->
+    <!-- THINGS YOU SHOULD KNOW -->
     <section id="facts">
       <div class="container">
         <div class="section-title">
           <h2>Things you should know about Measure B</h2>
-          <p>These points are based on documents and published reporting. They focus on tax rates, timing, and the county's own rollout of Measure B.</p>
+          <p>These points are drawn from county documents and published reporting on tax rates, timing, and the rollout of Measure B.</p>
         </div>
-
         <div class="facts-grid">
           <article class="fact-card">
             <div class="fact-number">1</div>
             <h3>Measure B adds five-eighths of a cent countywide</h3>
-            <p>Measure B would increase the county sales tax by <strong>0.625%</strong>. Based on current California Department of Tax and Fee Administration rates, that would push the total sales tax to <strong>10.875%</strong> in the county's highest-tax cities.</p>
+            <p>Measure B would increase the county sales tax by <strong>0.625%</strong>. Based on current California Department of Tax and Fee Administration rates, that would push the total sales tax to <strong>10.875%</strong> in the county&#8217;s highest-tax cities.</p>
           </article>
-
           <article class="fact-card">
             <div class="fact-number">2</div>
             <h3>Another countywide sales tax may be coming in November</h3>
-            <p>State law already authorizes a regional transit tax measure for the <strong>November 2026</strong> ballot, and planning documents describe a <strong>0.5%</strong> increase for Contra Costa County if that measure goes forward.</p>
+            <p>State law already authorizes a regional transit tax measure for the <strong>November 2026</strong> ballot, with planning documents describing a <strong>0.5%</strong> increase for Contra Costa County if that measure goes forward.</p>
           </article>
-
           <article class="fact-card">
             <div class="fact-number">3</div>
-            <h3>Supervisors proceeded after the projected loss number was revised down</h3>
-            <p>On March 3, published coverage reported that supervisors were told the projected federal-and-state funding loss estimate should be revised downward, yet the board still voted to place Measure B on the ballot that day.</p>
+            <h3>The Board revised its own funding figure the same day it voted</h3>
+            <p>On March 3, the Board corrected Recital H of the ordinance &#8212; changing &#8220;annual revenue losses exceeding $300 million&#8221; to &#8220;cumulative revenue losses of an estimated $239 million by 2029&#8221; &#8212; and then voted to place Measure B on the ballot anyway.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- ═══ VIDEO ═══ -->
+    <!-- VIDEO -->
     <section class="video-section">
       <div class="container">
         <div class="video-wrapper">
-          <iframe
-            src="https://www.youtube.com/embed/BpZQJThGaU8"
-            title="Stop Measure B Video"
-            allowfullscreen>
-          </iframe>
+          <iframe src="https://www.youtube.com/embed/BpZQJThGaU8" title="Stop Measure B Video" allowfullscreen></iframe>
         </div>
       </div>
     </section>
 
-    <!-- ═══ TAX RATE LOOKUP ═══ -->
+    <!-- TAX RATE LOOKUP -->
     <section id="lookup">
       <div class="container">
         <div class="section-title">
           <h2>What would Measure B cost you?</h2>
-          <p>Select your city or town to compare the current sales-tax rate with the rate if Measure B passes, and with the rate if both Measure B and the November transit tax pass.</p>
+          <p>Select your city or town to compare the current sales-tax rate with the rate if Measure B passes, and if both Measure B and the November transit tax pass.</p>
         </div>
-
         <div class="lookup-card">
           <div class="lookup-grid">
             <div>
@@ -790,23 +342,10 @@
                 Rates shown are combined sales-tax rates. Measure B adds <strong>0.625%</strong>. The November transit scenario adds another <strong>0.5%</strong>.
               </div>
             </div>
-
             <div class="lookup-results">
-              <div class="rate-box current">
-                <h4>Current rate</h4>
-                <div class="rate" id="currentRate">—</div>
-                <p>Current rate for the selected city or area.</p>
-              </div>
-              <div class="rate-box measureb">
-                <h4>If Measure B passes</h4>
-                <div class="rate" id="measureBRate">—</div>
-                <p>Current rate plus 0.625 percentage points.</p>
-              </div>
-              <div class="rate-box both">
-                <h4>If both pass</h4>
-                <div class="rate" id="bothRate">—</div>
-                <p>Current rate plus 1.125 percentage points.</p>
-              </div>
+              <div class="rate-box current"><h4>Current rate</h4><div class="rate" id="currentRate">&#8212;</div><p>Current rate for the selected city or area.</p></div>
+              <div class="rate-box measureb"><h4>If Measure B passes</h4><div class="rate" id="measureBRate">&#8212;</div><p>Current rate plus 0.625 points.</p></div>
+              <div class="rate-box both"><h4>If both pass</h4><div class="rate" id="bothRate">&#8212;</div><p>Current rate plus 1.125 points.</p></div>
             </div>
           </div>
           <div class="lookup-notes" id="selectedPlaceNote">Choose a location to see the comparison.</div>
@@ -814,50 +353,50 @@
       </div>
     </section>
 
-    <!-- ═══ LEGAL CHALLENGE ═══ -->
-    <section id="legal">
+    <!-- ABOUT THOSE FEDERAL CUTS -->
+    <section class="cuts-section" id="federal-cuts">
       <div class="container">
         <div class="section-title">
-          <h2>A legal challenge is already filed</h2>
-          <p>Voters deserve to know that Measure B faces serious legal questions — not just political opposition.</p>
+          <h2>About those federal health cuts</h2>
+          <p>The county says HR1 creates an emergency requiring immediate action. Its own documents tell a more complicated story.</p>
         </div>
-
-        <div class="legal-grid">
-          <div class="legal-card">
-            <span class="badge-pill badge-danger">Active Litigation</span>
-            <h3>The Lawsuit: Case No. N26-0456</h3>
-            <div class="case-num">Case No. N26-0456</div>
-            <p>A legal challenge to Measure B has been filed in Contra Costa County Superior Court. The complaint argues that the county failed to follow proper procedures in placing the measure on the ballot, and that voters were presented with a misleading funding picture.</p>
-            <p>Legal challenges to ballot measures are relatively rare — typically brought only when attorneys believe there is a substantial legal defect. If the court finds for the plaintiffs, <strong>the tax could be invalidated even if voters approve it</strong>. That would mean residents paid higher taxes for a period only to have the revenue returned or the program unwound.</p>
-            <p>We will post a link to the filed complaint here when available. Sign up below to stay informed as the case develops.</p>
-            <div class="hero-actions" style="margin-top:1rem;">
-              <a class="button button-secondary" href="#volunteer">Stay Informed — Sign Up</a>
-            </div>
+        <div class="cuts-grid">
+          <div class="cut-card">
+            <div class="cut-num">1</div>
+            <h3>The $300M &#8220;annual&#8221; loss was actually a 4-year cumulative total &#8212; corrected the same day the Board voted</h3>
+            <p>County staff originally described <strong style="color:var(--gold)">$307&nbsp;million in ongoing annual losses</strong>. Supervisor Andersen, the lone no vote, flagged the error. Staff confirmed it was a <strong style="color:var(--gold)">cumulative 4-year total</strong>. The Board revised Recital H of the ordinance that same day, lowering the figure to <strong style="color:var(--gold)">$239&nbsp;million cumulative through 2029</strong>. Framing cumulative losses as annual makes the gap appear 7&#x2013;8&times; larger than it is in any given year.</p>
+            <a href="myths-facts.html" class="detail-link">See the official documents &#x2192;</a>
           </div>
-
-          <div class="cap-card">
-            <span class="badge-pill badge-success">Plain English</span>
-            <h3>The Sales Tax Cap Issue</h3>
-            <p>California law imposes a combined local sales tax cap of <strong>2%</strong> above the state base rate. Several Contra Costa cities are already at or near that limit. Adding Measure B's 0.625% could push them over the cap.</p>
-            <p>Under current California law, a city at the cap <strong>cannot legally collect additional taxes beyond it without state legislation authorizing an exception</strong> — legislation that has not passed and is not guaranteed to pass before the June election.</p>
-            <p>In plain terms: voters could approve Measure B, but the tax might be legally unenforceable in some cities until Sacramento acts. The county has not clearly disclosed this risk to voters in its ballot materials.</p>
+          <div class="cut-card">
+            <div class="cut-num">2</div>
+            <h3>Most HR1 provisions don&#8217;t take effect until 2027 or later &#8212; taxes start collecting in October 2026</h3>
+            <p>Per the county&#8217;s own budget slide, <strong style="color:var(--gold)">federal legislative impacts are zero in FY25-26</strong>. Work requirements begin in <strong style="color:var(--gold)">January 2027</strong>. Six-month eligibility redeterminations begin in <strong style="color:var(--gold)">2027</strong>. DSH hospital cuts are delayed until at least <strong style="color:var(--gold)">October 2027</strong> per the county&#8217;s own presentation. Yet Measure B would start collecting taxes in <strong style="color:var(--gold)">October 2026</strong> &#8212; a full year before most cuts even begin.</p>
+            <a href="#timeline" class="detail-link">See the timeline &#x2192;</a>
           </div>
+          <div class="cut-card">
+            <div class="cut-num">3</div>
+            <h3>DSH hospital cuts predate HR1 by 15 years and have been delayed more than a dozen times</h3>
+            <p>The Disproportionate Share Hospital cuts were mandated by the <strong style="color:var(--gold)">Affordable Care Act in 2010</strong> &#8212; not HR1. Congress has delayed them on a bipartisan basis more than a dozen times across four presidential administrations. Even the county&#8217;s own March 3 presentation acknowledges the latest delay extends to <strong style="color:var(--gold)">October 1, 2027</strong>. There is no basis for treating these cuts as inevitable or attributing them to the current Congress.</p>
+            <a href="myths-facts.html" class="detail-link">Read the DSH facts &#x2192;</a>
+          </div>
+        </div>
+        <div class="cuts-cta">
+          <a class="button button-secondary" href="myths-facts.html">Read All 9 Myths v Facts &#x2192;</a>
         </div>
       </div>
     </section>
 
-    <!-- ═══ TIMELINE ═══ -->
+    <!-- TIMELINE -->
     <section id="timeline">
       <div class="container">
         <div class="section-title">
           <h2>When do the cuts hit vs. when does Measure B collect?</h2>
-          <p>The county says we must act now. The actual implementation calendar tells a different story.</p>
+          <p>The county says it must act now. The actual implementation calendar tells a different story.</p>
         </div>
-
         <div class="timeline-card">
           <h3>HR1 Provisions vs. Measure B Tax Collection</h3>
-          <p>Most HR1 Medicaid changes do not take effect until 2027–2028. Measure B starts collecting in October 2026 — locking in five years of higher taxes before the largest impacts are even known.</p>
-          <svg viewBox="0 0 900 270" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;" aria-label="Timeline showing Measure B tax collection in October 2026 versus HR1 provisions taking effect in 2027 and 2028">
+          <p>Per the county&#8217;s own budget slide, federal impacts are zero in FY25&#x2013;26. Measure B starts collecting in October 2026 &#8212; locking in five years of higher taxes before most impacts are even known.</p>
+          <svg viewBox="0 0 900 270" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;" aria-label="Timeline showing Measure B tax collection starting October 2026, while HR1 Medicaid provisions take effect in 2027 and DSH cuts are delayed to October 2027">
             <rect x="40" y="18" width="240" height="185" rx="14" fill="#fff4f2" opacity="0.8"/>
             <rect x="295" y="18" width="250" height="185" rx="14" fill="#f2fbf6" opacity="0.8"/>
             <rect x="558" y="18" width="320" height="185" rx="14" fill="#f2fbf6" opacity="0.8"/>
@@ -870,10 +409,6 @@
             <text x="220" y="147" text-anchor="middle" font-size="11" font-weight="700" font-family="Inter,Arial,sans-serif" fill="#b42318">Oct 2026</text>
             <text x="220" y="162" text-anchor="middle" font-size="10" font-family="Inter,Arial,sans-serif" fill="#b42318">Measure B taxes</text>
             <text x="220" y="175" text-anchor="middle" font-size="10" font-family="Inter,Arial,sans-serif" fill="#b42318">START collecting</text>
-            <line x1="262" y1="70" x2="262" y2="118" stroke="#e67e22" stroke-width="1.5" stroke-dasharray="4,3"/>
-            <circle cx="262" cy="118" r="6" fill="#e67e22"/>
-            <text x="262" y="198" text-anchor="middle" font-size="9" font-family="Inter,Arial,sans-serif" fill="#e67e22">Immigrant</text>
-            <text x="262" y="210" text-anchor="middle" font-size="9" font-family="Inter,Arial,sans-serif" fill="#e67e22">restrictions</text>
             <line x1="358" y1="58" x2="358" y2="118" stroke="#16794a" stroke-width="2" stroke-dasharray="5,3"/>
             <circle cx="358" cy="118" r="9" fill="#16794a"/>
             <text x="358" y="147" text-anchor="middle" font-size="11" font-weight="700" font-family="Inter,Arial,sans-serif" fill="#16794a">Jan 2027</text>
@@ -883,158 +418,152 @@
             <circle cx="490" cy="118" r="6" fill="#16794a"/>
             <text x="490" y="198" text-anchor="middle" font-size="9" font-family="Inter,Arial,sans-serif" fill="#16794a">6-month</text>
             <text x="490" y="210" text-anchor="middle" font-size="9" font-family="Inter,Arial,sans-serif" fill="#16794a">redeterminations</text>
-            <line x1="800" y1="58" x2="800" y2="118" stroke="#1e4f8f" stroke-width="2" stroke-dasharray="5,3"/>
-            <circle cx="800" cy="118" r="9" fill="#1e4f8f"/>
-            <text x="800" y="147" text-anchor="middle" font-size="11" font-weight="700" font-family="Inter,Arial,sans-serif" fill="#1e4f8f">Sept 2028</text>
-            <text x="800" y="162" text-anchor="middle" font-size="10" font-family="Inter,Arial,sans-serif" fill="#1e4f8f">DSH cuts</text>
-            <text x="800" y="175" text-anchor="middle" font-size="10" font-family="Inter,Arial,sans-serif" fill="#1e4f8f">deadline (HR1)</text>
+            <line x1="636" y1="58" x2="636" y2="118" stroke="#1e4f8f" stroke-width="2" stroke-dasharray="5,3"/>
+            <circle cx="636" cy="118" r="9" fill="#1e4f8f"/>
+            <text x="636" y="147" text-anchor="middle" font-size="11" font-weight="700" font-family="Inter,Arial,sans-serif" fill="#1e4f8f">Oct 2027</text>
+            <text x="636" y="162" text-anchor="middle" font-size="10" font-family="Inter,Arial,sans-serif" fill="#1e4f8f">DSH cuts</text>
+            <text x="636" y="175" text-anchor="middle" font-size="10" font-family="Inter,Arial,sans-serif" fill="#1e4f8f">(county&#x2019;s own slide)</text>
             <circle cx="68" cy="240" r="7" fill="#b42318"/>
             <text x="82" y="245" font-size="11" font-family="Inter,Arial,sans-serif" fill="#b42318" font-weight="700">Measure B tax collection begins</text>
             <circle cx="310" cy="240" r="7" fill="#16794a"/>
             <text x="324" y="245" font-size="11" font-family="Inter,Arial,sans-serif" fill="#16794a" font-weight="700">HR1 Medicaid provisions take effect</text>
             <circle cx="570" cy="240" r="7" fill="#1e4f8f"/>
-            <text x="584" y="245" font-size="11" font-family="Inter,Arial,sans-serif" fill="#1e4f8f" font-weight="700">Hospital funding deadline</text>
+            <text x="584" y="245" font-size="11" font-family="Inter,Arial,sans-serif" fill="#1e4f8f" font-weight="700">DSH cuts deadline (per county)</text>
           </svg>
         </div>
       </div>
     </section>
 
-    <!-- ═══ MORE TOOLS ═══ -->
+    <!-- MORE TOOLS -->
     <section>
       <div class="container">
         <div class="section-title">
           <h2>More tools for voters</h2>
-          <p>Use the lookup to see how sales-tax rates would change in your community, and read the full myths-versus-facts page drawn from the campaign's HR1 funding memo.</p>
+          <p>Use the lookup to see how sales-tax rates would change in your community, and read the full myths-versus-facts page.</p>
         </div>
-
         <div class="tools-grid">
           <article class="tool-card">
             <div class="tool-icon">?</div>
             <h3>Myths v Facts</h3>
-            <p>Read the full side-by-side discussion of county funding claims, HR1, DSH cuts, timing, and alternatives across 9 topics.</p>
-            <div class="hero-actions" style="margin-top:1rem;">
-              <a class="button button-primary" href="myths-facts.html">Open Myths v Facts</a>
-            </div>
+            <p>Full side-by-side discussion of county funding claims, HR1, DSH cuts, timing, and alternatives &#8212; with the official county documents as evidence.</p>
+            <div class="hero-actions" style="margin-top:1rem;"><a class="button button-primary" href="myths-facts.html">Open Myths v Facts</a></div>
           </article>
-
           <article class="tool-card">
             <div class="tool-icon">$</div>
             <h3>Tax Rate Lookup</h3>
             <p>Pick your city or town and compare your current rate to the rate if Measure B passes, and if both Measure B and the November transit tax pass.</p>
-            <div class="hero-actions" style="margin-top:1rem;">
-              <a class="button button-secondary" href="#lookup">Go to Lookup</a>
-            </div>
+            <div class="hero-actions" style="margin-top:1rem;"><a class="button button-secondary" href="#lookup">Go to Lookup</a></div>
           </article>
-
           <article class="tool-card">
-            <div class="tool-icon">⚖</div>
-            <h3>Legal Challenge</h3>
-            <p>A lawsuit (Case No. N26-0456) argues the county failed to follow proper procedures. Even if voters approve Measure B, the courts could invalidate it.</p>
-            <div class="hero-actions" style="margin-top:1rem;">
-              <a class="button button-secondary" href="#legal">Read the Overview</a>
-            </div>
+            <div class="tool-icon">&#x2696;</div>
+            <h3>Sales Tax Cap Issue</h3>
+            <p>California law caps combined local sales taxes. Several Contra Costa cities are already near the limit &#8212; the tax may not be legally collectible everywhere without state legislation.</p>
+            <div class="hero-actions" style="margin-top:1rem;"><a class="button button-secondary" href="#why">Learn More</a></div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- ═══ IN THE NEWS ═══ -->
+    <!-- IN THE NEWS -->
     <section id="news">
       <div class="container">
         <div class="section-title">
           <h2>In the News</h2>
-          <p>Coverage of Measure B, the cost of living in Contra Costa, and the broader squeeze on California households. Update article links as new coverage appears.</p>
+          <p>Coverage of Measure B, the legal challenge, the cost of living in Contra Costa, and the broader squeeze on California households.</p>
         </div>
-
         <div class="news-grid">
 
           <div class="news-card">
-            <div class="news-source">Patch / InvestorsObserver — March 2026</div>
-            <h3>Californians work 16 extra days a year just to pay the basics</h3>
-            <p>A new analysis ranked California 5th worst in the nation for cost-of-living burden. Despite an average hourly wage of $40.93, residents must put in significantly more hours than in 2007 just to cover rent, groceries, and transportation — because costs have outrun wages by a wide margin. The county wants to add to that burden.</p>
-            <a class="read-more" href="https://patch.com/california/sanramon/s/k4qz6/californians-work-16-extra-days-every-year-just-to-pay-the-basics-report" target="_blank" rel="noopener">Read the report →</a>
+            <div class="news-source">Contra Costa Superior Court</div>
+            <h3>Lawsuit filed challenging Measure B: Case No. N26-0456</h3>
+            <p>A legal challenge to Measure B has been filed in Contra Costa County Superior Court. The complaint argues the county failed to follow proper procedures and presented voters with a misleading funding picture. If the court rules for the plaintiffs, the tax could be invalidated even after voter approval &#8212; meaning residents could pay higher taxes only to have the measure unwound.</p>
+            <a class="read-more" href="#why">See campaign details &#x2192;</a>
           </div>
 
           <div class="news-card">
-            <div class="news-source">Gas Prices &amp; Sales Tax</div>
-            <h3>California gas is already among the most expensive in the nation — Measure B makes it worse</h3>
-            <p>California's gas prices are driven in large part by the state's high sales tax rate, which applies at the pump. Contra Costa County residents already pay some of the highest combined rates in the state. A 0.625% increase under Measure B would add to the cost of every gallon filled, hitting commuters and working families hardest.</p>
-            <a class="read-more" href="https://www.eia.gov/petroleum/gasdiesel/" target="_blank" rel="noopener">See current gas prices (EIA) →</a>
+            <div class="news-source">Patch / InvestorsObserver &#8212; March 2026</div>
+            <h3>Californians work 16 extra days a year just to pay the basics</h3>
+            <p>A new analysis ranked California 5th worst in the nation for cost-of-living burden. Despite an average hourly wage of $40.93, residents must put in significantly more hours than in 2007 just to cover rent, groceries, and transportation &#8212; because costs have far outrun wages. The county wants to add to that burden.</p>
+            <a class="read-more" href="https://patch.com/california/sanramon/s/k4qz6/californians-work-16-extra-days-every-year-just-to-pay-the-basics-report" target="_blank" rel="noopener">Read the report &#x2192;</a>
+          </div>
+
+          <div class="news-card">
+            <div class="news-source">Gas Prices &#8212; Contra Costa County</div>
+            <h3>California gas is among the most expensive in the nation &#8212; Measure B makes it worse</h3>
+            <p>California&#8217;s pump prices are driven in large part by high sales tax rates, which apply at the pump. Contra Costa residents already pay some of the highest combined rates in the state. Measure B&#8217;s 0.625% increase would apply to every gallon filled, hitting commuters and working families hardest.</p>
+            <a class="read-more" href="https://www.gasbuddy.com/gasprices/california/contra-costa/1949" target="_blank" rel="noopener">See Contra Costa gas prices (GasBuddy) &#x2192;</a>
           </div>
 
           <div class="news-card">
             <div class="news-source">Local News Matters</div>
             <h3>Contra Costa supervisors vote to place sales tax on June ballot despite revised funding figures</h3>
             <p>Coverage of the March 3 board meeting where staff revised the loss estimate downward but the board proceeded with the vote.</p>
-            <a class="read-more" href="https://localnewsmatters.org" target="_blank" rel="noopener">Visit Local News Matters →</a>
+            <a class="read-more" href="https://localnewsmatters.org" target="_blank" rel="noopener">Visit Local News Matters &#x2192;</a>
           </div>
 
           <div class="news-card">
             <div class="news-source">ContraCosta.news</div>
             <h3>Lone no vote cites misleading $300M annual figure; county confirms number is cumulative</h3>
-            <p>Supervisor Andersen's dissent and her identification of the "ongoing vs. cumulative" error in county staff materials before the March 3 vote.</p>
-            <a class="read-more" href="https://contracosta.news" target="_blank" rel="noopener">Visit ContraCosta.news →</a>
+            <p>Supervisor Andersen&#8217;s dissent and her identification of the &#8220;ongoing vs. cumulative&#8221; error in county staff materials before the March 3 vote.</p>
+            <a class="read-more" href="https://contracosta.news" target="_blank" rel="noopener">Visit ContraCosta.news &#x2192;</a>
           </div>
 
           <div class="news-card">
             <div class="news-source">Press Contact</div>
-            <h3>Reporters: contact the campaign about the legal challenge and opposition arguments</h3>
-            <p>Media inquiries about Case No. N26-0456 or the campaign's record are welcome. We respond quickly to press requests.</p>
-            <a class="read-more" href="mailto:marc@cocotax.org">Email the campaign →</a>
+            <h3>Reporters: contact the campaign for details on the lawsuit and the opposition&#8217;s case</h3>
+            <p>Media inquiries about Case No. N26-0456 or the campaign&#8217;s record are welcome. We respond quickly.</p>
+            <a class="read-more" href="mailto:marc@cocotax.org">Email the campaign &#x2192;</a>
           </div>
 
         </div>
       </div>
     </section>
 
-    <!-- ═══ WHY IT MATTERS ═══ -->
+    <!-- WHY IT MATTERS -->
     <section id="why">
       <div class="container">
         <div class="section-title">
           <h2>Why it matters</h2>
-          <p>Even before any fall measures, Measure B would make everyday purchases more expensive across Contra Costa County.</p>
+          <p>Measure B would make everyday purchases more expensive across Contra Costa County &#8212; and may not be legally collectible everywhere without state action.</p>
         </div>
-
         <div class="split">
           <div class="quote-card">
             <h3>What is on the table</h3>
             <ul>
-              <li>Measure B is a <strong>general sales tax</strong> — revenue goes to the county general fund with no dedicated purpose.</li>
-              <li>The county's own ballot language says the tax would run for <strong>five years</strong>.</li>
+              <li>Measure B is a <strong>general sales tax</strong> &#8212; revenue goes to the general fund with no dedicated purpose.</li>
+              <li>The county&#8217;s own ballot language says the tax runs for <strong>five years</strong>.</li>
               <li>The county estimated the measure would raise about <strong>$150 million annually</strong>.</li>
-              <li>The earliest collection date in county materials is <strong>October 1, 2026</strong> — before most HR1 impacts are felt.</li>
+              <li>Collection is set to begin <strong>October 1, 2026</strong> &#8212; before most HR1 impacts are even felt.</li>
               <li>A <strong>legal challenge</strong> (Case No. N26-0456) is pending in Contra Costa County Superior Court.</li>
             </ul>
           </div>
-
           <div class="notice-card">
             <h3>Key questions voters should ask</h3>
             <p>Before voting yes on any tax measure, it is reasonable to ask:</p>
             <ul>
-              <li>Why did the county present a $307M annual figure that turned out to be a 4-year cumulative total?</li>
+              <li>Why did the county present a $307M annual figure that turned out to be a 4-year cumulative total of $239M?</li>
               <li>Why lock in a 5-year tax before federal and state rules are even finalized?</li>
-              <li>Is the sales tax cap issue resolved for all cities in the county?</li>
+              <li>Is the sales tax cap resolved for all Contra Costa cities without state legislation?</li>
               <li>What happens to tax revenue if the legal challenge (N26-0456) succeeds?</li>
-              <li>Have alternatives — including the November state ballot — been fully assessed?</li>
+              <li>Have alternatives &#8212; including the November state ballot &#8212; been fully considered?</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ═══ VOLUNTEER ═══ -->
+    <!-- VOLUNTEER -->
     <section id="volunteer">
       <div class="container">
         <div class="section-title">
           <h2>Volunteer for the No campaign</h2>
           <p>Help us get accurate information to Contra Costa County voters before June.</p>
         </div>
-
         <div class="volunteer-wrap">
           <div class="volunteer-card">
             <h3>Ways to help</h3>
             <p>We are looking for supporters who can help spread the word and build the campaign as the election approaches.</p>
-            <div class="pill-list" aria-label="Volunteer options">
+            <div class="pill-list">
               <span class="pill">Research</span>
               <span class="pill">Letter Writing</span>
               <span class="pill">Social Media Posting</span>
@@ -1042,50 +571,30 @@
               <span class="pill">Post Signs</span>
             </div>
           </div>
-
           <div class="volunteer-card">
             <h3>Contact the campaign</h3>
             <form id="volunteerForm">
               <div class="field-row">
-                <div>
-                  <label for="name">Full name</label>
-                  <input id="name" name="name" type="text" placeholder="Your name" required>
-                </div>
-                <div>
-                  <label for="email">Email</label>
-                  <input id="email" name="email" type="email" placeholder="you@example.com" required>
-                </div>
+                <div><label for="name">Full name</label><input id="name" name="name" type="text" placeholder="Your name" required></div>
+                <div><label for="email">Email</label><input id="email" name="email" type="email" placeholder="you@example.com" required></div>
               </div>
-
               <div class="field-row">
-                <div>
-                  <label for="city">City</label>
-                  <input id="city" name="city" type="text" placeholder="City" required>
-                </div>
+                <div><label for="city">City</label><input id="city" name="city" type="text" placeholder="City" required></div>
                 <div>
                   <label for="interest">How would you like to help?</label>
                   <select id="interest" name="interest" required>
                     <option value="">Choose one</option>
-                    <option>Research</option>
-                    <option>Letter Writing</option>
-                    <option>Social Media Posting</option>
-                    <option>Host a Neighborhood Meeting</option>
-                    <option>Post Signs</option>
-                    <option>General volunteer</option>
+                    <option>Research</option><option>Letter Writing</option>
+                    <option>Social Media Posting</option><option>Host a Neighborhood Meeting</option>
+                    <option>Post Signs</option><option>General volunteer</option>
                   </select>
                 </div>
               </div>
-
-              <div>
-                <label for="message">Message</label>
-                <textarea id="message" name="message" placeholder="Tell us how you would like to help."></textarea>
-              </div>
-
+              <div><label for="message">Message</label><textarea id="message" name="message" placeholder="Tell us how you would like to help."></textarea></div>
               <button class="button button-primary" type="submit" style="width:100%;">Send Volunteer Signup</button>
             </form>
-
             <div class="contact-alt">
-              <strong>Form not opening?</strong> If your device doesn't have an email app configured, email us directly at <a href="mailto:marc@cocotax.org">marc@cocotax.org</a> — or reply to that address to connect with the campaign team.
+              <strong>Form not opening?</strong> Email us directly at <a href="mailto:marc@cocotax.org">marc@cocotax.org</a>.
             </div>
           </div>
         </div>
@@ -1097,10 +606,7 @@
   <footer class="footer">
     <div class="container">
       <div class="footer-card">
-        <div>
-          <strong>Stop Measure B</strong>
-          <div class="disclaimer">Information for Contra Costa County voters.</div>
-        </div>
+        <div><strong>Stop Measure B</strong><div class="disclaimer">Information for Contra Costa County voters.</div></div>
         <div class="disclaimer">Paid for by Contra Costa Taxpayers Association.</div>
       </div>
     </div>
@@ -1110,69 +616,40 @@
     (function () {
       var form = document.getElementById('volunteerForm');
       if (form) {
-        var campaignEmail = ['marc', '@', 'cocotax.org'].join('');
+        var ce = ['marc','@','cocotax.org'].join('');
         form.addEventListener('submit', function (e) {
           e.preventDefault();
-          var name     = document.getElementById('name').value.trim();
-          var email    = document.getElementById('email').value.trim();
-          var city     = document.getElementById('city').value.trim();
-          var interest = document.getElementById('interest').value.trim();
-          var message  = document.getElementById('message').value.trim();
-          var subject  = encodeURIComponent('Volunteer for No on Measure B');
-          var body     = encodeURIComponent([
-            'New volunteer signup from StopMeasureB.com',
-            '',
-            'Name: ' + name,
-            'Email: ' + email,
-            'City: ' + city,
-            'Volunteer interest: ' + interest,
-            '',
-            'Message:',
-            message || '(No additional message provided)'
-          ].join('\n'));
-          window.location.href = 'mailto:' + campaignEmail + '?subject=' + subject + '&body=' + body;
+          var n = document.getElementById('name').value.trim();
+          var em = document.getElementById('email').value.trim();
+          var c = document.getElementById('city').value.trim();
+          var i = document.getElementById('interest').value.trim();
+          var m = document.getElementById('message').value.trim();
+          var s = encodeURIComponent('Volunteer for No on Measure B');
+          var b = encodeURIComponent(['New volunteer signup from StopMeasureB.com','','Name: '+n,'Email: '+em,'City: '+c,'Volunteer interest: '+i,'','Message:',m||'(none)'].join('\n'));
+          window.location.href = 'mailto:'+ce+'?subject='+s+'&body='+b;
         });
       }
-
       var taxData = {
-        'Antioch': 9.750, 'Brentwood': 8.750, 'Clayton': 8.750,
-        'Concord': 9.750, 'Danville': 8.750, 'El Cerrito': 10.250,
-        'Hercules': 9.250, 'Lafayette': 9.250, 'Martinez': 9.750,
-        'Moraga': 9.750, 'Oakley': 8.750, 'Orinda': 9.750,
-        'Pinole': 10.250, 'Pittsburg': 9.250, 'Pleasant Hill': 9.250,
-        'Richmond': 9.750, 'San Pablo': 9.500, 'San Ramon': 9.750,
-        'Walnut Creek': 9.250, 'Unincorporated Contra Costa County': 8.750
+        'Antioch':9.750,'Brentwood':8.750,'Clayton':8.750,'Concord':9.750,
+        'Danville':8.750,'El Cerrito':10.250,'Hercules':9.250,'Lafayette':9.250,
+        'Martinez':9.750,'Moraga':9.750,'Oakley':8.750,'Orinda':9.750,
+        'Pinole':10.250,'Pittsburg':9.250,'Pleasant Hill':9.250,'Richmond':9.750,
+        'San Pablo':9.500,'San Ramon':9.750,'Walnut Creek':9.250,
+        'Unincorporated Contra Costa County':8.750
       };
-
-      var citySelect        = document.getElementById('citySelect');
-      var currentRate       = document.getElementById('currentRate');
-      var measureBRate      = document.getElementById('measureBRate');
-      var bothRate          = document.getElementById('bothRate');
-      var selectedPlaceNote = document.getElementById('selectedPlaceNote');
-
-      function fmt(v) { return v.toFixed(3) + '%'; }
-
-      Object.keys(taxData).sort().forEach(function (c) {
-        var o = document.createElement('option');
-        o.value = c; o.textContent = c;
-        citySelect.appendChild(o);
-      });
-
-      citySelect.addEventListener('change', function () {
-        var c = citySelect.value;
-        if (!c) {
-          currentRate.textContent = measureBRate.textContent = bothRate.textContent = '—';
-          selectedPlaceNote.textContent = 'Choose a location to see the comparison.';
-          return;
-        }
-        var cur = taxData[c], mb = cur + 0.625, both = cur + 1.125;
-        currentRate.textContent  = fmt(cur);
-        measureBRate.textContent = fmt(mb);
-        bothRate.textContent     = fmt(both);
-        selectedPlaceNote.innerHTML =
-          '<strong>' + c + ':</strong> current rate ' + fmt(cur) +
-          ', with Measure B ' + fmt(mb) +
-          ', with Measure B plus the November transit tax ' + fmt(both) + '.';
+      var sel = document.getElementById('citySelect');
+      var cr = document.getElementById('currentRate');
+      var mr = document.getElementById('measureBRate');
+      var br = document.getElementById('bothRate');
+      var note = document.getElementById('selectedPlaceNote');
+      function fmt(v){return v.toFixed(3)+'%';}
+      Object.keys(taxData).sort().forEach(function(c){var o=document.createElement('option');o.value=c;o.textContent=c;sel.appendChild(o);});
+      sel.addEventListener('change',function(){
+        var c=sel.value;
+        if(!c){cr.textContent=mr.textContent=br.textContent='&#8212;';note.textContent='Choose a location to see the comparison.';return;}
+        var cur=taxData[c],mb=cur+0.625,both=cur+1.125;
+        cr.textContent=fmt(cur);mr.textContent=fmt(mb);br.textContent=fmt(both);
+        note.innerHTML='<strong>'+c+':</strong> current rate '+fmt(cur)+', with Measure B '+fmt(mb)+', with Measure B plus the November transit tax '+fmt(both)+'.';
       });
     })();
   </script>
