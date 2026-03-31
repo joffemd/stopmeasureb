@@ -12,4 +12,22 @@
     <priority>0.8</priority>
   </url>
 
+  <url>
+    <loc>https://stopmeasureb.com/county-reserves.html</loc>
+    <lastmod>2026-03-30</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://stopmeasureb.com/shrinking-revenue-loss.html</loc>
+    <lastmod>2026-03-30</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://stopmeasureb.com/undocumented-medi-cal.html</loc>
+    <lastmod>2026-03-30</lastmod>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>
