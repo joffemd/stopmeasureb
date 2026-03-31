@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Healthcare for our Undocumented Neighbors? | Stop Measure B</title>
+  <meta name="description" content="Part of the Medi-Cal cuts driving Measure B involves shifting undocumented immigrants from full-scope coverage to emergency-only coverage. Voters deserve a frank conversation about who is being asked to pay for what." />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #1a1a1a;
+      background: #fff;
+      line-height: 1.65;
+    }
+
+    /* ── NAV ── */
+    nav {
+      background: #1a2744;
+      padding: 0 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      min-height: 60px;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      text-decoration: none;
+      color: #fff;
+      padding: 0.6rem 0;
+    }
+    .nav-badge {
+      background: #c0392b;
+      color: #fff;
+      font-weight: 900;
+      font-size: 1rem;
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .nav-title { font-size: 0.95rem; font-weight: 700; line-height: 1.2; }
+    .nav-sub   { font-size: 0.7rem; font-weight: 400; opacity: 0.75; }
+    .nav-links { display: flex; gap: 1.2rem; flex-wrap: wrap; align-items: center; }
+    .nav-links a {
+      color: #c8d3e8;
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 500;
+      transition: color 0.15s;
+      padding: 0.4rem 0;
+    }
+    .nav-links a:hover { color: #fff; }
+
+    /* ── HERO ── */
+    .hero {
+      background: #f4f6fb;
+      border-bottom: 3px solid #c0392b;
+      padding: 2.5rem 1.5rem 2rem;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 800;
+      color: #1a2744;
+      margin-bottom: 0.75rem;
+      line-height: 1.2;
+    }
+    .hero p {
+      font-size: 1.05rem;
+      color: #444;
+      max-width: 700px;
+      margin: 0 auto 1.25rem;
+    }
+    .hero-links { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      display: inline-block;
+      padding: 0.55rem 1.25rem;
+      border-radius: 6px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: opacity 0.15s;
+    }
+    .btn:hover { opacity: 0.85; }
+    .btn-primary   { background: #c0392b; color: #fff; }
+    .btn-secondary { background: #1a2744; color: #fff; }
+
+    /* ── MAIN ── */
+    main { max-width: 800px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
+
+    /* ── NOTE BOX ── */
+    .note-box {
+      background: #f0f4ff;
+      border: 1px solid #c5d0ea;
+      border-left: 4px solid #1a2744;
+      border-radius: 0 8px 8px 0;
+      padding: 1.1rem 1.25rem;
+      margin-bottom: 2rem;
+      font-size: 0.93rem;
+      color: #333;
+    }
+    .note-box strong { color: #1a2744; }
+
+    /* ── NUMBERED SECTIONS ── */
+    .section {
+      border: 1px solid #dde3ef;
+      border-radius: 10px;
+      padding: 1.75rem;
+      margin-bottom: 1.5rem;
+    }
+    .section-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2rem;
+      height: 2rem;
+      background: #1a2744;
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.9rem;
+      border-radius: 50%;
+      margin-bottom: 0.75rem;
+    }
+    .section h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #1a2744;
+      margin-bottom: 0.75rem;
+    }
+    .section p { color: #333; margin-bottom: 0.75rem; }
+    .section p:last-child { margin-bottom: 0; }
+
+    /* ── COMPARE TABLE ── */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.25rem 0;
+      font-size: 0.92rem;
+    }
+    .compare-table th {
+      background: #1a2744;
+      color: #fff;
+      padding: 0.65rem 1rem;
+      text-align: left;
+      font-weight: 600;
+    }
+    .compare-table td {
+      padding: 0.65rem 1rem;
+      border-bottom: 1px solid #e5eaf3;
+      color: #333;
+      vertical-align: top;
+    }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:nth-child(even) td { background: #f9fafc; }
+    .tag-yes  { color: #16a34a; font-weight: 700; }
+    .tag-no   { color: #c0392b; font-weight: 700; }
+
+    /* ── CALLOUT ── */
+    .callout {
+      background: #fff8e1;
+      border-left: 4px solid #f59e0b;
+      border-radius: 0 8px 8px 0;
+      padding: 1rem 1.25rem;
+      margin: 1rem 0;
+      font-size: 0.95rem;
+      color: #333;
+    }
+    .callout strong { color: #1a2744; }
+
+    /* ── SOURCES ── */
+    .sources {
+      background: #f9fafc;
+      border: 1px solid #dde3ef;
+      border-radius: 8px;
+      padding: 1.25rem 1.5rem;
+      margin-top: 2.5rem;
+    }
+    .sources h3 { font-size: 1rem; font-weight: 700; color: #1a2744; margin-bottom: 0.5rem; }
+    .sources ul { padding-left: 1.25rem; }
+    .sources li { font-size: 0.85rem; color: #555; margin-bottom: 0.3rem; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #1a2744;
+      color: #c8d3e8;
+      text-align: center;
+      padding: 1.5rem 1rem;
+      font-size: 0.82rem;
+    }
+    footer strong { color: #fff; display: block; margin-bottom: 0.25rem; font-size: 0.9rem; }
+
+    @media (max-width: 540px) {
+      .nav-links { display: none; }
+      .compare-table { font-size: 0.82rem; }
+      .compare-table th, .compare-table td { padding: 0.5rem 0.65rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-badge">NO</div>
+    <div>
+      <div class="nav-title">Stop Measure B</div>
+      <div class="nav-sub">Contra Costa County</div>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="index.html#facts">Key Facts</a>
+    <a href="myths-facts.html">Myths v Facts</a>
+    <a href="index.html#lookup">Tax Rate Lookup</a>
+    <a href="index.html#volunteer">Volunteer</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <h1>Free Healthcare for our Undocumented Neighbors?</h1>
+  <p>Some of the Medi-Cal changes driving Measure B involve shifting undocumented immigrants from full-scope coverage — with no premiums, copayments, or deductibles — to emergency-only coverage. Before raising taxes, voters deserve a frank conversation about who is being asked to pay for what.</p>
+  <div class="hero-links">
+    <a href="index.html" class="btn btn-secondary">← Back to Home</a>
+    <a href="myths-facts.html" class="btn btn-primary">Read All Myths v Facts</a>
+  </div>
+</div>
+
+<main>
+
+  <div class="note-box">
+    <strong>A note on tone:</strong> People hold genuine and deeply felt views on immigration policy, and this page does not take a position on those broader debates. The question here is narrower and specific to Measure B: is it reasonable for Contra Costa taxpayers to raise their own sales tax in order to fund comprehensive, no-cost health coverage for people who are in the country illegally — when most of those same taxpayers pay premiums, copayments, and deductibles for their own health coverage?
+  </div>
+
+  <div class="section">
+    <div class="section-num">1</div>
+    <h2>What is actually changing — and why it matters for Measure B</h2>
+    <p>
+      California has, for several years, provided <strong>full-scope Medi-Cal</strong> to undocumented immigrants — the same comprehensive coverage available to citizens and legal residents, with <strong>no premiums, no copayments, and no deductibles</strong>. This was funded entirely through state-only dollars, since federal Medicaid law does not allow federal matching funds for undocumented immigrants.
+    </p>
+    <p>
+      Under HR1 and accompanying state budget changes, undocumented immigrants are being transitioned from full-scope Medi-Cal to <strong>emergency Medi-Cal</strong> — which covers urgent and emergency care, labor and delivery, and certain other acute services, but not routine, preventive, or specialty care.
+    </p>
+    <p>
+      This transition is part of the revenue loss the county cites as justification for Measure B. In other words, Contra Costa voters are being asked to raise the sales tax in part to continue subsidizing comprehensive, zero-cost health coverage for people who entered or remain in the country without legal authorization.
+    </p>
+  </div>
+
+  <div class="section">
+    <div class="section-num">2</div>
+    <h2>The cost-sharing comparison</h2>
+    <p>
+      Most Contra Costa residents who have health insurance through an employer or the ACA marketplace pay some combination of premiums, copayments, and deductibles. These are not trivial amounts for working families.
+    </p>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Coverage type</th>
+          <th>Premiums?</th>
+          <th>Copayments?</th>
+          <th>Deductibles?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Employer-sponsored insurance (typical)</td>
+          <td><span class="tag-yes">Yes</span></td>
+          <td><span class="tag-yes">Yes</span></td>
+          <td><span class="tag-yes">Yes</span></td>
+        </tr>
+        <tr>
+          <td>ACA marketplace plan</td>
+          <td><span class="tag-yes">Yes</span></td>
+          <td><span class="tag-yes">Yes</span></td>
+          <td><span class="tag-yes">Yes</span></td>
+        </tr>
+        <tr>
+          <td>Standard Medi-Cal (citizens / legal residents)</td>
+          <td><span class="tag-no">No</span></td>
+          <td>Nominal / No</td>
+          <td><span class="tag-no">No</span></td>
+        </tr>
+        <tr>
+          <td>Full-scope Medi-Cal for undocumented immigrants (California)</td>
+          <td><span class="tag-no">No</span></td>
+          <td><span class="tag-no">No</span></td>
+          <td><span class="tag-no">No</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      It is worth noting that even standard Medi-Cal for low-income citizens and legal residents requires minimal to no cost-sharing. California has been unusually generous in extending that same coverage — with zero cost-sharing — to undocumented immigrants, funded entirely by state taxpayers with no federal match.
+    </p>
+  </div>
+
+  <div class="section">
+    <div class="section-num">3</div>
+    <h2>This is a policy choice that has not been put to voters</h2>
+    <p>
+      The decision to extend full-scope Medi-Cal to undocumented immigrants was made by the California Legislature, not by Contra Costa County voters. The decision to now ask Contra Costa voters to raise the sales tax — in part to continue that coverage — is being made by the Board of Supervisors, again without an explicit public conversation about the tradeoff.
+    </p>
+    <p>
+      The ballot argument for Measure B frames the issue as protecting "health care" and "the county's regional hospital." Those are legitimate concerns. But the argument does not spell out that a portion of the revenue being replaced funds zero-cost, comprehensive coverage for people who are undocumented — while the people being asked to pay the higher sales tax face their own insurance costs every month.
+    </p>
+    <div class="callout">
+      <strong>The fairness question:</strong> We can have differing views about immigration policy. But it is hard to justify asking working Contra Costa families — who pay premiums, copays, and deductibles for their own health coverage — to pay a higher sales tax so that undocumented immigrants can receive comprehensive healthcare at no cost.
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-num">4</div>
+    <h2>What would a more balanced policy look like?</h2>
+    <p>
+      This page does not argue that undocumented residents should be denied emergency care. Emergency Medi-Cal already provides coverage for urgent conditions, labor and delivery, and acute care — ensuring that no one in Contra Costa is left without a safety net in a genuine emergency.
+    </p>
+    <p>
+      The question is whether it is appropriate to use a <strong>countywide sales tax</strong> — paid by every resident and visitor, regardless of their own insurance status or immigration views — to fund <strong>comprehensive, zero-cost routine and specialty care</strong> for undocumented immigrants. That is a significant policy commitment that deserves a direct public debate, not a line item buried inside a general sales tax measure.
+    </p>
+    <p>
+      Moderate cost-sharing requirements for undocumented enrollees — similar to the modest copayments that apply to other Medi-Cal beneficiaries — would reduce the county's net costs and provide a more equitable distribution of the burden. The county has not publicly explored or proposed this option.
+    </p>
+  </div>
+
+  <div class="sources">
+    <h3>Sources</h3>
+    <ul>
+      <li>California Department of Health Care Services (DHCS) — Medi-Cal eligibility for undocumented immigrants and emergency Medi-Cal scope of services</li>
+      <li>HR1 (One Big Beautiful Bill Act), Division E — Medicaid provisions; immigration-related eligibility changes effective October 2026</li>
+      <li>California Senate Budget Subcommittee, 2025–26 budget — state-only Medi-Cal expansion for undocumented adults</li>
+      <li>KFF (Kaiser Family Foundation) — "Key Facts About Uninsured Immigrants in the U.S." and Medi-Cal cost-sharing summary</li>
+      <li>Contra Costa Health budget presentation, March 2026 — revenue loss components including state-only enrollment changes</li>
+    </ul>
+  </div>
+
+</main>
+
+<footer>
+  <strong>Stop Measure B</strong>
+  Free Healthcare for our Undocumented Neighbors? — information for Contra Costa County voters.<br>
+  Paid for by Contra Costa Taxpayers Association.
+</footer>
+
+</body>
+</html>
