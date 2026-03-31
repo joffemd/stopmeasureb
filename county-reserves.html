@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The County's Spare Money | Stop Measure B</title>
+  <meta name="description" content="Contra Costa County holds more than $1.1 billion in unreserved general fund reserves — triple the amount recommended by financial experts. A sales tax is not necessary." />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #1a1a1a;
+      background: #fff;
+      line-height: 1.65;
+    }
+
+    /* ── NAV ── */
+    nav {
+      background: #1a2744;
+      padding: 0 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      min-height: 60px;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      text-decoration: none;
+      color: #fff;
+      padding: 0.6rem 0;
+    }
+    .nav-badge {
+      background: #c0392b;
+      color: #fff;
+      font-weight: 900;
+      font-size: 1rem;
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      letter-spacing: -0.5px;
+      flex-shrink: 0;
+    }
+    .nav-title { font-size: 0.95rem; font-weight: 700; line-height: 1.2; }
+    .nav-sub   { font-size: 0.7rem; font-weight: 400; opacity: 0.75; }
+    .nav-links { display: flex; gap: 1.2rem; flex-wrap: wrap; align-items: center; }
+    .nav-links a {
+      color: #c8d3e8;
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 500;
+      transition: color 0.15s;
+      padding: 0.4rem 0;
+    }
+    .nav-links a:hover { color: #fff; }
+
+    /* ── HERO ── */
+    .hero {
+      background: #f4f6fb;
+      border-bottom: 3px solid #c0392b;
+      padding: 2.5rem 1.5rem 2rem;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 800;
+      color: #1a2744;
+      margin-bottom: 0.75rem;
+      line-height: 1.2;
+    }
+    .hero p {
+      font-size: 1.05rem;
+      color: #444;
+      max-width: 680px;
+      margin: 0 auto 1.25rem;
+    }
+    .hero-links { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      display: inline-block;
+      padding: 0.55rem 1.25rem;
+      border-radius: 6px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: opacity 0.15s;
+    }
+    .btn:hover { opacity: 0.85; }
+    .btn-primary { background: #c0392b; color: #fff; }
+    .btn-secondary { background: #1a2744; color: #fff; }
+    .btn-outline { border: 2px solid #1a2744; color: #1a2744; }
+
+    /* ── MAIN ── */
+    main { max-width: 800px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
+
+    /* ── STAT BOX ── */
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+    .stat-box {
+      background: #f4f6fb;
+      border: 2px solid #d0d8ea;
+      border-radius: 10px;
+      padding: 1.25rem 1rem;
+      text-align: center;
+    }
+    .stat-box .value {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #1a2744;
+      line-height: 1.1;
+    }
+    .stat-box .label {
+      font-size: 0.82rem;
+      color: #555;
+      margin-top: 0.3rem;
+      line-height: 1.4;
+    }
+    .stat-box.highlight { border-color: #c0392b; }
+    .stat-box.highlight .value { color: #c0392b; }
+
+    /* ── NUMBERED SECTIONS ── */
+    .section {
+      border: 1px solid #dde3ef;
+      border-radius: 10px;
+      padding: 1.75rem 1.75rem 1.75rem 1.5rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+    .section-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2rem;
+      height: 2rem;
+      background: #1a2744;
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.9rem;
+      border-radius: 50%;
+      margin-bottom: 0.75rem;
+    }
+    .section h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #1a2744;
+      margin-bottom: 0.75rem;
+    }
+    .section p { color: #333; margin-bottom: 0.75rem; }
+    .section p:last-child { margin-bottom: 0; }
+
+    /* ── CALLOUT ── */
+    .callout {
+      background: #fff8e1;
+      border-left: 4px solid #f59e0b;
+      border-radius: 0 8px 8px 0;
+      padding: 1rem 1.25rem;
+      margin: 1rem 0;
+      font-size: 0.95rem;
+      color: #333;
+    }
+    .callout strong { color: #1a2744; }
+
+    /* ── EXTERNAL LINK ── */
+    .planb-card {
+      background: #f4f6fb;
+      border: 2px solid #d0d8ea;
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .planb-card h3 { font-size: 1.1rem; font-weight: 700; color: #1a2744; }
+    .planb-card p  { font-size: 0.93rem; color: #444; }
+    .planb-card a  { color: #c0392b; font-weight: 600; text-decoration: none; }
+    .planb-card a:hover { text-decoration: underline; }
+
+    /* ── SOURCES ── */
+    .sources {
+      background: #f9fafc;
+      border: 1px solid #dde3ef;
+      border-radius: 8px;
+      padding: 1.25rem 1.5rem;
+      margin-top: 2.5rem;
+    }
+    .sources h3 { font-size: 1rem; font-weight: 700; color: #1a2744; margin-bottom: 0.5rem; }
+    .sources ul { padding-left: 1.25rem; }
+    .sources li { font-size: 0.85rem; color: #555; margin-bottom: 0.3rem; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #1a2744;
+      color: #c8d3e8;
+      text-align: center;
+      padding: 1.5rem 1rem;
+      font-size: 0.82rem;
+      margin-top: 0;
+    }
+    footer strong { color: #fff; display: block; margin-bottom: 0.25rem; font-size: 0.9rem; }
+
+    @media (max-width: 540px) {
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-badge">NO</div>
+    <div>
+      <div class="nav-title">Stop Measure B</div>
+      <div class="nav-sub">Contra Costa County</div>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="index.html#facts">Key Facts</a>
+    <a href="myths-facts.html">Myths v Facts</a>
+    <a href="index.html#lookup">Tax Rate Lookup</a>
+    <a href="index.html#volunteer">Volunteer</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <h1>The County's Spare Money</h1>
+  <p>Contra Costa County holds more than $1.1 billion in unreserved general fund reserves — over triple the level recommended by financial experts. A new sales tax is not necessary to weather federal and state funding changes.</p>
+  <div class="hero-links">
+    <a href="index.html" class="btn btn-secondary">← Back to Home</a>
+    <a href="https://www.contracostaplanb.com/" class="btn btn-primary" target="_blank" rel="noopener">See Contra Costa Plan B →</a>
+  </div>
+</div>
+
+<main>
+
+  <div class="planb-card">
+    <h3>Contra Costa Plan B</h3>
+    <p>
+      <a href="https://www.contracostaplanb.com/" target="_blank" rel="noopener">ContraCostaplanB.com</a>
+      presents a detailed, publicly trackable alternative to Measure B — one that addresses the county's budget pressures through phased spending management, without raising the county sales tax. One key element: the county already holds more than enough in general fund reserves to absorb near-term federal and state funding losses.
+    </p>
+  </div>
+
+  <div class="stat-row">
+    <div class="stat-box highlight">
+      <div class="value">$1.19B</div>
+      <div class="label">Unreserved general fund balance, June 30, 2025</div>
+    </div>
+    <div class="stat-box">
+      <div class="value">51.3%</div>
+      <div class="label">Reserve ratio as a share of FY2024–25 general fund expenditures</div>
+    </div>
+    <div class="stat-box">
+      <div class="value">16.7%</div>
+      <div class="label">Reserve ratio recommended by the Government Finance Officers Association</div>
+    </div>
+    <div class="stat-box">
+      <div class="value">3×</div>
+      <div class="label">How much larger the county's reserves are than the GFOA recommendation</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-num">1</div>
+    <h2>How the reserve figure is calculated</h2>
+    <p>
+      The county's unreserved general fund balance as of June 30, 2025 totals <strong>$1,189,653,000</strong>, composed of three components:
+    </p>
+    <ul style="padding-left:1.4rem; margin: 0.75rem 0; color:#333;">
+      <li>Nonspendable fund balance: <strong>$1,078,000</strong></li>
+      <li>Committed fund balance: <strong>$604,025,000</strong></li>
+      <li>Assigned fund balance: <strong>$584,550,000</strong></li>
+    </ul>
+    <p>
+      The county's general fund expenditures for fiscal year 2024–25 were <strong>$2,319,352,000</strong>. That puts the reserve ratio at <strong>51.3%</strong> — more than three times the 16.7% (two months of expenditures) recommended by the Government Finance Officers Association as a minimum prudent reserve.
+    </p>
+  </div>
+
+  <div class="section">
+    <div class="section-num">2</div>
+    <h2>The county could draw down hundreds of millions without jeopardizing its fiscal health</h2>
+    <p>
+      Even if the county drew down $400 million of its reserves over the five-year life of Measure B — $80 million per year — it would still hold reserves well above the GFOA minimum. The county's own projected federal and state health funding losses average far less than $80 million per year in the near term. Per the county's corrected March 3 figures, the cumulative health services shortfall through fiscal year 2028–29 is approximately $239 million — roughly $60 million per year.
+    </p>
+    <div class="callout">
+      <strong>Bottom line:</strong> The county does not need to raise the sales tax to cover projected health funding losses. It could draw down general fund reserves at a modest pace, keep reserves well above the GFOA threshold throughout, and reassess once the actual scope of federal and state cuts is known.
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-num">3</div>
+    <h2>Reserves exist precisely for situations like this</h2>
+    <p>
+      The Government Finance Officers Association and most public finance professionals advise maintaining reserves of two months of expenditures (16.7%) as a <em>floor</em> — the minimum needed to handle normal revenue volatility and short-term shocks. Contra Costa's 51.3% reserve ratio reflects a cushion that is three times that floor.
+    </p>
+    <p>
+      Temporary, phased revenue losses from federal and state policy changes — especially when those changes are still being implemented and are subject to legal challenge, Congressional revision, and state mitigation — are exactly the kind of situation for which general fund reserves exist. Locking in five years of higher sales taxes before the full scope of cuts is even known is fiscally premature.
+    </p>
+  </div>
+
+  <div class="section">
+    <div class="section-num">4</div>
+    <h2>The biggest driver of the county's budget gap is not health funding</h2>
+    <p>
+      According to the county's own January 2026 budget development presentation, the largest single component of the projected FY 2026–27 budget pressure is not federal health cuts — it is <strong>rising employee pay and benefits</strong>, estimated at $208 million in FY 2026–27 alone and growing at roughly 5% per year. Federal and state health impacts in the first year total approximately $42 million combined.
+    </p>
+    <p>
+      Asking every Contra Costa resident and visitor to pay a higher sales tax — in part to subsidize growing county employee compensation — is a policy choice, not a fiscal necessity.
+    </p>
+    <p>
+      <a href="https://www.contracostaplanb.com/" target="_blank" rel="noopener" style="color:#c0392b; font-weight:600;">See the full budget breakdown at ContraCostaplanB.com →</a>
+    </p>
+  </div>
+
+  <div class="sources">
+    <h3>Sources</h3>
+    <ul>
+      <li>Contra Costa County Comprehensive Annual Financial Report (CAFR), fiscal year ending June 30, 2025 — general fund balance components</li>
+      <li>Government Finance Officers Association, <em>Best Practice: Fund Balance Guidelines for the General Fund</em></li>
+      <li>Contra Costa County FY 2026–27 Budget Development Key Considerations (Jan. 30, 2026)</li>
+      <li>Resolution 2026-40, Recital H (revised March 3, 2026) — $239M cumulative Health Services shortfall through FY 2028–29</li>
+      <li><a href="https://www.contracostaplanb.com/" target="_blank" rel="noopener" style="color:#c0392b;">ContraCostaplanB.com</a> — Contra Costa Plan B, including budget pressure methodology and charts</li>
+    </ul>
+  </div>
+
+</main>
+
+<footer>
+  <strong>Stop Measure B</strong>
+  The County's Spare Money — information for Contra Costa County voters.<br>
+  Paid for by Contra Costa Taxpayers Association.
+</footer>
+
+</body>
+</html>
