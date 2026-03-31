@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -55,6 +55,23 @@
       color: var(--white); background: linear-gradient(135deg, #c0392b, #96281b);
       padding: 0.7rem 1.05rem; border-radius: 999px; box-shadow: 0 8px 20px rgba(192,57,43,0.28);
     }
+    /* DROPDOWN */
+    .dropdown { position: relative; }
+    .dropdown-toggle { cursor: pointer; color: var(--muted); font-weight: 600; font-size: 0.87rem; user-select: none; }
+    .dropdown-menu {
+      display: none; position: absolute; top: calc(100% + 0.6rem); left: 50%; transform: translateX(-50%);
+      background: white; border-radius: 14px; padding: 0.4rem;
+      box-shadow: 0 8px 28px rgba(16,35,63,0.16); border: 1px solid rgba(16,35,63,0.09);
+      min-width: 210px; z-index: 200; flex-direction: column; gap: 0.05rem;
+    }
+    .dropdown:hover .dropdown-menu,
+    .dropdown:focus-within .dropdown-menu { display: flex; }
+    .dropdown-menu a {
+      display: block; padding: 0.55rem 0.85rem; border-radius: 10px;
+      color: var(--text) !important; font-size: 0.85rem; font-weight: 600;
+      transition: background 0.15s;
+    }
+    .dropdown-menu a:hover { background: #eef5fd; color: var(--navy) !important; }
 
     /* HERO */
     .hero { position: relative; overflow: hidden; padding: 4.4rem 0 3rem; }
@@ -190,6 +207,7 @@
       .hero { padding-top: 3rem; }
       .nav { align-items: flex-start; flex-direction: column; }
       .footer-card { flex-direction: column; align-items: flex-start; }
+      .dropdown-menu { left: 0; transform: none; }
     }
     @media (max-width: 640px) {
       .nav-links { gap: 0.5rem; }
@@ -213,6 +231,14 @@
         <a href="myths-facts.html">Myths v Facts</a>
         <a href="#lookup">Tax Rate Lookup</a>
         <a href="#federal-cuts">Federal Cuts</a>
+        <div class="dropdown">
+          <span class="dropdown-toggle">Deep Dives &#9660;</span>
+          <div class="dropdown-menu">
+            <a href="county-reserves.html">County Reserves</a>
+            <a href="shrinking-revenue-loss.html">Shrinking Revenue Loss</a>
+            <a href="undocumented-medi-cal.html">Medi-Cal &amp; Immigrants</a>
+          </div>
+        </div>
         <a href="#volunteer">Volunteer</a>
         <a class="cta" href="#volunteer">Join the Campaign</a>
       </nav>
@@ -460,26 +486,23 @@
             <p>California law caps combined local sales taxes. Several Contra Costa cities are already near the limit &#8212; the tax may not be legally collectible everywhere without state legislation.</p>
             <div class="hero-actions" style="margin-top:1rem;"><a class="button button-secondary" href="#why">Learn More</a></div>
           </article>
-          <!-- CARD 4: The County's Spare Money -->
           <article class="tool-card">
-            <div class="tool-icon">🏦</div>
-            <h3>The County's Spare Money</h3>
-            <p>Contra Costa has $1.1 billion in unreserved general funds — more than three times the level financial experts recommend. The county could draw down reserves to cover any real funding losses without raising the sales tax.</p>
+            <div class="tool-icon">&#x1F3E6;</div>
+            <h3>The County&#8217;s Spare Money</h3>
+            <p>Contra Costa has $1.1 billion in unreserved general funds &#8212; more than three times the level financial experts recommend. The county could draw down reserves to cover any real funding losses without raising the sales tax.</p>
             <div class="hero-actions" style="margin-top:1rem;"><a class="button button-secondary" href="county-reserves.html">See the reserve numbers</a></div>
           </article>
-          <!-- CARD 5: The Incredible Shrinking Revenue Loss -->
           <article class="tool-card">
-            <div class="tool-icon">📉</div>
+            <div class="tool-icon">&#x1F4C9;</div>
             <h3>The Incredible Shrinking Revenue Loss</h3>
-            <p>The figure used to justify Measure B has been revised downward twice — first from a $307&nbsp;million annual loss to a $239&nbsp;million four-year cumulative total, then reduced further after Congress again delayed hospital funding cuts that predate HR1 entirely.</p>
+            <p>The figure used to justify Measure B has been revised downward twice &#8212; first from a $307&nbsp;million annual loss to a $239&nbsp;million four-year cumulative total, then reduced further after Congress again delayed hospital funding cuts that predate HR1 entirely.</p>
             <div class="hero-actions" style="margin-top:1rem;"><a class="button button-secondary" href="shrinking-revenue-loss.html">Track the revisions</a></div>
           </article>
-          <!-- CARD 6: Free Healthcare for our Undocumented Neighbors? -->
           <article class="tool-card">
-              <div class="tool-icon">🏥</div>
-              <h3>Free Healthcare for our Undocumented Neighbors?</h3>
-              <p>Part of the revenue loss driving Measure B involves shifting undocumented immigrants off full-scope Medi-Cal — which charges no premiums, copayments, or deductibles. Most Contra Costa taxpayers pay all three for their own coverage.</p>
-              <div class="hero-actions" style="margin-top:1rem;"><a class="button button-secondary" href="undocumented-medi-cal.html">Read the analysis</a></div>
+            <div class="tool-icon">&#x1F3E5;</div>
+            <h3>Free Healthcare for our Undocumented Neighbors?</h3>
+            <p>Part of the revenue loss driving Measure B involves shifting undocumented immigrants off full-scope Medi-Cal &#8212; which charges no premiums, copayments, or deductibles. Most Contra Costa taxpayers pay all three for their own coverage.</p>
+            <div class="hero-actions" style="margin-top:1rem;"><a class="button button-secondary" href="undocumented-medi-cal.html">Read the analysis</a></div>
           </article>
         </div>
       </div>
@@ -519,14 +542,14 @@
             <div class="news-source">Local News Matters</div>
             <h3>Contra Costa supervisors vote to place sales tax on June ballot despite revised funding figures</h3>
             <p>Coverage of the March 3 board meeting where staff revised the loss estimate downward but the board proceeded with the vote.</p>
-            <a class="read-more" href="https://localnewsmatters.org" target="_blank" rel="noopener">Visit Local News Matters &#x2192;</a>
+            <a class="read-more" href="https://localnewsmatters.org/2026/03/06/contra-costa-sales-tax-june-ballot-federal-cuts/" target="_blank" rel="noopener">Read the article &#x2192;</a>
           </div>
 
           <div class="news-card">
             <div class="news-source">ContraCosta.news</div>
             <h3>Lone no vote cites misleading $300M annual figure; county confirms number is cumulative</h3>
             <p>Supervisor Andersen&#8217;s dissent and her identification of the &#8220;ongoing vs. cumulative&#8221; error in county staff materials before the March 3 vote.</p>
-            <a class="read-more" href="https://contracosta.news" target="_blank" rel="noopener">Visit ContraCosta.news &#x2192;</a>
+            <a class="read-more" href="https://contracosta.news/2026/03/04/contra-costa-county-supervisors-agree-to-place-sales-tax-measure-on-june-ballot/" target="_blank" rel="noopener">Read the article &#x2192;</a>
           </div>
 
           <div class="news-card">
