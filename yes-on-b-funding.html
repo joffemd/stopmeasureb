@@ -100,7 +100,11 @@
       background: var(--navy); color: white; font-weight: 700;
       padding: 0.7rem 1rem; text-align: left; font-size: 0.83rem; letter-spacing: 0.04em;
     }
+    .donor-table th.col-date  { text-align: center; }
+    .donor-table th.col-amount { text-align: right; }
     .donor-table td { padding: 0.7rem 1rem; border-bottom: 1px solid var(--border); }
+    .donor-table td.col-date  { text-align: center; }
+    .donor-table td.col-amount { text-align: right; font-variant-numeric: tabular-nums; }
     .donor-table tr:last-child td { border-bottom: none; }
     .donor-table .total-row td { font-weight: 800; color: var(--red); background: rgba(180,35,24,0.05); }
     .callout {
@@ -165,34 +169,34 @@
         <h2>The Campaign Committee</h2>
         <p>The official committee backing Measure B is registered with the Contra Costa County Elections Division as <strong>Safe and Healthy Contra Costa County</strong> (also referred to in later filings as <em>Yes on Measure B, Safe and Healthy Contra Costa County</em>). Its filings are publicly available through the county&#8217;s <a href="https://public.netfile.com/Pub2/AllFilingsByFiler.aspx?id=215686834&aid=CCC" target="_blank" rel="noopener">NetFile campaign finance portal</a>. As of the April 7 filing date, the committee had received three contributions, all from union PACs, totaling $125,000.</p>
 
-        <h2>The Donors</h2>
+        <h2>The Donations</h2>
         <table class="donor-table">
           <thead>
             <tr>
               <th>Contributor</th>
-              <th>Date</th>
-              <th>Amount</th>
+              <th class="col-date">Date</th>
+              <th class="col-amount">Amount</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>IFPTE Local 21 Issues PAC &mdash; San Francisco, CA<br><small style="color:var(--muted);">Committee ID #1362080</small></td>
-              <td>March 16, 2026</td>
-              <td>$30,000</td>
+              <td class="col-date">March 16, 2026</td>
+              <td class="col-amount">$30,000</td>
             </tr>
             <tr>
               <td>AFSCME Council 57 Issues PAC &mdash; Norwalk, CA<br><small style="color:var(--muted);">Committee ID #1338455</small></td>
-              <td>March 30, 2026</td>
-              <td>$25,000</td>
+              <td class="col-date">March 30, 2026</td>
+              <td class="col-amount">$25,000</td>
             </tr>
             <tr>
               <td>IFPTE Local 21 Issues PAC &mdash; San Francisco, CA<br><small style="color:var(--muted);">Committee ID #1362080</small></td>
-              <td>April 1, 2026</td>
-              <td>$70,000</td>
+              <td class="col-date">April 1, 2026</td>
+              <td class="col-amount">$70,000</td>
             </tr>
             <tr class="total-row">
               <td colspan="2"><strong>Total raised</strong></td>
-              <td><strong>$125,000</strong></td>
+              <td class="col-amount"><strong>$125,000</strong></td>
             </tr>
           </tbody>
         </table>
