@@ -1,0 +1,12 @@
+{
+  "filings_seen": ["216201295", "216492967", "216537041"],
+  "donations": [
+    {"filing_id": "216201295", "contributor": "IFPTE Local 21 Issues PAC", "location": "San Francisco, CA", "committee_id": "1362080", "date": "2026-03-16", "amount": 30000.0},
+    {"filing_id": "216492967", "contributor": "AFSCME Council 57 Issues PAC", "location": "Norwalk, CA", "committee_id": "1338455", "date": "2026-03-30", "amount": 25000.0},
+    {"filing_id": "216537041", "contributor": "IFPTE Local 21 Issues PAC", "location": "San Francisco, CA", "committee_id": "1362080", "date": "2026-04-01", "amount": 70000.0}
+  ],
+  "total": 125000.0,
+  "unique_donors": 2,
+  "last_checked": "2026-04-08",
+  "last_updated": "2026-04-08"
+}
