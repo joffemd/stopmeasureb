@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stay Informed | Stop Measure B</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23ffffff' stroke='%23c0392b' stroke-width='4'/%3E%3Ctext x='32' y='38' text-anchor='middle' font-size='30' font-family='Arial, Helvetica, sans-serif' font-weight='700' fill='%2310233f'%3EB%3C/text%3E%3Cline x1='16' y1='16' x2='48' y2='48' stroke='%23c0392b' stroke-width='6'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #10233f; --blue: #1e4f8f; --gold: #f6c453;
+      --text: #18212f; --muted: #5f6b7a; --white: #ffffff;
+      --border: rgba(16,35,63,0.12); --shadow: 0 18px 40px rgba(16,35,63,0.12);
+      --radius: 22px; --red: #b42318;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(246,196,83,0.18), transparent 30%),
+        linear-gradient(180deg, #f8fbff 0%, #eef5fd 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+    }
+    .card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      width: 100%;
+      max-width: 520px;
+      padding: 2rem 2rem 1.5rem;
+    }
+    .brand-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.4rem;
+    }
+    .brand-badge {
+      width: 44px; height: 44px; border-radius: 12px;
+      display: grid; place-items: center;
+      background: linear-gradient(135deg, #c0392b, #96281b);
+      color: white; font-weight: 900; font-size: 1.1rem;
+      font-family: 'Merriweather', Georgia, serif;
+      box-shadow: 0 6px 16px rgba(192,57,43,0.3);
+      flex-shrink: 0;
+    }
+    .brand-text { font-weight: 800; font-size: 0.97rem; color: var(--navy); line-height: 1.2; }
+    .brand-text small { display: block; font-size: 0.75rem; color: var(--muted); font-weight: 500; }
+    h1 {
+      margin: 0 0 0.25rem;
+      font-family: 'Merriweather', Georgia, serif;
+      font-size: 1.25rem;
+      color: var(--navy);
+      line-height: 1.3;
+    }
+    .sub { margin: 0 0 1.4rem; font-size: 0.9rem; color: var(--muted); }
+    .field { margin-bottom: 1rem; }
+    label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.3rem;
+    }
+    label .req { color: var(--blue); font-size: 0.78rem; font-weight: 600; margin-left: 0.25rem; }
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"] {
+      width: 100%;
+      border: 1px solid rgba(16,35,63,0.18);
+      background: rgba(255,255,255,0.95);
+      border-radius: 14px;
+      padding: 0.8rem 0.95rem;
+      font: inherit;
+      font-size: 0.95rem;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    input:focus {
+      border-color: rgba(30,79,143,0.45);
+      box-shadow: 0 0 0 4px rgba(30,79,143,0.10);
+    }
+    input::placeholder { color: #a8b2bd; }
+    .phone-row { display: flex; gap: 0.5rem; }
+    .phone-prefix {
+      flex-shrink: 0;
+      border: 1px solid rgba(16,35,63,0.18);
+      border-radius: 14px;
+      padding: 0.8rem 0.75rem;
+      font: inherit;
+      font-size: 0.9rem;
+      background: #f5f7fa;
+      color: var(--navy);
+      font-weight: 600;
+      outline: none;
+    }
+    .consent {
+      display: flex;
+      gap: 0.7rem;
+      align-items: flex-start;
+      margin: 1.1rem 0 1.3rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+    .consent input[type="checkbox"] {
+      width: 16px; height: 16px;
+      margin-top: 2px;
+      flex-shrink: 0;
+      accent-color: var(--blue);
+      cursor: pointer;
+    }
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 0.85rem;
+      border-radius: 999px;
+      border: 0;
+      font: inherit;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      background: linear-gradient(135deg, var(--navy), var(--blue));
+      color: #fff;
+      box-shadow: 0 10px 22px rgba(30,79,143,0.22);
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .btn:hover { transform: translateY(-1px); box-shadow: 0 14px 28px rgba(30,79,143,0.28); }
+    .legal-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 1.2rem;
+      font-size: 0.82rem;
+    }
+    .legal-links a { color: var(--muted); text-decoration: underline; text-underline-offset: 3px; }
+    .legal-links a:hover { color: var(--navy); }
+    .success {
+      display: none;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    .success .check {
+      font-size: 2.5rem;
+      margin-bottom: 0.75rem;
+    }
+    .success h2 { margin: 0 0 0.5rem; font-family: 'Merriweather', Georgia, serif; color: var(--navy); }
+    .success p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+    .back-link { display: block; text-align: center; margin-top: 1.5rem; font-size: 0.85rem; color: var(--muted); }
+    .back-link a { color: var(--blue); font-weight: 600; text-decoration: underline; }
+    @media (max-width: 560px) {
+      .card { padding: 1.5rem 1.25rem 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="card" id="formCard">
+    <div class="brand-row">
+      <div class="brand-badge">NO</div>
+      <div class="brand-text">Stop Measure B<small>Contra Costa County</small></div>
+    </div>
+    <h1>Stay informed about the campaign</h1>
+    <p class="sub">Sign up to receive updates about Measure B from the Contra Costa Taxpayers Association.</p>
+
+    <form id="intakeForm" novalidate>
+      <div class="field">
+        <label for="firstName">First name <span class="req">*required</span></label>
+        <input type="text" id="firstName" name="firstName" placeholder="Type your answer here..." required autocomplete="given-name">
+      </div>
+      <div class="field">
+        <label for="lastName">Last name <span class="req">*required</span></label>
+        <input type="text" id="lastName" name="lastName" placeholder="Type your answer here..." required autocomplete="family-name">
+      </div>
+      <div class="field">
+        <label for="email">Email <span class="req">*required</span></label>
+        <input type="email" id="email" name="email" placeholder="Type your answer here..." required autocomplete="email">
+      </div>
+      <div class="field">
+        <label for="phone">Phone <span class="req">*required</span></label>
+        <div class="phone-row">
+          <select class="phone-prefix" aria-label="Country code">
+            <option value="+1">&#x1F1FA;&#x1F1F8; +1</option>
+          </select>
+          <input type="tel" id="phone" name="phone" placeholder="(555) 000-0000" required autocomplete="tel">
+        </div>
+      </div>
+
+      <div class="consent">
+        <input type="checkbox" id="smsConsent" name="smsConsent" required>
+        <label for="smsConsent" style="margin:0;font-weight:400;font-size:0.8rem;color:var(--muted);">
+          By providing a telephone number, clicking this button, and submitting the form, you are consenting
+          to be contacted by SMS text message and AI-powered voice calls from Contra Costa Taxpayers Association
+          regarding Political (Stop Measure B &mdash; Vote No by June 2), (our message frequency may vary).
+          Message &amp; data rates apply. Reply STOP to unsubscribe. Reply HELP for more information.
+          See our <a href="privacy-policy.html">Privacy Policy</a> (containing our SMS Terms) for more information.
+        </label>
+      </div>
+
+      <button class="btn" type="submit">Submit</button>
+    </form>
+
+    <div class="legal-links">
+      <a href="terms-of-service.html">Terms of Service</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+    </div>
+  </div>
+
+  <div class="card success" id="successCard">
+    <div class="check">&#x2713;</div>
+    <h2>Thank you!</h2>
+    <p>We&rsquo;ll be in touch with updates on Stop Measure B before the June 2 vote.</p>
+  </div>
+
+  <p class="back-link"><a href="index.html">&larr; Back to StopMeasureB.com</a></p>
+
+  <script>
+    (function () {
+      var form = document.getElementById('intakeForm');
+      var formCard = document.getElementById('formCard');
+      var successCard = document.getElementById('successCard');
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var fn = document.getElementById('firstName').value.trim();
+        var ln = document.getElementById('lastName').value.trim();
+        var em = document.getElementById('email').value.trim();
+        var ph = document.getElementById('phone').value.trim();
+        var consent = document.getElementById('smsConsent').checked;
+        if (!fn || !ln || !em || !ph) { alert('Please fill in all required fields.'); return; }
+        if (!consent) { alert('Please check the consent box to continue.'); return; }
+        var sub = encodeURIComponent('Stop Measure B — New Intake Signup');
+        var body = encodeURIComponent(
+          'New signup from StopMeasureB.com intake form\n\n' +
+          'Name: ' + fn + ' ' + ln + '\n' +
+          'Email: ' + em + '\n' +
+          'Phone: ' + ph + '\n' +
+          'SMS Consent: Yes'
+        );
+        window.location.href = 'mailto:marc@cocotax.org?subject=' + sub + '&body=' + body;
+        formCard.style.display = 'none';
+        successCard.style.display = 'block';
+      });
+    })();
+  </script>
+</body>
+</html>
