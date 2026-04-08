@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contra Costa's Last Sales Tax Hike: Measure X | Stop Measure B</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23ffffff' stroke='%23c0392b' stroke-width='4'/%3E%3Ctext x='32' y='38' text-anchor='middle' font-size='30' font-family='Arial, Helvetica, sans-serif' font-weight='700' fill='%2310233f'%3EB%3C/text%3E%3Cline x1='16' y1='16' x2='48' y2='48' stroke='%23c0392b' stroke-width='6'/%3E%3C/svg%3E">
+  <meta name="description" content="Measure X passed in 2020 on promises of healthcare and public safety. It generated far more money than projected and was spent on a Guaranteed Income Pilot, an African American Wellness Hub, and an Office of Racial Equity. Now they want another one." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #10233f; --blue: #1e4f8f; --gold: #f6c453;
+      --text: #18212f; --muted: #5f6b7a; --white: #ffffff;
+      --card: rgba(255,255,255,0.88); --border: rgba(16,35,63,0.12);
+      --shadow: 0 18px 40px rgba(16,35,63,0.12);
+      --radius: 22px; --max: 860px; --red: #b42318;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(246,196,83,0.18), transparent 30%),
+        linear-gradient(180deg, #f8fbff 0%, #eef5fd 50%, #ffffff 100%);
+      line-height: 1.7;
+    }
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { width: min(calc(100% - 2rem), var(--max)); margin: 0 auto; }
+    .site-header {
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: blur(12px);
+      background: rgba(255,255,255,0.93);
+      border-bottom: 2px solid rgba(180,35,24,0.14);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.7rem 0; }
+    .brand { display: flex; align-items: center; gap: 0.9rem; font-weight: 800; color: var(--navy); text-decoration: none; }
+    .brand-badge {
+      width: 52px; height: 52px; border-radius: 14px; display: grid; place-items: center;
+      background: linear-gradient(135deg, #c0392b, #96281b); color: white;
+      font-weight: 900; font-size: 1.3rem; font-family: 'Merriweather', Georgia, serif;
+      box-shadow: 0 8px 20px rgba(192,57,43,0.3);
+    }
+    .brand-text { font-size: 1rem; line-height: 1.2; }
+    .brand-text small { display: block; color: var(--muted); font-size: 0.76rem; font-weight: 600; }
+    .back-link { font-size: 0.87rem; font-weight: 600; color: var(--muted); }
+    .back-link:hover { color: var(--navy); text-decoration: none; }
+    .page-hero {
+      padding: 3rem 0 2rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 2.5rem;
+    }
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.78rem; font-weight: 800; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--red);
+      background: rgba(180,35,24,0.08); border-radius: 6px;
+      padding: 0.2rem 0.6rem; margin-bottom: 0.9rem;
+    }
+    h1 {
+      font-family: 'Merriweather', Georgia, serif;
+      font-size: clamp(1.9rem, 4vw, 2.9rem);
+      color: var(--navy); margin: 0 0 0.75rem; line-height: 1.12;
+    }
+    .deck { font-size: 1.1rem; color: var(--muted); max-width: 44rem; margin: 0; }
+    .stat-row {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
+      margin: 2.5rem 0;
+    }
+    .stat-box {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 18px; box-shadow: var(--shadow);
+      padding: 1.25rem 1rem; text-align: center;
+    }
+    .stat-box .num {
+      font-family: 'Merriweather', Georgia, serif;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 700; color: var(--navy); line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+    .stat-box .num.red { color: var(--red); }
+    .stat-box .label { font-size: 0.82rem; color: var(--muted); font-weight: 600; line-height: 1.4; }
+    .prose { max-width: 100%; }
+    .prose p { margin: 0 0 1.1rem; }
+    .prose h2 {
+      font-family: 'Merriweather', Georgia, serif;
+      font-size: 1.35rem; color: var(--navy);
+      margin: 2.5rem 0 0.65rem; line-height: 1.2;
+    }
+    .prose h3 { font-size: 1.05rem; color: var(--navy); margin: 1.6rem 0 0.45rem; }
+    .spending-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;
+      margin: 1.2rem 0 1.8rem;
+    }
+    .spending-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 16px; box-shadow: var(--shadow);
+      padding: 1.1rem 1.2rem;
+    }
+    .spending-card .amount {
+      font-size: 1.35rem; font-weight: 800; color: var(--red);
+      font-family: 'Merriweather', Georgia, serif; margin-bottom: 0.2rem;
+    }
+    .spending-card .item-name { font-weight: 700; color: var(--navy); font-size: 0.93rem; margin-bottom: 0.25rem; }
+    .spending-card .item-desc { font-size: 0.84rem; color: var(--muted); line-height: 1.5; margin: 0; }
+    .callout {
+      background: linear-gradient(145deg, rgba(16,35,63,0.97), rgba(30,79,143,0.95));
+      border-radius: 20px; padding: 1.6rem 1.75rem; color: white;
+      margin: 2rem 0;
+    }
+    .callout p { color: rgba(255,255,255,0.88); margin: 0 0 0.7rem; }
+    .callout p:last-child { margin: 0; }
+    .callout strong { color: var(--gold); }
+    .warning-box {
+      background: rgba(180,35,24,0.07); border: 1px solid rgba(180,35,24,0.18);
+      border-radius: 14px; padding: 1.1rem 1.3rem; margin: 1.5rem 0;
+      font-size: 0.93rem;
+    }
+    .warning-box strong { color: var(--red); }
+    .timeline {
+      border-left: 3px solid rgba(16,35,63,0.15);
+      padding-left: 1.5rem;
+      margin: 1.5rem 0 2rem;
+    }
+    .tl-item { margin-bottom: 1.4rem; position: relative; }
+    .tl-item::before {
+      content: '';
+      position: absolute; left: -1.85rem; top: 0.4rem;
+      width: 10px; height: 10px; border-radius: 50%;
+      background: var(--red); border: 2px solid white;
+      box-shadow: 0 0 0 2px var(--red);
+    }
+    .tl-date { font-size: 0.8rem; font-weight: 800; color: var(--red); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.2rem; }
+    .tl-item p { margin: 0; font-size: 0.92rem; color: var(--text); }
+    .source-box {
+      background: rgba(30,79,143,0.06); border: 1px solid rgba(30,79,143,0.14);
+      border-radius: 14px; padding: 1rem 1.2rem; margin: 1.5rem 0;
+      font-size: 0.88rem; color: var(--muted);
+    }
+    .source-box a { color: var(--blue); font-weight: 600; }
+    .footer { padding: 2.5rem 0 3.5rem; border-top: 1px solid var(--border); margin-top: 3rem; }
+    .footer-inner { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between; font-size: 0.88rem; color: var(--muted); }
+    .footer-inner a { color: var(--blue); }
+    @media (max-width: 640px) {
+      .stat-row, .spending-grid { grid-template-columns: 1fr; }
+      .page-hero { padding: 2rem 0 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="Stop Measure B home">
+        <div class="brand-badge">NO</div>
+        <div class="brand-text">Stop Measure B<small>Contra Costa County</small></div>
+      </a>
+      <a class="back-link" href="index.html">&larr; Back to main page</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="page-hero">
+        <div class="eyebrow">Deep Dive</div>
+        <h1>The County&#8217;s Last Sales Tax Hike: What Measure X Tells Us About Measure B</h1>
+        <p class="deck">In 2020, the county placed a half-cent general sales tax on the ballot, promising it would fund healthcare, public safety, and essential services. Measure X passed &mdash; and has generated far more money than projected. Where did it go? The county&#8217;s own annual reports tell a revealing story about priorities, promises, and the pattern now being repeated with Measure B.</p>
+      </div>
+
+      <div class="stat-row">
+        <div class="stat-box">
+          <div class="num">$509M</div>
+          <div class="label">Total Measure X revenue collected through FY24-25</div>
+        </div>
+        <div class="stat-box">
+          <div class="num red">48%</div>
+          <div class="label">Revenue overage: $120M/yr actual vs. $81M projected</div>
+        </div>
+        <div class="stat-box">
+          <div class="num">47.5%</div>
+          <div class="label">Rise in county salaries &amp; benefits since Measure X passed</div>
+        </div>
+      </div>
+
+      <div class="prose">
+
+        <h2>What Voters Were Told in 2020</h2>
+        <p>Measure X was sold to voters in November 2020 as an urgent response to the COVID pandemic and a way to keep Contra Costa&#8217;s regional hospital open, fund community health centers, support fire and emergency response, and protect &#8220;vulnerable populations.&#8221; The county projected it would raise approximately $81 million annually over its 20-year life. The ballot label emphasized &#8220;life-saving services&#8221; and included a phrase promising &#8220;fiscal accountability&#8221; &mdash; a phrase Contra Costa Superior Court Judge Austin had to order removed when he determined it did not appear anywhere in the underlying ordinance.</p>
+
+        <p>What the ballot language did not emphasize &mdash; but the ordinance clearly stated &mdash; was that Measure X revenue would be &#8220;solely for general governmental purposes and not for specific purposes.&#8221; In other words, the supervisors could spend it on anything they deemed &#8220;governmental.&#8221; Measure B uses identical language.</p>
+
+        <div class="warning-box">
+          <strong>The East Bay Times editorial board, October 3, 2020:</strong> County supervisors should &#8220;plan to make do with [Measure X&#8217;s] additional money; they shouldn&#8217;t expect support for an additional tax in the future.&#8221; Five years later, they&#8217;re asking for exactly that.
+        </div>
+
+        <h2>The Legislative Trickery Behind Measure X</h2>
+        <p>Before Measure X could even appear on the ballot, the county needed to engineer its way around a legal problem. California law caps the combined local sales tax in any jurisdiction at 2.00% above the statewide base, for a statutory maximum of 9.25%. Several Contra Costa cities were already at or near that limit. So beginning in October 2019, the county&#8217;s Finance Committee authorized its lobbying firm, Nielsen Merksamer, to develop &#8220;special legislation&#8221; to bypass the cap.</p>
+
+        <p>The result was SB1349, introduced in February 2020 by State Senator Steve Glazer &mdash; who had campaigned on &#8220;holding the line on taxes&#8221; as one of his Ten Governing Principles. SB1349 began life as a fire-protection bill and was immediately gutted and amended into a vehicle to let Contra Costa County place taxes above the statutory limit. The mechanism: existing BART and CCTA sales taxes would be declared exempt from the 2% cap, freeing up room for a new county levy. In effect, the cap was raised while county officials publicly insisted it was not.</p>
+
+        <p>A May 21, 2020 email chain among county officials captured the rhetorical sleight of hand directly. When a county administrator suggested saying that the legislation &#8220;creates a statutory waiver&#8221; of existing taxes for cap-counting purposes, Supervisor John Gioia&#8217;s office edited the language. The reply from a Senior Deputy County Administrator: &#8220;Our letter on it says we&#8217;re not raising the cap; just redefining it.&#8221; The Contra Costa Taxpayers Association has preserved these records, which were obtained in connection with the 2020 Measure X campaign.</p>
+
+        <p>Ten Contra Costa cities already exceed the statutory 9.25% sales-tax ceiling as a result of that &#8220;redefinition.&#8221; Measure B would push all ten above 10%.</p>
+
+        <h2>Revenue Has Far Exceeded Projections</h2>
+        <p>Measure X began generating revenue in April 2021. Through the end of FY24-25, the county had collected more than $509 million &mdash; roughly $120 million per year, nearly 50% above the $81 million annual projection used to sell the measure to voters. Our rebuttal to the Yes on B ballot argument notes this directly: Measure X, only five years into its 20-year run, &#8220;already supplies $120 Million annually &mdash; not just the $81 Million they projected in 2020.&#8221; The county&#8217;s own FY24-25 Measure X Annual Report confirms total collections of $509,307,032 against total approved allocations of $507,684,368.</p>
+
+        <p>Given that track record, the county&#8217;s stated projection of $150 million annually for Measure B should be treated as a floor, not a ceiling. Measure B revenue would likely grow substantially over its five-year term, as Measure X did &mdash; and with no legal restriction on how it is spent.</p>
+
+        <h2>How the Money Was Actually Spent</h2>
+        <p>The county&#8217;s <a href="https://www.contracosta.ca.gov/DocumentCenter/View/89747/FY24-25-Measure-X-Annual-Report" target="_blank" rel="noopener">FY24-25 Measure X Annual Report</a> allocates funds across 56 programs. Several expenditures stand out as far removed from the &#8220;keep the hospital open&#8221; framing that passed the measure.</p>
+
+        <div class="spending-grid">
+          <div class="spending-card">
+            <div class="amount">$3.25M</div>
+            <div class="item-name">Guaranteed Income Pilot</div>
+            <p class="item-desc">&#8220;Contra Costa Thrives&#8221; provides $1,250/month for 18 months to 178 participants, including people on probation returning from incarceration. The county board voted 4-1 to fund it; Supervisor Andersen was the lone dissenter.</p>
+          </div>
+          <div class="spending-card">
+            <div class="amount">$8.5M</div>
+            <div class="item-name">African American Holistic Wellness Center &amp; Resource Hub</div>
+            <p class="item-desc">A $7.5 million one-time allocation approved April 2024 plus earlier funding, for a new facility whose planning is still in early stages as of FY24-25.</p>
+          </div>
+          <div class="spending-card">
+            <div class="amount">$3.05M</div>
+            <div class="item-name">Office of Racial Equity &amp; Social Justice</div>
+            <p class="item-desc">A county administrative office established and funded with Measure X proceeds, spending $1.49M in FY24-25 alone on programming, staffing, and initiatives.</p>
+          </div>
+          <div class="spending-card">
+            <div class="amount">$4.0M</div>
+            <div class="item-name">Innovation Fund</div>
+            <p class="item-desc">A discretionary pool for experimental county programs, with $1.44M spent in FY24-25. The category description: &#8220;innovative solutions to community challenges.&#8221;</p>
+          </div>
+        </div>
+
+        <p>To be clear: the largest Measure X allocation, $125 million to Contra Costa Regional Medical Center, does reflect the hospital-funding priority that voters were shown. But the general-purpose nature of the tax has also allowed the Board of Supervisors to route tens of millions of dollars to programs that would never have survived as standalone ballot measures &mdash; and that were not part of the pitch made to voters in 2020.</p>
+
+        <h3>The Guaranteed Income Pilot in Detail</h3>
+        <p>The &#8220;Contra Costa Thrives&#8221; program, formally approved in July 2025 and funded in part with $3.25 million in Measure X money, provides unconditional monthly cash payments to 178 residents for 18 months. The four target populations are youth transitioning out of foster care, families with young children experiencing financial hardship, low-income seniors, and &mdash; in the description used in multiple news accounts &mdash; people on probation returning to the community after incarceration. Monthly payments are set at up to $1,250. Supervisor Candace Andersen cast the only opposing vote when the program was initially funded in October 2024, noting her preference for connecting residents to existing programs like CalFresh and CalWORKs instead.</p>
+
+        <p>The guaranteed income program may or may not be good policy. What it clearly is, however, is a long way from &#8220;keeping the hospital open and staffed&#8221; &mdash; the headline promise of the 2020 Measure X campaign.</p>
+
+        <h2>The Compensation Escalator</h2>
+        <p>Our ballot rebuttal notes that county salaries and benefits have risen 47.5% since Measure X passed in 2020. The State Controller&#8217;s Office data for 2024 shows 3,041 Contra Costa County employees with total compensation exceeding $200,000, including 1,005 above $300,000 and 252 above $400,000. The county&#8217;s total spending has risen from $4.51 billion in FY20-21 to $7.37 billion in FY25-26 &mdash; a 63.4% increase, more than three-and-a-half times the Bay Area CPI rate over the same period, against essentially flat population growth.</p>
+
+        <p>Measure B would pour another $150 million or more annually into the same general fund that has been the primary vehicle for this compensation growth. With no dedicated purpose and no legal restriction on use, Measure B revenue would be available to fund the next round of contract negotiations &mdash; negotiations conducted by the same unions that are currently funding the Yes on B campaign.</p>
+
+        <div class="callout">
+          <p>The county called Measure X an urgent, once-in-a-generation necessity to preserve healthcare during a pandemic. Five years later &mdash; with Measure X still running and still collecting &mdash; it is calling Measure B an urgent, once-in-a-generation necessity to preserve healthcare under federal cuts. <strong>The pattern is the same. The general-fund mechanism is the same. The conflict of interest is the same. The ask is simply larger.</strong></p>
+        </div>
+
+        <h2>A Brief Timeline of the Measure X Push</h2>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-date">May 2019</div>
+            <p>Board of Supervisors Finance Committee begins exploring a general sales-tax measure &mdash; driven in part by county employee union representatives who testified at the meeting that a new countywide sales tax was needed for county services.</p>
+          </div>
+          <div class="tl-item">
+            <div class="tl-date">October 2019</div>
+            <p>Finance Committee authorizes Nielsen Merksamer, the county&#8217;s Sacramento lobbying firm, to begin work on &#8220;special legislation&#8221; needed to get around the 2% local sales tax cap.</p>
+          </div>
+          <div class="tl-item">
+            <div class="tl-date">February 2020</div>
+            <p>SB1349 is introduced by Sen. Steve Glazer &mdash; who ran on &#8220;holding the line on taxes&#8221; &mdash; gutted from a fire-protection bill and amended into a vehicle for Contra Costa to bypass the statutory sales tax cap.</p>
+          </div>
+          <div class="tl-item">
+            <div class="tl-date">May 2020</div>
+            <p>Internal county emails capture senior administrator: &#8220;Our letter on it says we&#8217;re not raising the cap; just redefining it.&#8221; The County Counsel&#8217;s own staff described SB1349 as raising the cap via a statutory waiver.</p>
+          </div>
+          <div class="tl-item">
+            <div class="tl-date">August 2020</div>
+            <p>Superior Court Judge Austin orders removal of &#8220;fiscal accountability&#8221; from the Measure X ballot label because the phrase does not appear in the underlying ordinance. The Board votes to proceed with printing anyway.</p>
+          </div>
+          <div class="tl-item">
+            <div class="tl-date">November 2020</div>
+            <p>Voters pass Measure X 61-39%. The East Bay Times editorial board urges the supervisors to make do with Measure X proceeds and &#8220;not expect support for an additional tax in the future.&#8221;</p>
+          </div>
+          <div class="tl-item">
+            <div class="tl-date">March 2026</div>
+            <p>The Board votes to place Measure B on the June ballot using the same general-fund mechanism, correcting an $86 million error in its own funding justification the same day it votes, and relying on SB1349&#8217;s cap-bypass for the new tax as well.</p>
+          </div>
+        </div>
+
+        <div class="source-box">
+          <strong>Primary sources:</strong>
+          The FY24-25 Measure X Annual Report is available from the <a href="https://www.contracosta.ca.gov/DocumentCenter/View/89747/FY24-25-Measure-X-Annual-Report" target="_blank" rel="noopener">Contra Costa County website</a>. The SB1349 timeline and county email evidence are drawn from original research by the Contra Costa Taxpayers Association. Guaranteed income program coverage from <a href="https://richmondconfidential.org/2024/12/14/some-contra-costa-residents-will-get-1000-monthly-under-a-new-county-program/" target="_blank" rel="noopener">Richmond Confidential</a> and <a href="https://www.kalw.org/bay-area-news/2025-07-09/contra-costa-county-starting-guaranteed-income-program" target="_blank" rel="noopener">KALW</a>. Compensation data from the California State Controller&#8217;s <a href="https://publicpay.ca.gov/Reports/Counties/Counties.aspx?entity=6" target="_blank" rel="noopener">Government Compensation in California database</a>.
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <span>Paid for by Contra Costa Taxpayers Association.</span>
+        <span>
+          <a href="index.html">StopMeasureB.com</a> &nbsp;&middot;&nbsp;
+          <a href="myths-facts.html">Myths v Facts</a> &nbsp;&middot;&nbsp;
+          <a href="yes-on-b-funding.html">Who&#8217;s Funding Yes on B?</a> &nbsp;&middot;&nbsp;
+          <a href="county-reserves.html">County Reserves</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

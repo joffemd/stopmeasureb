@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Who's Funding 'Yes on B'? | Stop Measure B</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23ffffff' stroke='%23c0392b' stroke-width='4'/%3E%3Ctext x='32' y='38' text-anchor='middle' font-size='30' font-family='Arial, Helvetica, sans-serif' font-weight='700' fill='%2310233f'%3EB%3C/text%3E%3Cline x1='16' y1='16' x2='48' y2='48' stroke='%23c0392b' stroke-width='6'/%3E%3C/svg%3E">
+  <meta name="description" content="The Yes on B campaign has been funded entirely by two public employee union PACs whose stated mission is to raise member wages and benefits." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #10233f; --blue: #1e4f8f; --gold: #f6c453;
+      --text: #18212f; --muted: #5f6b7a; --white: #ffffff;
+      --card: rgba(255,255,255,0.88); --border: rgba(16,35,63,0.12);
+      --shadow: 0 18px 40px rgba(16,35,63,0.12);
+      --radius: 22px; --max: 860px; --red: #b42318;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(246,196,83,0.18), transparent 30%),
+        linear-gradient(180deg, #f8fbff 0%, #eef5fd 50%, #ffffff 100%);
+      line-height: 1.7;
+    }
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { width: min(calc(100% - 2rem), var(--max)); margin: 0 auto; }
+    .site-header {
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: blur(12px);
+      background: rgba(255,255,255,0.93);
+      border-bottom: 2px solid rgba(180,35,24,0.14);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.7rem 0; }
+    .brand { display: flex; align-items: center; gap: 0.9rem; font-weight: 800; color: var(--navy); text-decoration: none; }
+    .brand-badge {
+      width: 52px; height: 52px; border-radius: 14px; display: grid; place-items: center;
+      background: linear-gradient(135deg, #c0392b, #96281b); color: white;
+      font-weight: 900; font-size: 1.3rem; font-family: 'Merriweather', Georgia, serif;
+      box-shadow: 0 8px 20px rgba(192,57,43,0.3);
+    }
+    .brand-text { font-size: 1rem; line-height: 1.2; }
+    .brand-text small { display: block; color: var(--muted); font-size: 0.76rem; font-weight: 600; }
+    .back-link { font-size: 0.87rem; font-weight: 600; color: var(--muted); }
+    .back-link:hover { color: var(--navy); text-decoration: none; }
+    .page-hero {
+      padding: 3rem 0 2rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 2.5rem;
+    }
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.78rem; font-weight: 800; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--red);
+      background: rgba(180,35,24,0.08); border-radius: 6px;
+      padding: 0.2rem 0.6rem; margin-bottom: 0.9rem;
+    }
+    h1 {
+      font-family: 'Merriweather', Georgia, serif;
+      font-size: clamp(1.9rem, 4vw, 2.9rem);
+      color: var(--navy); margin: 0 0 0.75rem; line-height: 1.12;
+    }
+    .deck { font-size: 1.1rem; color: var(--muted); max-width: 44rem; margin: 0; }
+    .stat-row {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
+      margin: 2.5rem 0;
+    }
+    .stat-box {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 18px; box-shadow: var(--shadow);
+      padding: 1.25rem 1rem; text-align: center;
+    }
+    .stat-box .num {
+      font-family: 'Merriweather', Georgia, serif;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 700; color: var(--red); line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+    .stat-box .label { font-size: 0.82rem; color: var(--muted); font-weight: 600; line-height: 1.4; }
+    .prose { max-width: 100%; }
+    .prose p { margin: 0 0 1.1rem; }
+    .prose h2 {
+      font-family: 'Merriweather', Georgia, serif;
+      font-size: 1.35rem; color: var(--navy);
+      margin: 2.2rem 0 0.65rem; line-height: 1.2;
+    }
+    .prose h3 { font-size: 1.05rem; color: var(--navy); margin: 1.6rem 0 0.45rem; }
+    .donor-table {
+      width: 100%; border-collapse: collapse; font-size: 0.92rem;
+      margin: 1.2rem 0 1.6rem; background: var(--card);
+      border-radius: 14px; overflow: hidden; box-shadow: var(--shadow);
+    }
+    .donor-table th {
+      background: var(--navy); color: white; font-weight: 700;
+      padding: 0.7rem 1rem; text-align: left; font-size: 0.83rem; letter-spacing: 0.04em;
+    }
+    .donor-table td { padding: 0.7rem 1rem; border-bottom: 1px solid var(--border); }
+    .donor-table tr:last-child td { border-bottom: none; }
+    .donor-table .total-row td { font-weight: 800; color: var(--red); background: rgba(180,35,24,0.05); }
+    .callout {
+      background: linear-gradient(145deg, rgba(16,35,63,0.97), rgba(30,79,143,0.95));
+      border-radius: 20px; padding: 1.6rem 1.75rem; color: white;
+      margin: 2rem 0;
+    }
+    .callout p { color: rgba(255,255,255,0.88); margin: 0 0 0.7rem; }
+    .callout p:last-child { margin: 0; }
+    .callout strong { color: var(--gold); }
+    .source-box {
+      background: rgba(30,79,143,0.06); border: 1px solid rgba(30,79,143,0.14);
+      border-radius: 14px; padding: 1rem 1.2rem; margin: 1.5rem 0;
+      font-size: 0.88rem; color: var(--muted);
+    }
+    .source-box a { color: var(--blue); font-weight: 600; }
+    .footer { padding: 2.5rem 0 3.5rem; border-top: 1px solid var(--border); margin-top: 3rem; }
+    .footer-inner { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between; font-size: 0.88rem; color: var(--muted); }
+    .footer-inner a { color: var(--blue); }
+    @media (max-width: 640px) {
+      .stat-row { grid-template-columns: 1fr; }
+      .page-hero { padding: 2rem 0 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="Stop Measure B home">
+        <div class="brand-badge">NO</div>
+        <div class="brand-text">Stop Measure B<small>Contra Costa County</small></div>
+      </a>
+      <a class="back-link" href="index.html">&larr; Back to main page</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="page-hero">
+        <div class="eyebrow">Deep Dive</div>
+        <h1>Who&#8217;s Funding &#8220;Yes on B&#8221;?</h1>
+        <p class="deck">The pro-Measure B campaign has been funded entirely by two public employee union political action committees whose own mission statements describe their core purpose as raising member wages and benefits. As of April 7, 2026, the campaign had collected $125,000 &mdash; every dollar from union PACs representing county employees.</p>
+      </div>
+
+      <div class="stat-row">
+        <div class="stat-box">
+          <div class="num">$125K</div>
+          <div class="label">Total raised by Yes on B as of April 7, 2026</div>
+        </div>
+        <div class="stat-box">
+          <div class="num">100%</div>
+          <div class="label">Share from public employee union PACs</div>
+        </div>
+        <div class="stat-box">
+          <div class="num">2</div>
+          <div class="label">Donors on record &mdash; both representing county workers</div>
+        </div>
+      </div>
+
+      <div class="prose">
+
+        <h2>The Campaign Committee</h2>
+        <p>The official committee backing Measure B is registered with the Contra Costa County Elections Division as <strong>Safe and Healthy Contra Costa County</strong> (also referred to in later filings as <em>Yes on Measure B, Safe and Healthy Contra Costa County</em>). Its filings are publicly available through the county&#8217;s <a href="https://public.netfile.com/Pub2/AllFilingsByFiler.aspx?id=215686834&aid=CCC" target="_blank" rel="noopener">NetFile campaign finance portal</a>. As of the April 7 filing date, the committee had received three contributions, all from union PACs, totaling $125,000.</p>
+
+        <h2>The Donors</h2>
+        <table class="donor-table">
+          <thead>
+            <tr>
+              <th>Contributor</th>
+              <th>Date</th>
+              <th>Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>IFPTE Local 21 Issues PAC &mdash; San Francisco, CA<br><small style="color:var(--muted);">Committee ID #1362080</small></td>
+              <td>March 16, 2026</td>
+              <td>$30,000</td>
+            </tr>
+            <tr>
+              <td>AFSCME Council 57 Issues PAC &mdash; Norwalk, CA<br><small style="color:var(--muted);">Committee ID #1338455</small></td>
+              <td>March 30, 2026</td>
+              <td>$25,000</td>
+            </tr>
+            <tr>
+              <td>IFPTE Local 21 Issues PAC &mdash; San Francisco, CA<br><small style="color:var(--muted);">Committee ID #1362080</small></td>
+              <td>April 1, 2026</td>
+              <td>$70,000</td>
+            </tr>
+            <tr class="total-row">
+              <td colspan="2"><strong>Total raised</strong></td>
+              <td><strong>$125,000</strong></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Who Are These Unions?</h2>
+
+        <h3>IFPTE Local 21</h3>
+        <p>IFPTE Local 21 is the International Federation of Professional and Technical Engineers, Local 21, representing over 11,000 engineers, architects, planners, healthcare professionals, accountants, and other professional employees working for Bay Area cities, counties, school districts, and water districts &mdash; including Contra Costa County. Its <a href="https://ifpte21.org/our-mission/" target="_blank" rel="noopener">stated mission</a> is to help public sector workers &#8220;raise wages, benefits, working conditions.&#8221; IFPTE Local 21 is the sole largest donor to the Yes on B campaign, having contributed $100,000 across two filings.</p>
+
+        <h3>AFSCME Council 57</h3>
+        <p>AFSCME Council 57 is the American Federation of State, County and Municipal Employees, District Council 57, a Northern California labor organization with approximately 35,000 members across 26 local unions, including those covering Contra Costa County workers in health services, public works, and social services. Its <a href="https://www.afscme57.org/about" target="_blank" rel="noopener">about page</a> states that it was founded to &#8220;improve wages, benefits and working conditions through organizing, collective bargaining and political action.&#8221;</p>
+
+        <p>Both unions represent employees whose pay comes directly from the Contra Costa County general fund &mdash; the same fund that would receive every dollar collected under Measure B.</p>
+
+        <h2>Why It Matters</h2>
+        <p>Measure B is a general sales tax. Its authorizing ordinance, like Measure X before it, explicitly states that the proceeds are &#8220;solely for general governmental purposes and not for specific purposes.&#8221; There is no dedicated healthcare account, no dedicated public safety fund, no legal mechanism to prevent the revenue from being used for employee compensation. The county&#8217;s general fund is, primarily, a payroll fund: employee salaries and benefits represent the largest category of county expenditure by a wide margin.</p>
+
+        <p>The State Controller&#8217;s Office <a href="https://publicpay.ca.gov/Reports/Counties/Counties.aspx?entity=6" target="_blank" rel="noopener">public pay data</a> for 2024 shows that total Contra Costa County compensation exceeded $200,000 for 3,041 employees. Of those, 1,005 exceeded $300,000 and 252 exceeded $400,000. Since Measure X passed in 2020, county salaries and benefits have risen by 47.5% &mdash; a rate far exceeding both inflation and population growth.</p>
+
+        <p>The unions funding the Yes on B campaign exist, by their own description, to negotiate higher wages and better benefits for their members. When those same unions pour $125,000 into a ballot measure that would deliver unrestricted general fund revenue to the employer whose employees they represent, the financial interest at stake is direct and transparent. Voters considering Measure B should understand not just who is asking for more money, but who is paying to make the ask.</p>
+
+        <div class="callout">
+          <p>Measure B&#8217;s ballot argument in favor is signed by elected officials and community groups. But the money bankrolling the campaign comes exclusively from union PACs representing the employees who stand to benefit most directly from a larger county general fund. <strong>There are no individual donors, no business contributions, and no community fundraising on record as of April 7, 2026.</strong></p>
+        </div>
+
+        <h2>The Compensation Context</h2>
+        <p>Our ballot argument against Measure B notes that total county spending has risen from $4.51 billion in FY20-21 to $7.37 billion in FY25-26 &mdash; a 63.4% increase, more than three-and-a-half times the Bay Area CPI inflation rate over the same period, while population growth was essentially flat. A substantial share of that increase reflects the salary and benefit growth that IFPTE Local 21 and AFSCME Council 57 helped negotiate. Measure B would expand the revenue pool available to fund the next round of increases.</p>
+
+        <p>This is not an argument that county employees are overpaid or that their unions lack legitimate interests. It is an argument for transparency: when the question on the ballot is whether voters should pay more taxes, voters deserve to know that the campaign urging them to vote yes is funded by the employees who would benefit most from the answer being yes.</p>
+
+        <div class="source-box">
+          <strong>Primary sources:</strong> All contribution figures are drawn from FPPC Form 497 filings by Safe and Healthy Contra Costa County, available via the <a href="https://public.netfile.com/Pub2/AllFilingsByFiler.aspx?id=215686834&aid=CCC" target="_blank" rel="noopener">Contra Costa County NetFile portal</a>. Union mission language is quoted from <a href="https://ifpte21.org/our-mission/" target="_blank" rel="noopener">IFPTE Local 21&#8217;s mission page</a> and <a href="https://www.afscme57.org/about" target="_blank" rel="noopener">AFSCME Council 57&#8217;s about page</a>. Compensation data is from the California State Controller&#8217;s <a href="https://publicpay.ca.gov/Reports/Counties/Counties.aspx?entity=6" target="_blank" rel="noopener">Government Compensation in California database</a>.
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <span>Paid for by Contra Costa Taxpayers Association.</span>
+        <span>
+          <a href="index.html">StopMeasureB.com</a> &nbsp;&middot;&nbsp;
+          <a href="myths-facts.html">Myths v Facts</a> &nbsp;&middot;&nbsp;
+          <a href="county-reserves.html">County Reserves</a> &nbsp;&middot;&nbsp;
+          <a href="measure-x-history.html">Measure X History</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
