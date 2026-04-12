@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detenga la Medida B | Condado de Contra Costa</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23ffffff' stroke='%23c0392b' stroke-width='4'/%3E%3Ctext x='32' y='38' text-anchor='middle' font-size='30' font-family='Arial, Helvetica, sans-serif' font-weight='700' fill='%2310233f'%3EB%3C/text%3E%3Cline x1='16' y1='16' x2='48' y2='48' stroke='%23c0392b' stroke-width='6'/%3E%3C/svg%3E">
+  <meta name="description" content="Conozca los hechos sobre la Medida B del Condado de Contra Costa y por qué debe votar NO el 2 de junio de 2026." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #10233f; --blue: #1e4f8f; --gold: #f6c453;
+      --text: #18212f; --muted: #5f6b7a; --white: #ffffff;
+      --card: rgba(255,255,255,0.88); --border: rgba(16,35,63,0.12);
+      --shadow: 0 18px 40px rgba(16,35,63,0.12);
+      --radius: 22px; --max: 1180px; --red: #b42318; --green: #16794a;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(246,196,83,0.22), transparent 28%),
+        radial-gradient(circle at top right, rgba(90,149,230,0.14), transparent 26%),
+        linear-gradient(180deg, #f8fbff 0%, #eef5fd 42%, #ffffff 100%);
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(calc(100% - 2rem), var(--max)); margin: 0 auto; }
+    .site-header {
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: blur(12px);
+      background: rgba(255,255,255,0.93);
+      border-bottom: 2px solid rgba(180,35,24,0.14);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.7rem 0; flex-wrap: wrap; }
+    .brand { display: flex; align-items: center; gap: 0.9rem; font-weight: 800; color: var(--navy); }
+    .brand-badge {
+      width: 60px; height: 60px; border-radius: 16px; display: grid; place-items: center;
+      background: linear-gradient(135deg, #c0392b, #96281b); color: white;
+      box-shadow: 0 10px 28px rgba(192,57,43,0.35);
+      font-weight: 900; font-size: 1.55rem; font-family: 'Merriweather', Georgia, serif;
+    }
+    .brand-text { font-size: 1.1rem; }
+    .brand small { display: block; color: var(--muted); font-size: 0.78rem; font-weight: 600; }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 0.7rem; align-items: center; }
+    .nav-links a { color: var(--muted); font-weight: 600; font-size: 0.87rem; }
+    .nav-links a.cta {
+      color: var(--white); background: linear-gradient(135deg, #c0392b, #96281b);
+      padding: 0.7rem 1.05rem; border-radius: 999px; box-shadow: 0 8px 20px rgba(192,57,43,0.28);
+    }
+    .nav-links a.lang-link {
+      color: var(--blue); border: 1px solid rgba(30,79,143,0.25);
+      padding: 0.4rem 0.75rem; border-radius: 999px; font-size: 0.82rem;
+    }
+    .hero { padding: 4rem 0 3rem; }
+    .hero-inner { max-width: 760px; margin: 0 auto; text-align: center; }
+    .no-badge {
+      display: inline-grid; place-items: center;
+      width: 90px; height: 90px; border-radius: 50%;
+      background: linear-gradient(135deg, #c0392b, #96281b);
+      color: white; font-size: 2.2rem; font-weight: 900;
+      font-family: 'Merriweather', Georgia, serif;
+      box-shadow: 0 16px 40px rgba(192,57,43,0.35);
+      margin-bottom: 1.5rem;
+    }
+    h1 {
+      margin: 0.5rem 0 1rem;
+      font-family: 'Merriweather', Georgia, serif;
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      line-height: 1.1; color: var(--navy); letter-spacing: -0.02em;
+    }
+    .lead { font-size: 1.12rem; color: var(--muted); max-width: 600px; margin: 0 auto 2rem; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 0.9rem; justify-content: center; margin-top: 1.4rem; }
+    .button {
+      display: inline-flex; align-items: center; justify-content: center;
+      gap: 0.6rem; min-height: 52px; padding: 0.9rem 1.4rem;
+      border-radius: 999px; font-weight: 700; border: 0; cursor: pointer;
+      font-family: inherit; font-size: 1rem; text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .button:hover { transform: translateY(-1px); }
+    .button-danger { background: linear-gradient(135deg, #c0392b, #96281b); color: white; box-shadow: 0 14px 28px rgba(192,57,43,0.28); }
+    .button-primary { background: linear-gradient(135deg, var(--navy), var(--blue)); color: white; box-shadow: 0 14px 28px rgba(30,79,143,0.25); }
+    .button-secondary { background: rgba(255,255,255,0.9); color: var(--navy); border: 1px solid rgba(16,35,63,0.1); box-shadow: var(--shadow); }
+    .date-banner {
+      background: linear-gradient(135deg, var(--gold), #f0a500);
+      color: var(--navy); text-align: center;
+      padding: 0.85rem 1rem; font-weight: 700; font-size: 1.05rem;
+    }
+    section { padding: 2.5rem 0; }
+    .section-title { margin-bottom: 1.4rem; }
+    .section-title h2 {
+      margin: 0 0 0.4rem;
+      font-family: 'Merriweather', Georgia, serif;
+      font-size: clamp(1.7rem, 3vw, 2.4rem); color: var(--navy);
+    }
+    .section-title p { margin: 0; color: var(--muted); max-width: 44rem; }
+    .reasons-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.2rem; margin-top: 1.4rem; }
+    .reason-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); box-shadow: var(--shadow); padding: 1.5rem;
+    }
+    .reason-icon { font-size: 2rem; margin-bottom: 0.75rem; display: block; }
+    .reason-card h3 { margin: 0 0 0.6rem; font-size: 1.1rem; color: var(--navy); line-height: 1.25; }
+    .reason-card p { margin: 0; color: var(--muted); font-size: 0.96rem; }
+    .dark-section {
+      background: linear-gradient(145deg, #0d1f3a 0%, #1a3b6e 100%);
+      padding: 3rem 0;
+    }
+    .dark-section .section-title h2 { color: white; }
+    .dark-section .section-title p { color: rgba(255,255,255,0.65); }
+    .claim-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.1rem; margin-top: 1.4rem; }
+    .claim-card {
+      background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 20px; padding: 1.4rem;
+    }
+    .claim-label { font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold); margin-bottom: 0.5rem; }
+    .claim-card h3 { color: white; margin: 0 0 0.6rem; font-size: 1.05rem; line-height: 1.3; }
+    .claim-card p { color: rgba(255,255,255,0.78); margin: 0; font-size: 0.94rem; }
+    .links-section { padding: 2.5rem 0; }
+    .links-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; margin-top: 1.2rem; }
+    .link-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); box-shadow: var(--shadow); padding: 1.25rem;
+      display: flex; flex-direction: column;
+    }
+    .link-card h3 { margin: 0 0 0.5rem; font-size: 1rem; color: var(--navy); }
+    .link-card p { margin: 0 0 0.9rem; color: var(--muted); font-size: 0.91rem; flex: 1; }
+    .link-card a.go { color: var(--blue); font-weight: 700; font-size: 0.9rem; }
+    .footer { padding: 2rem 0 3rem; }
+    .footer-card {
+      display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+      padding: 1.1rem 1.2rem; background: rgba(255,255,255,0.78);
+      border: 1px solid rgba(16,35,63,0.08); border-radius: 20px; box-shadow: var(--shadow);
+      flex-wrap: wrap;
+    }
+    .disclaimer { font-size: 0.92rem; color: var(--muted); }
+    .footer-legal { text-align: center; margin-top: 0.65rem; font-size: 0.77rem; color: var(--muted); }
+    .footer-legal a { color: var(--muted); text-decoration: underline; text-underline-offset: 2px; }
+    @media (max-width: 640px) {
+      .hero { padding: 2.5rem 0 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="date-banner">♡ Elecciones del 2 de junio de 2026 &mdash; Su voto es importante
+  </div>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="/" aria-label="Stop Measure B">
+        <div class="brand-badge">NO</div>
+        <div class="brand-text">Detenga la Medida B<small>Condado de Contra Costa</small></div>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#razones">Por qu&eacute; votar NO</a>
+        <a href="#afirmaciones">Afirmaciones falsas</a>
+        <a href="#recursos">M&aacute;s informaci&oacute;n</a>
+        <a href="/" class="lang-link">&#127482;&#127480; English</a>
+        <a class="cta" href="#contacto">Voluntario</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-inner">
+          <div class="no-badge">NO</div>
+          <h1>Vote NO en la Medida B el 2 de junio</h1>
+          <p class="lead">
+            La Medida B aumentar&iacute;a el impuesto sobre las ventas en el Condado de Contra Costa en un 0.625% durante cinco a&ntilde;os &mdash; basada en proyecciones que el propio Consejo de Supervisores tuvo que corregir el mismo d&iacute;a en que vot&oacute;.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-danger" href="#razones">Por qu&eacute; votar NO</a>
+            <a class="button button-secondary" href="/myths-facts.html">Hechos vs. Afirmaciones (ingl&eacute;s)</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REASONS -->
+    <section id="razones">
+      <div class="container">
+        <div class="section-title">
+          <h2>Cuatro razones para votar NO en la Medida B</h2>
+          <p>Los hechos provienen de documentos oficiales del condado y reportes publicados.</p>
+        </div>
+        <div class="reasons-grid">
+
+          <div class="reason-card">
+            <span class="reason-icon">U0001f9fe</span>
+            <h3>Sus impuestos ya son suficientemente altos</h3>
+            <p>La Medida B a&ntilde;adir&iacute;a un 0.625% al impuesto sobre las ventas del condado &mdash; llevando la tasa total hasta <strong>10.875%</strong> en algunas ciudades de Contra Costa, una de las m&aacute;s altas de California. Y posiblemente habr&aacute; otro aumento de impuestos de transporte p&uacute;blico en la boleta de noviembre.</p>
+          </div>
+
+          <div class="reason-card">
+            <span class="reason-icon">U0001f6d2</span>
+            <h3>Afectar&aacute; lo que compra en la tienda</h3>
+            <p>Aunque los proponentes dicen que la Medida B no aumentar&aacute; el costo de los v&iacute;veres, muchos art&iacute;culos que las familias compran regularmente s&iacute; est&aacute;n sujetos al impuesto: refrescos con gas, comida para mascotas, jab&oacute;n y productos de cuidado personal, y alimentos calientes preparados. La Medida B aumentar&iacute;a el costo de todos esos art&iacute;culos.</p>
+          </div>
+
+          <div class="reason-card">
+            <span class="reason-icon">U0001f4c9</span>
+            <h3>Los n&uacute;meros no cuadran</h3>
+            <p>El condado originally afirm&oacute; que enfrentaba p&eacute;rdidas anuales de $307 millones. Ese n&uacute;mero era incorrecto &mdash; y fue corregido el mismo d&iacute;a en que el Consejo vot&oacute; para poner la Medida B en la boleta. La cifra correcta es un estimado acumulado de cuatro a&ntilde;os de $239 millones: entre 7 y 8 veces m&aacute;s peque&ntilde;o de lo que se present&oacute; originalmente.</p>
+          </div>
+
+          <div class="reason-card">
+            <span class="reason-icon">⏰</span>
+            <h3>El momento no tiene sentido</h3>
+            <p>La Medida B comenzar&iacute;a a recaudar impuestos en octubre de 2026, un a&ntilde;o completo antes de que la mayor&iacute;a de los cambios federales de Medicaid entren en vigor. El propio presupuesto del condado muestra <strong>cero</strong> impacto federal en el a&ntilde;o fiscal 2025-26. &iquest;Por qu&eacute; comprometer cinco a&ntilde;os de impuestos m&aacute;s altos antes de conocer el panorama completo?</p>
+          </div>
+
+          <div class="reason-card">
+            <span class="reason-icon">U0001f512</span>
+            <h3>Es un impuesto general &mdash; sin garant&iacute;as</h3>
+            <p>La Medida B es un impuesto general. Los ingresos van al fondo general del condado sin ning&uacute;n compromiso legal. Ni un centavo est&aacute; legalmente garantizado para atenci&oacute;n m&eacute;dica, el hospital del condado, o cualquier servicio espec&iacute;fico. Los supervisores podr&iacute;an gastar cada d&oacute;lar en cualquier otra cosa.</p>
+          </div>
+
+          <div class="reason-card">
+            <span class="reason-icon">⚖️</span>
+            <h3>Un tribunal ya encontr&oacute; que el lenguaje de la boleta era enga&ntilde;oso</h3>
+            <p>Un juez del Tribunal Superior de Contra Costa ya orden&oacute; que se revisara la pregunta de la boleta de la Medida B, dictaminando que el lenguaje original era &ldquo;argumentativo y perjudicial.&rdquo; Un segundo caso judicial (N26-0554) ahora impugna afirmaciones falsas en los argumentos escritos de los proponentes.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FALSE CLAIMS -->
+    <section class="dark-section" id="afirmaciones">
+      <div class="container">
+        <div class="section-title">
+          <h2>Afirmaciones falsas en los argumentos oficiales de la boleta</h2>
+          <p>Los proponentes &mdash; incluidos miembros del Consejo de Supervisores &mdash; presentaron argumentos que contienen afirmaciones verificablemente falsas.</p>
+        </div>
+        <div class="claim-grid">
+
+          <div class="claim-card">
+            <div class="claim-label">Afirmaci&oacute;n falsa</div>
+            <h3>&ldquo;M&aacute;s de 90,000 personas perder&aacute;n el seguro de salud&rdquo;</h3>
+            <p>No existe evidencia de que esta cantidad de personas <em>definitivamente</em> perder&aacute; cobertura. Los cambios de elegibilidad de Medi-Cal son proyecciones contingentes que dependen de decisiones legislativas futuras que a&uacute;n no han sido finalizadas. La palabra honesta es &ldquo;podr&iacute;an&rdquo;, no &ldquo;perder&aacute;n&rdquo;.</p>
+          </div>
+
+          <div class="claim-card">
+            <div class="claim-label">Afirmaci&oacute;n engañosa</div>
+            <h3>&ldquo;La Medida B no aumentar&aacute; el costo de los v&iacute;veres&rdquo;</h3>
+            <p>Muchos art&iacute;culos que los compradores adquieren en el supermercado ya est&aacute;n sujetos al impuesto sobre las ventas: refrescos con gas, comida para mascotas, jab&oacute;n, y alimentos calientes preparados. La Medida B aumentar&iacute;a el impuesto sobre todos ellos.</p>
+          </div>
+
+          <div class="claim-card">
+            <div class="claim-label">Afirmaci&oacute;n falsa</div>
+            <h3>&ldquo;Nuestro sistema de salud perder&aacute; m&aacute;s de $1.5 mil millones en los pr&oacute;ximos cinco a&ntilde;os&rdquo;</h3>
+            <p>Las propias proyecciones corregidas del condado muestran un impacto acumulado de seis a&ntilde;os de $509 millones &mdash; menos de un tercio de la cifra que aparece en el argumento de la boleta.</p>
+          </div>
+
+          <div class="claim-card">
+            <div class="claim-label">Afirmaci&oacute;n falsa</div>
+            <h3>&ldquo;La Medida B mantendr&aacute; abierto y funcionando el Centro M&eacute;dico del Condado de Contra Costa&rdquo;</h3>
+            <p>La propia ordenanza de la Medida B dice que el impuesto &ldquo;se promulga exclusivamente para prop&oacute;sitos gubernamentales generales del Condado y no para prop&oacute;sitos espec&iacute;ficos.&rdquo; Ni un centavo est&aacute; legalmente comprometido con el hospital.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- MORE RESOURCES -->
+    <section class="links-section" id="recursos">
+      <div class="container">
+        <div class="section-title">
+          <h2>M&aacute;s informaci&oacute;n (en ingl&eacute;s)</h2>
+          <p>Nuestro sitio completo en ingl&eacute;s tiene an&aacute;lisis detallados, documentos oficiales del condado, y herramientas para votantes.</p>
+        </div>
+        <div class="links-grid">
+
+          <div class="link-card">
+            <h3>Mitos vs. Hechos</h3>
+            <p>Discusi&oacute;n completa de las afirmaciones del condado sobre los fondos federales, los recortes DSH, el calendario, y las alternativas &mdash; con documentos oficiales como evidencia.</p>
+            <a class="go" href="/myths-facts.html">Leer Mitos vs. Hechos &#x2192;</a>
+          </div>
+
+          <div class="link-card">
+            <h3>Las Reservas del Condado</h3>
+            <p>Contra Costa tiene $1.1 mil millones en fondos generales sin reservar &mdash; m&aacute;s del triple del nivel recomendado. El condado podr&iacute;a usar reservas para cubrir cualquier p&eacute;rdida de financiamiento real sin aumentar el impuesto sobre las ventas.</p>
+            <a class="go" href="/county-reserves.html">Ver los n&uacute;meros de reservas &#x2192;</a>
+          </div>
+
+          <div class="link-card">
+            <h3>La P&eacute;rdida de Ingresos que Se Reduce</h3>
+            <p>La cifra usada para justificar la Medida B ha sido revisada a la baja dos veces. Siga c&oacute;mo el n&uacute;mero ha cambiado.</p>
+            <a class="go" href="/shrinking-revenue-loss.html">Seguir las revisiones &#x2192;</a>
+          </div>
+
+          <div class="link-card">
+            <h3>&iquest;Qui&eacute;n financia el S&iacute; en la Medida B?</h3>
+            <p>La campa&ntilde;a pro-Medida B ha recaudado $125,000 &mdash; el 100% de dos PACs de sindicatos de empleados p&uacute;blicos.</p>
+            <a class="go" href="/yes-on-b-funding.html">Ver los donantes &#x2192;</a>
+          </div>
+
+          <div class="link-card">
+            <h3>El &uacute;ltimo aumento de impuestos: Medida X</h3>
+            <p>El impuesto sobre las ventas de la Medida X de 2020 recaud&oacute; mucho m&aacute;s de lo proyectado. Ahora quieren otro.</p>
+            <a class="go" href="/measure-x-history.html">Leer la historia de la Medida X &#x2192;</a>
+          </div>
+
+          <div class="link-card">
+            <h3>P&aacute;gina principal (English)</h3>
+            <p>Acceda a todas las herramientas para votantes, incluyendo la consulta de tasas de impuestos por ciudad y el an&aacute;lisis completo de los recortes federales.</p>
+            <a class="go" href="/">Ir a StopMeasureB.com &#x2192;</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contacto" style="padding: 2.5rem 0;">
+      <div class="container">
+        <div class="section-title">
+          <h2>&iquest;Quiere ayudar?</h2>
+          <p>Si desea ser voluntario o tiene preguntas, env&iacute;enos un correo electr&oacute;nico.</p>
+        </div>
+        <div style="background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); padding: 1.75rem; max-width: 520px;">
+          <p style="color: var(--muted); margin-top: 0;">Puede contactarnos directamente por correo electr&oacute;nico en: <a href="mailto:marc@cocotax.org" style="color: var(--blue); font-weight: 700;">marc@cocotax.org</a></p>
+          <p style="color: var(--muted);">Tambi&eacute;n puede visitar nuestra p&aacute;gina principal en ingl&eacute;s para registrarse como voluntario de la campa&ntilde;a.</p>
+          <a class="button button-primary" href="/#volunteer">Formulario de voluntario &#x2192;</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-card">
+        <div><strong>Detenga la Medida B</strong><div class="disclaimer">Informaci&oacute;n para los votantes del Condado de Contra Costa.</div></div>
+        <div class="disclaimer">Pagado por la Asociaci&oacute;n de Contribuyentes de Contra Costa.<br>(Contra Costa Taxpayers Association)</div>
+      </div>
+      <div class="footer-legal">
+        <a href="/privacy-policy.html">Pol&iacute;tica de Privacidad</a>
+        &nbsp;&middot;&nbsp;
+        <a href="/terms-of-service.html">T&eacute;rminos de Servicio</a>
+        &nbsp;&middot;&nbsp;
+        <a href="/">English</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
