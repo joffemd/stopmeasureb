@@ -10,141 +10,83 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --navy: #10233f; --blue: #1e4f8f; --gold: #f6c453;
-      --text: #18212f; --muted: #5f6b7a; --white: #ffffff;
-      --card: rgba(255,255,255,0.88); --border: rgba(16,35,63,0.12);
-      --shadow: 0 18px 40px rgba(16,35,63,0.12);
-      --radius: 22px; --max: 1180px; --red: #b42318; --green: #16794a;
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: 'Inter', system-ui, -apple-system, sans-serif;
-      color: var(--text);
-      background: radial-gradient(circle at top left, rgba(246,196,83,0.22), transparent 28%),
-        radial-gradient(circle at top right, rgba(90,149,230,0.14), transparent 26%),
-        linear-gradient(180deg, #f8fbff 0%, #eef5fd 42%, #ffffff 100%);
-      line-height: 1.6;
-    }
-    a { color: inherit; text-decoration: none; }
-    .container { width: min(calc(100% - 2rem), var(--max)); margin: 0 auto; }
-    .site-header { position: sticky; top: 0; z-index: 50; backdrop-filter: blur(12px); background: rgba(255,255,255,0.93); border-bottom: 2px solid rgba(180,35,24,0.14); }
-    .nav { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.7rem 0; }
-    .brand { display: flex; align-items: center; gap: 0.9rem; font-weight: 800; color: var(--navy); }
-    .brand-badge { width: 60px; height: 60px; border-radius: 16px; display: grid; place-items: center; background: linear-gradient(135deg, #c0392b, #96281b); color: white; box-shadow: 0 10px 28px rgba(192,57,43,0.35); font-weight: 900; font-size: 1.55rem; font-family: 'Merriweather', Georgia, serif; }
-    .brand-text { font-size: 1.1rem; }
-    .brand small { display: block; color: var(--muted); font-size: 0.78rem; font-weight: 600; }
-    .nav-links { display: flex; flex-wrap: wrap; gap: 0.7rem; align-items: center; }
-    .nav-links a { color: var(--muted); font-weight: 600; font-size: 0.87rem; }
-    .nav-links a.lang { color: var(--blue); border: 1px solid rgba(30,79,143,0.2); padding: 0.4rem 0.75rem; border-radius: 999px; font-weight: 700; }
-    .nav-links a.cta { color: var(--white); background: linear-gradient(135deg, #c0392b, #96281b); padding: 0.7rem 1.05rem; border-radius: 999px; box-shadow: 0 8px 20px rgba(192,57,43,0.28); }
-    .dropdown { position: relative; }
-    .dropdown-toggle { cursor: pointer; color: var(--muted); font-weight: 600; font-size: 0.87rem; user-select: none; }
-    .dropdown-menu { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: white; border-radius: 14px; padding: 0.6rem 0.4rem 0.4rem; box-shadow: 0 8px 28px rgba(16,35,63,0.16); border: 1px solid rgba(16,35,63,0.09); min-width: 240px; z-index: 200; flex-direction: column; gap: 0.05rem; }
-    .dropdown:hover .dropdown-menu, .dropdown:focus-within .dropdown-menu { display: flex; }
-    .dropdown-menu a { display: block; padding: 0.55rem 0.85rem; border-radius: 10px; color: var(--text) !important; font-size: 0.85rem; font-weight: 600; transition: background 0.15s; }
-    .dropdown-menu a:hover { background: #eef5fd; color: var(--navy) !important; }
-    .dropdown-menu a.active { background: #eef5fd; color: var(--navy) !important; }
-
-    /* PAGE HERO */
-    .page-hero { padding: 3.5rem 0 2.5rem; }
-    .breadcrumb { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.9rem; }
-    .breadcrumb a { color: var(--blue); font-weight: 600; }
-    h1 { margin: 0 0 1rem; font-family: 'Merriweather', Georgia, serif; font-size: clamp(2rem, 4.5vw, 3.4rem); line-height: 1.1; color: var(--navy); letter-spacing: -0.02em; }
-    .lead { max-width: 48rem; font-size: 1.08rem; color: var(--muted); margin: 0 0 1.4rem; }
-    .source-links { display: flex; flex-wrap: wrap; gap: 0.65rem; margin-top: 1.25rem; }
-    .source-pill { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.45rem 0.85rem; border-radius: 999px; background: rgba(255,255,255,0.9); border: 1px solid var(--border); font-size: 0.83rem; font-weight: 600; color: var(--blue); box-shadow: 0 4px 12px rgba(16,35,63,0.07); }
-    .source-pill:hover { background: #eef5fd; }
-
-    section { padding: 2rem 0; }
-    .section-title { margin-bottom: 1.25rem; }
-    .section-title h2 { margin: 0 0 0.35rem; font-family: 'Merriweather', Georgia, serif; font-size: clamp(1.6rem, 3vw, 2.3rem); color: var(--navy); }
-    .section-title p { margin: 0; color: var(--muted); max-width: 52rem; }
-
-    /* STAT STRIP */
-    .stat-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 1.2rem; }
-    .stat-box { background: var(--card); border: 1px solid var(--border); border-radius: 20px; box-shadow: var(--shadow); padding: 1.25rem 1.35rem; }
-    .stat-box .label { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--muted); margin-bottom: 0.35rem; }
-    .stat-box .value { font-size: clamp(1.5rem, 2.8vw, 2rem); font-weight: 800; color: var(--navy); line-height: 1.1; }
-    .stat-box .sub { font-size: 0.82rem; color: var(--muted); margin-top: 0.2rem; }
-
-    /* TABLE */
-    .table-wrap { overflow-x: auto; margin-top: 1.2rem; border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid var(--border); background: var(--card); }
-    table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
-    thead th { background: linear-gradient(135deg, var(--navy), var(--blue)); color: white; padding: 0.85rem 1rem; text-align: left; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; white-space: nowrap; }
-    thead th.num { text-align: right; }
-    tbody tr:nth-child(even) { background: rgba(30,79,143,0.03); }
-    tbody tr:hover { background: rgba(30,79,143,0.07); }
-    tbody td { padding: 0.7rem 1rem; border-bottom: 1px solid rgba(16,35,63,0.06); color: var(--text); vertical-align: middle; }
-    tbody td.num { text-align: right; font-variant-numeric: tabular-nums; color: var(--navy); font-weight: 600; }
-    tbody td.rank { font-weight: 800; color: var(--muted); font-size: 0.78rem; }
-    tbody td.name { font-weight: 700; color: var(--navy); }
-    tbody td.title { color: var(--muted); font-size: 0.84rem; }
-    .tbl-note { font-size: 0.82rem; color: var(--muted); margin-top: 0.6rem; }
-
-    /* BAR CHART */
-    .chart-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); padding: 1.5rem; margin-top: 1.2rem; }
-    .chart-card h3 { margin: 0 0 1.1rem; font-family: 'Merriweather', Georgia, serif; font-size: 1.15rem; color: var(--navy); }
-    .bar-chart { display: flex; flex-direction: column; gap: 0.65rem; }
-    .bar-row { display: grid; grid-template-columns: 110px 1fr 60px; align-items: center; gap: 0.75rem; }
-    .bar-label { font-size: 0.83rem; font-weight: 700; color: var(--muted); text-align: right; }
-    .bar-track { background: #e8f0fb; border-radius: 999px; height: 28px; overflow: hidden; }
-    .bar-fill { height: 100%; border-radius: 999px; background: linear-gradient(135deg, var(--blue), #4a90d9); display: flex; align-items: center; padding-left: 0.6rem; font-size: 0.78rem; font-weight: 700; color: white; white-space: nowrap; transition: width 0.4s ease; }
-    .bar-count { font-size: 0.83rem; font-weight: 700; color: var(--navy); text-align: right; }
-
-    /* DARK SECTION */
-    .dark-section { background: linear-gradient(145deg, #0d1f3a 0%, #1a3b6e 100%); padding: 3.5rem 0; position: relative; overflow: hidden; }
-    .dark-section::before { content: ''; position: absolute; top: -80px; right: -80px; width: 350px; height: 350px; border-radius: 50%; background: rgba(246,196,83,0.07); pointer-events: none; }
-    .dark-section .section-title h2 { color: white; }
-    .dark-section .section-title p { color: rgba(255,255,255,0.66); }
-    .mou-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 1.5rem; }
-    .mou-card { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.13); border-radius: 24px; padding: 1.6rem; }
-    .mou-card .union-tag { font-size: 0.74rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold); margin-bottom: 0.55rem; }
-    .mou-card h3 { color: white; margin: 0 0 0.7rem; font-size: 1.05rem; line-height: 1.3; }
-    .mou-card ul { margin: 0; padding-left: 1.1rem; color: rgba(255,255,255,0.78); font-size: 0.92rem; }
-    .mou-card ul li + li { margin-top: 0.4rem; }
-    .mou-card a.detail-link { display: inline-block; margin-top: 0.9rem; color: var(--gold); font-weight: 700; font-size: 0.88rem; text-decoration: underline; text-underline-offset: 3px; }
-    .raise-badge { display: inline-block; background: rgba(246,196,83,0.18); border: 1px solid rgba(246,196,83,0.35); color: var(--gold); font-weight: 800; font-size: 0.9rem; padding: 0.2rem 0.55rem; border-radius: 8px; margin-bottom: 0.65rem; }
-
-    /* PENSION */
-    .pension-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 1.2rem; }
-    .pension-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); padding: 1.5rem; }
-    .pension-card h3 { margin: 0 0 0.65rem; color: var(--navy); font-size: 1.1rem; font-family: 'Merriweather', Georgia, serif; }
-    .pension-card p { color: var(--muted); margin: 0 0 0.65rem; font-size: 0.95rem; }
-    .pension-card ul { margin: 0; padding-left: 1.1rem; color: var(--muted); font-size: 0.94rem; }
-    .pension-card ul li + li { margin-top: 0.4rem; }
-    .pension-card.highlight { background: linear-gradient(145deg, rgba(16,35,63,0.97), rgba(30,79,143,0.95)); color: white; }
-    .pension-card.highlight h3 { color: white; }
-    .pension-card.highlight p, .pension-card.highlight li { color: rgba(255,255,255,0.82); }
-
-    .back-link { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--blue); font-weight: 700; font-size: 0.9rem; margin-bottom: 1.5rem; }
-    .back-link:hover { color: var(--navy); }
-
-    .footer { padding: 2.25rem 0 3rem; color: var(--muted); }
-    .footer-card { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.1rem 1.2rem; background: rgba(255,255,255,0.78); border: 1px solid rgba(16,35,63,0.08); border-radius: 20px; box-shadow: var(--shadow); }
-    .disclaimer { font-size: 0.92rem; color: var(--muted); }
-    .footer-legal { text-align: center; margin-top: 0.65rem; font-size: 0.77rem; color: var(--muted); }
-    .footer-legal a { color: var(--muted); text-decoration: underline; text-underline-offset: 2px; }
-
-    @media (max-width: 960px) {
-      .stat-strip { grid-template-columns: repeat(2, 1fr); }
-      .mou-grid, .pension-grid { grid-template-columns: 1fr; }
-      .nav { align-items: flex-start; flex-direction: column; }
-      .footer-card { flex-direction: column; align-items: flex-start; }
-      .dropdown-menu { left: 0; transform: none; }
-    }
-    @media (max-width: 640px) {
-      .stat-strip { grid-template-columns: 1fr 1fr; }
-      .bar-row { grid-template-columns: 80px 1fr 50px; }
-      table { font-size: 0.8rem; }
-      thead th, tbody td { padding: 0.6rem 0.7rem; }
-    }
+    :root{--navy:#10233f;--blue:#1e4f8f;--gold:#f6c453;--text:#18212f;--muted:#5f6b7a;--white:#ffffff;--card:rgba(255,255,255,0.88);--border:rgba(16,35,63,0.12);--shadow:0 18px 40px rgba(16,35,63,0.12);--radius:22px;--max:1180px;--red:#b42318;--green:#16794a}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}
+    body{margin:0;font-family:'Inter',system-ui,-apple-system,sans-serif;color:var(--text);background:radial-gradient(circle at top left,rgba(246,196,83,0.22),transparent 28%),radial-gradient(circle at top right,rgba(90,149,230,0.14),transparent 26%),linear-gradient(180deg,#f8fbff 0%,#eef5fd 42%,#ffffff 100%);line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    .container{width:min(calc(100% - 2rem),var(--max));margin:0 auto}
+    .site-header{position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);background:rgba(255,255,255,0.93);border-bottom:2px solid rgba(180,35,24,0.14)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:0.7rem 0}
+    .brand{display:flex;align-items:center;gap:0.9rem;font-weight:800;color:var(--navy)}
+    .brand-badge{width:60px;height:60px;border-radius:16px;display:grid;place-items:center;background:linear-gradient(135deg,#c0392b,#96281b);color:white;box-shadow:0 10px 28px rgba(192,57,43,0.35);font-weight:900;font-size:1.55rem;font-family:'Merriweather',Georgia,serif}
+    .brand-text{font-size:1.1rem}.brand small{display:block;color:var(--muted);font-size:0.78rem;font-weight:600}
+    .nav-links{display:flex;flex-wrap:wrap;gap:0.7rem;align-items:center}
+    .nav-links a{color:var(--muted);font-weight:600;font-size:0.87rem}
+    .nav-links a.lang{color:var(--blue);border:1px solid rgba(30,79,143,0.2);padding:0.4rem 0.75rem;border-radius:999px;font-weight:700}
+    .nav-links a.cta{color:var(--white);background:linear-gradient(135deg,#c0392b,#96281b);padding:0.7rem 1.05rem;border-radius:999px;box-shadow:0 8px 20px rgba(192,57,43,0.28)}
+    .dropdown{position:relative}
+    .dropdown-toggle{cursor:pointer;color:var(--muted);font-weight:600;font-size:0.87rem;user-select:none}
+    .dropdown-menu{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);background:white;border-radius:14px;padding:0.6rem 0.4rem 0.4rem;box-shadow:0 8px 28px rgba(16,35,63,0.16);border:1px solid rgba(16,35,63,0.09);min-width:240px;z-index:200;flex-direction:column;gap:0.05rem}
+    .dropdown:hover .dropdown-menu,.dropdown:focus-within .dropdown-menu{display:flex}
+    .dropdown-menu a{display:block;padding:0.55rem 0.85rem;border-radius:10px;color:var(--text)!important;font-size:0.85rem;font-weight:600;transition:background 0.15s}
+    .dropdown-menu a:hover,.dropdown-menu a.active{background:#eef5fd;color:var(--navy)!important}
+    .page-hero{padding:3.5rem 0 2.5rem}.breadcrumb{font-size:0.85rem;color:var(--muted);margin-bottom:0.9rem}.breadcrumb a{color:var(--blue);font-weight:600}
+    h1{margin:0 0 1rem;font-family:'Merriweather',Georgia,serif;font-size:clamp(2rem,4.5vw,3.4rem);line-height:1.1;color:var(--navy);letter-spacing:-0.02em}
+    .lead{max-width:48rem;font-size:1.08rem;color:var(--muted);margin:0 0 1.4rem}
+    .source-links{display:flex;flex-wrap:wrap;gap:0.65rem;margin-top:1.25rem}
+    .source-pill{display:inline-flex;align-items:center;gap:0.4rem;padding:0.45rem 0.85rem;border-radius:999px;background:rgba(255,255,255,0.9);border:1px solid var(--border);font-size:0.83rem;font-weight:600;color:var(--blue);box-shadow:0 4px 12px rgba(16,35,63,0.07)}
+    .source-pill:hover{background:#eef5fd}
+    section{padding:2rem 0}.section-title{margin-bottom:1.25rem}
+    .section-title h2{margin:0 0 0.35rem;font-family:'Merriweather',Georgia,serif;font-size:clamp(1.6rem,3vw,2.3rem);color:var(--navy)}
+    .section-title p{margin:0;color:var(--muted);max-width:52rem}
+    .stat-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:1.2rem}
+    .stat-box{background:var(--card);border:1px solid var(--border);border-radius:20px;box-shadow:var(--shadow);padding:1.25rem 1.35rem}
+    .stat-box .label{font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;color:var(--muted);margin-bottom:0.35rem}
+    .stat-box .value{font-size:clamp(1.5rem,2.8vw,2rem);font-weight:800;color:var(--navy);line-height:1.1}
+    .stat-box .sub{font-size:0.82rem;color:var(--muted);margin-top:0.2rem}
+    .table-wrap{overflow-x:auto;margin-top:1.2rem;border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid var(--border);background:var(--card)}
+    table{width:100%;border-collapse:collapse;font-size:0.88rem}
+    thead th{background:linear-gradient(135deg,var(--navy),var(--blue));color:white;padding:0.85rem 1rem;text-align:left;font-weight:700;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.05em;white-space:nowrap}
+    thead th.num{text-align:right}
+    tbody tr:nth-child(even){background:rgba(30,79,143,0.03)}
+    tbody tr:hover{background:rgba(30,79,143,0.07)}
+    tbody td{padding:0.7rem 1rem;border-bottom:1px solid rgba(16,35,63,0.06);color:var(--text);vertical-align:middle}
+    tbody td.num{text-align:right;font-variant-numeric:tabular-nums;color:var(--navy);font-weight:600}
+    tbody td.rank{font-weight:800;color:var(--muted);font-size:0.78rem}
+    tbody td.name{font-weight:700;color:var(--navy)}
+    tbody td.title{color:var(--muted);font-size:0.84rem}
+    .tbl-note{font-size:0.82rem;color:var(--muted);margin-top:0.6rem}
+    .dark-section{background:linear-gradient(145deg,#0d1f3a 0%,#1a3b6e 100%);padding:3.5rem 0;position:relative;overflow:hidden}
+    .dark-section::before{content:'';position:absolute;top:-80px;right:-80px;width:350px;height:350px;border-radius:50%;background:rgba(246,196,83,0.07);pointer-events:none}
+    .dark-section .section-title h2{color:white}
+    .dark-section .section-title p{color:rgba(255,255,255,0.66)}
+    .mou-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:1.5rem}
+    .mou-card{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.13);border-radius:24px;padding:1.6rem}
+    .mou-card .union-tag{font-size:0.74rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--gold);margin-bottom:0.55rem}
+    .mou-card h3{color:white;margin:0 0 0.7rem;font-size:1.05rem;line-height:1.3}
+    .mou-card ul{margin:0;padding-left:1.1rem;color:rgba(255,255,255,0.78);font-size:0.92rem}
+    .mou-card ul li+li{margin-top:0.4rem}
+    .mou-card a.detail-link{display:inline-block;margin-top:0.9rem;color:var(--gold);font-weight:700;font-size:0.88rem;text-decoration:underline;text-underline-offset:3px}
+    .raise-badge{display:inline-block;background:rgba(246,196,83,0.18);border:1px solid rgba(246,196,83,0.35);color:var(--gold);font-weight:800;font-size:0.9rem;padding:0.2rem 0.55rem;border-radius:8px;margin-bottom:0.65rem}
+    .pension-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:1.2rem}
+    .pension-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:1.5rem}
+    .pension-card h3{margin:0 0 0.65rem;color:var(--navy);font-size:1.1rem;font-family:'Merriweather',Georgia,serif}
+    .pension-card p{color:var(--muted);margin:0 0 0.65rem;font-size:0.95rem}
+    .pension-card ul{margin:0;padding-left:1.1rem;color:var(--muted);font-size:0.94rem}
+    .pension-card ul li+li{margin-top:0.4rem}
+    .pension-card.highlight{background:linear-gradient(145deg,rgba(16,35,63,0.97),rgba(30,79,143,0.95));color:white}
+    .pension-card.highlight h3{color:white}
+    .pension-card.highlight p,.pension-card.highlight li{color:rgba(255,255,255,0.82)}
+    .footer{padding:2.25rem 0 3rem;color:var(--muted)}
+    .footer-card{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.1rem 1.2rem;background:rgba(255,255,255,0.78);border:1px solid rgba(16,35,63,0.08);border-radius:20px;box-shadow:var(--shadow)}
+    .disclaimer{font-size:0.92rem;color:var(--muted)}
+    .footer-legal{text-align:center;margin-top:0.65rem;font-size:0.77rem;color:var(--muted)}
+    .footer-legal a{color:var(--muted);text-decoration:underline;text-underline-offset:2px}
+    @media(max-width:960px){.stat-strip{grid-template-columns:repeat(2,1fr)}.mou-grid,.pension-grid{grid-template-columns:1fr}.nav{align-items:flex-start;flex-direction:column}.footer-card{flex-direction:column;align-items:flex-start}.dropdown-menu{left:0;transform:none}}
+    @media(max-width:640px){.stat-strip{grid-template-columns:1fr 1fr}table{font-size:0.8rem}thead th,tbody td{padding:0.6rem 0.7rem}}
   </style>
 </head>
 <body>
-
 <header class="site-header">
   <div class="container nav">
     <a class="brand" href="index.html" aria-label="Stop Measure B home">
@@ -173,7 +115,6 @@
     </nav>
   </div>
 </header>
-
 <main>
   <section class="page-hero">
     <div class="container">
@@ -189,8 +130,6 @@
       <p style="font-size:0.83rem;color:var(--muted);margin-top:1rem;"><strong>Note on data sources:</strong> Transparent California reports calendar-year compensation; the California State Controller's payroll data uses the county's fiscal year (July 1 to June 30). The two datasets will not reconcile precisely for this reason. Both are legitimate primary sources drawn from official county payroll records.</p>
     </div>
   </section>
-
-  <!-- SUMMARY STATS -->
   <section id="summary">
     <div class="container">
       <div class="section-title">
@@ -198,31 +137,13 @@
         <p>Statistics below cover employees with base pay of $50,000 or more -- a proxy for full-time, full-year employees. This yields approximately 9,471 workers out of 12,541 records in the Transparent California dataset. Part-time, per-diem, and seasonal employees are excluded from the summary figures but are present in the top-25 table if their total compensation ranked highly.</p>
       </div>
       <div class="stat-strip">
-        <div class="stat-box">
-          <div class="label">Full-time employees (est.)</div>
-          <div class="value">9,471</div>
-          <div class="sub">Base pay &ge; $50,000 in 2024</div>
-        </div>
-        <div class="stat-box">
-          <div class="label">Median total pay &amp; benefits</div>
-          <div class="value">$150,771</div>
-          <div class="sub">Includes salary, overtime, and benefits</div>
-        </div>
-        <div class="stat-box">
-          <div class="label">Median base pay</div>
-          <div class="value">$99,372</div>
-          <div class="sub">Mean base pay: $110,878</div>
-        </div>
-        <div class="stat-box">
-          <div class="label">Total payroll cost</div>
-          <div class="value">$1.696B</div>
-          <div class="sub">Incl. $86.7M in overtime pay</div>
-        </div>
+        <div class="stat-box"><div class="label">Full-time employees (est.)</div><div class="value">9,471</div><div class="sub">Base pay &ge; $50,000 in 2024</div></div>
+        <div class="stat-box"><div class="label">Median total pay &amp; benefits</div><div class="value">$150,771</div><div class="sub">Includes salary, overtime, and benefits</div></div>
+        <div class="stat-box"><div class="label">Median base pay</div><div class="value">$99,372</div><div class="sub">Mean base pay: $110,878</div></div>
+        <div class="stat-box"><div class="label">Total payroll cost</div><div class="value">$1.696B</div><div class="sub">Incl. $86.7M in overtime pay</div></div>
       </div>
     </div>
   </section>
-
-  <!-- TOP 25 TABLE -->
   <section id="top25">
     <div class="container">
       <div class="section-title">
@@ -231,17 +152,7 @@
       </div>
       <div class="table-wrap">
         <table>
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Employee</th>
-              <th>Job Title</th>
-              <th class="num">Regular Pay</th>
-              <th class="num">Total Pay</th>
-              <th class="num">Benefits</th>
-              <th class="num">Total Pay &amp; Benefits</th>
-            </tr>
-          </thead>
+          <thead><tr><th>#</th><th>Employee</th><th>Job Title</th><th class="num">Regular Pay</th><th class="num">Total Pay</th><th class="num">Benefits</th><th class="num">Total Pay &amp; Benefits</th></tr></thead>
           <tbody>
             <tr><td class="rank">1</td><td class="name">Ritu Malik</td><td class="title">Emergency Medicine-Exempt</td><td class="num">$324,703</td><td class="num">$622,138</td><td class="num">$127,831</td><td class="num">$749,969</td></tr>
             <tr><td class="rank">2</td><td class="name">Neil Jayasekera</td><td class="title">Emergency Medicine-Exempt</td><td class="num">$324,703</td><td class="num">$556,663</td><td class="num">$128,679</td><td class="num">$685,342</td></tr>
@@ -274,54 +185,6 @@
       <p class="tbl-note">Source: <a href="https://transparentcalifornia.com/salaries/contra-costa-county/" target="_blank" rel="noopener" style="color:var(--blue);font-weight:600;">Transparent California</a>, calendar year 2024. "Regular Pay" is base salary as reported. "Total Pay" includes base, overtime, and other pay. "Benefits" includes the county's cost for retirement, health, and other benefits. Figures may differ from the California State Controller's fiscal-year data for the reasons described above.</p>
     </div>
   </section>
-
-  <!-- DISTRIBUTION CHART -->
-  <section id="distribution">
-    <div class="container">
-      <div class="section-title">
-        <h2>Base pay distribution (full-time employees)</h2>
-        <p>Among the approximately 9,471 employees with base pay of $50,000 or more, the largest single group earns between $50,000 and $75,000 annually. However, the median base pay of $99,372 means roughly half the full-time workforce earns six figures or more in base salary alone -- before overtime, other pay, or benefits.</p>
-      </div>
-      <div class="chart-card">
-        <h3>Number of employees by base pay range (2024)</h3>
-        <div class="bar-chart">
-          <div class="bar-row">
-            <div class="bar-label">$50k -- $75k</div>
-            <div class="bar-track"><div class="bar-fill" style="width:100%">2,516 employees (26.6%)</div></div>
-            <div class="bar-count">2,516</div>
-          </div>
-          <div class="bar-row">
-            <div class="bar-label">$75k -- $100k</div>
-            <div class="bar-track"><div class="bar-fill" style="width:90%">2,266 (23.9%)</div></div>
-            <div class="bar-count">2,266</div>
-          </div>
-          <div class="bar-row">
-            <div class="bar-label">$100k -- $125k</div>
-            <div class="bar-track"><div class="bar-fill" style="width:69%">1,735 (18.3%)</div></div>
-            <div class="bar-count">1,735</div>
-          </div>
-          <div class="bar-row">
-            <div class="bar-label">$125k -- $150k</div>
-            <div class="bar-track"><div class="bar-fill" style="width:51%">1,275 (13.5%)</div></div>
-            <div class="bar-count">1,275</div>
-          </div>
-          <div class="bar-row">
-            <div class="bar-label">$150k -- $200k</div>
-            <div class="bar-track"><div class="bar-fill" style="width:46%">1,152 (12.2%)</div></div>
-            <div class="bar-count">1,152</div>
-          </div>
-          <div class="bar-row">
-            <div class="bar-label">Over $200k</div>
-            <div class="bar-track"><div class="bar-fill" style="width:21%;background:linear-gradient(135deg,#b42318,#96281b)">527 (5.6%)</div></div>
-            <div class="bar-count">527</div>
-          </div>
-        </div>
-        <p style="font-size:0.82rem;color:var(--muted);margin-top:1rem;">527 employees -- more than 5% of the full-time workforce -- earn base salaries exceeding $200,000 per year. That figure does not include overtime, other pay, or the county's substantial benefit contributions.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- MOU SECTION -->
   <section class="dark-section" id="mous">
     <div class="container">
       <div class="section-title">
@@ -377,8 +240,6 @@
       </div>
     </div>
   </section>
-
-  <!-- PENSION SECTION -->
   <section id="pension">
     <div class="container">
       <div class="section-title">
@@ -388,7 +249,7 @@
       <div class="pension-grid">
         <div class="pension-card highlight">
           <h3>Legacy pension formulas (pre-2013 hires)</h3>
-          <p>Employees hired before the 2013 PEPRA pension reform under the Public Employees' Pension Reform Act may retire under significantly more generous formulas:</p>
+          <p>Employees hired before the 2013 PEPRA pension reform may retire under significantly more generous formulas:</p>
           <ul>
             <li><strong>Legacy general members:</strong> 2% at 55 -- a 30-year employee retiring at 55 collects 60% of final salary for life</li>
             <li><strong>Legacy safety members</strong> (firefighters, deputies): 3% at 50 -- a 30-year employee can retire at 50 and collect 90% of highest-year salary for life</li>
@@ -419,10 +280,10 @@
         </div>
         <div class="pension-card">
           <h3>The employer's pension cost</h3>
-          <p>CCCERA's employer contribution rates -- paid by the county on top of employees' own contributions -- vary by cost group and tier but represent a substantial percentage of payroll for safety members in particular. The Retirement Board sets rates annually based on actuarial valuations.</p>
+          <p>CCCERA's employer contribution rates -- paid by the county on top of employees' own contributions -- vary by cost group and tier but represent a substantial percentage of payroll for safety members in particular.</p>
           <ul>
             <li>For legacy safety members (firefighters, deputies), the combined employer-employee pension cost can represent 40% or more of base pay</li>
-            <li>Benefits costs reported in the Transparent California data -- averaging $51,647 per full-time employee -- include pension contributions, health insurance, and other benefits paid by the county</li>
+            <li>Benefits costs in the Transparent California data -- averaging $51,647 per full-time employee -- include pension contributions, health insurance, and other benefits paid by the county</li>
             <li>These costs grow automatically as wages increase under MOU contracts, compounding the total cost to taxpayers</li>
           </ul>
           <p style="margin-top:0.75rem;"><a href="https://www.cccera.gov/contribution-rates" target="_blank" rel="noopener" style="color:var(--blue);font-weight:700;">View CCCERA contribution rates &#x2192;</a></p>
@@ -430,8 +291,6 @@
       </div>
     </div>
   </section>
-
-  <!-- BOTTOM CTA -->
   <section>
     <div class="container">
       <div style="background:linear-gradient(135deg,#0d1f3a,#1a3b6e);border-radius:var(--radius);padding:2rem 1.75rem;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.25rem;">
@@ -447,7 +306,6 @@
     </div>
   </section>
 </main>
-
 <footer class="footer">
   <div class="container">
     <div class="footer-card">
@@ -455,14 +313,11 @@
       <div class="disclaimer">Paid for by Contra Costa Taxpayers Association.</div>
     </div>
     <div class="footer-legal">
-      <a href="intake.html">Feedback</a>
-      &nbsp;&middot;&nbsp;
-      <a href="terms-of-service.html">Terms of Service</a>
-      &nbsp;&middot;&nbsp;
+      <a href="intake.html">Feedback</a>&nbsp;&middot;&nbsp;
+      <a href="terms-of-service.html">Terms of Service</a>&nbsp;&middot;&nbsp;
       <a href="privacy-policy.html">Privacy Policy</a>
     </div>
   </div>
 </footer>
-
 </body>
 </html>
