@@ -237,7 +237,6 @@
         var ph = document.getElementById('phone').value.trim();
         var consent = document.getElementById('smsConsent').checked;
         if (!fn || !ln || !em || !ph) { alert('Please fill in all required fields.'); return; }
-        if (!consent) { alert('Please check the consent box to continue.'); return; }
         var sub = encodeURIComponent('Stop Measure B — New Intake Signup');
         var body = encodeURIComponent(
           'New signup from StopMeasureB.com intake form\n\n' +
