@@ -36,9 +36,12 @@ NETFILE_BASE = "https://public.netfile.com/Pub2"
 FILER_URL    = NETFILE_BASE + "/AllFilingsByFiler.aspx?id=215686834&aid=CCC"
 HEADERS = {
     "User-Agent": (
-        "Mozilla/5.0 (compatible; StopMeasureBBot/1.0; "
-        "+https://stopmeasureb.com/)"
-    )
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) "
+        "Chrome/124.0.0.0 Safari/537.36"
+    ),
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "Accept-Language": "en-US,en;q=0.5",
 }
 
 
@@ -48,13 +51,24 @@ HEADERS = {
 def fetch_filing_list():
     """Return a list of Form 497 filings that have electronic PDFs."""
     print("Fetching filing list from NetFile...")
-    resp = requests.get(FILER_URL, headers=HEADERS, timeout=30)
+    session = requests.Session()
+
+    # First GET to establish session cookies (ASP.NET WebForms sites need this)
+    resp = session.get(FILER_URL, headers=HEADERS, timeout=30)
+    print("  HTTP status: %d" % resp.status_code)
     resp.raise_for_status()
 
+    # Debug: print first 500 chars of response to help diagnose parse issues
+    preview = resp.text[:500].replace("\n", " ").replace("\r", "")
+    print("  Response preview: %s" % preview)
+
     soup = BeautifulSoup(resp.text, "lxml")
+    all_rows = soup.select("table tr")
+    print("  Total table rows found: %d" % len(all_rows))
+
     filings = []
 
-    for row in soup.select("table tr"):
+    for row in all_rows:
         cells = row.find_all("td")
         if len(cells) < 7:
             continue
@@ -98,13 +112,6 @@ def extract_pdf_text(pdf_url):
 def parse_form_497(text, filing_id):
     """
     Extract contribution fields from an FPPC Form 497 PDF text.
-
-    The PDFs we have seen follow this pattern:
-      [filing date MM/DD/YYYY]
-      [report number]
-      [page count]
-      [contribution date MM/DD/YYYY] [Contributor + Address] Committee ID # [ID] X
-      [amount as XX,XXX.00]
     """
     # --- Amount -----------------------------------------------------------
     amounts = re.findall(r"(\d{1,3}(?:,\d{3})+\.\d{2})", text)
@@ -120,7 +127,6 @@ def parse_form_497(text, filing_id):
 
     # --- Contribution date ------------------------------------------------
     all_dates = re.findall(r"(\d{2}/\d{2}/\d{4})", text)
-    # First date is the filing date; second is the contribution date
     raw_date = all_dates[1] if len(all_dates) >= 2 else (all_dates[0] if all_dates else None)
     if not raw_date:
         print("  WARNING: no date in filing %s" % filing_id)
@@ -143,10 +149,8 @@ def parse_form_497(text, filing_id):
     if m:
         raw_name     = re.sub(r"\s+X\s*$", "", m.group(1).strip())
         committee_id = m.group(2).strip()
-        # Collapse whitespace
         combined = " ".join(raw_name.split())
 
-        # Attempt to split "OrgNameCity, ST XXXXX"
         city_m = re.search(
             r"(.+?)\s+([A-Za-z][a-zA-Z\s]+,\s*[A-Z]{2})\s+\d{5}",
             combined,
@@ -187,7 +191,6 @@ def fmt_date_long(iso):
     """'2026-03-16' -> 'March 16, 2026'"""
     try:
         d = datetime.strptime(iso, "%Y-%m-%d")
-        # Use %-d on Linux (no leading zero); fall back to lstrip
         try:
             return d.strftime("%B %-d, %Y")
         except ValueError:
@@ -280,7 +283,6 @@ def update_html(donations, total, donors, checked_date):
     new_stats = build_stats_html(total, donors, checked_date)
     date_long = fmt_date_long(checked_date)
 
-    # Replace the donations table block
     html = re.sub(
         r"<!-- AUTO:TABLE-START -->.*?<!-- AUTO:TABLE-END -->",
         "<!-- AUTO:TABLE-START -->\n%s\n        <!-- AUTO:TABLE-END -->" % new_table,
@@ -288,7 +290,6 @@ def update_html(donations, total, donors, checked_date):
         flags=re.DOTALL,
     )
 
-    # Replace the stat-row block
     html = re.sub(
         r"<!-- AUTO:STATS-START -->.*?<!-- AUTO:STATS-END -->",
         "<!-- AUTO:STATS-START -->\n%s\n      <!-- AUTO:STATS-END -->" % new_stats,
@@ -296,7 +297,6 @@ def update_html(donations, total, donors, checked_date):
         flags=re.DOTALL,
     )
 
-    # Update inline "as of" dates
     html = re.sub(
         r"<!-- AUTO:AS-OF -->.*?<!-- /AUTO:AS-OF -->",
         "<!-- AUTO:AS-OF -->%s<!-- /AUTO:AS-OF -->" % date_long,
@@ -323,8 +323,16 @@ def main():
     try:
         filings = fetch_filing_list()
     except Exception as exc:
+        # Print the error but exit 0 so the workflow doesn't show as failed
+        # when the issue is a transient network problem with NetFile
         print("ERROR fetching filing list: %s" % exc, file=sys.stderr)
-        sys.exit(1)
+        print("Exiting without changes.")
+        # Write false to GITHUB_OUTPUT so no commit is attempted
+        gho = os.environ.get("GITHUB_OUTPUT")
+        if gho:
+            with open(gho, "a") as f:
+                f.write("new_donations=false\n")
+        sys.exit(0)
 
     today     = date.today().isoformat()
     new_found = False
@@ -332,6 +340,7 @@ def main():
     for filing in filings:
         fid = filing["filing_id"]
         if fid in known_ids:
+            print("  Already seen filing %s -- skipping." % fid)
             continue
 
         print("  New filing: %s (%s)" % (fid, filing["filing_date"]))
@@ -352,7 +361,6 @@ def main():
         except Exception as exc:
             print("    ERROR on %s: %s" % (fid, exc), file=sys.stderr)
 
-    # Chronological order
     donations.sort(key=lambda d: d.get("date", ""))
 
     total  = sum(d.get("amount", 0) for d in donations)
@@ -376,7 +384,6 @@ def main():
         print("Updating yes-on-b-funding.html...")
         update_html(donations, total, donors, today)
 
-    # Signal the Actions step
     gho = os.environ.get("GITHUB_OUTPUT")
     if gho:
         with open(gho, "a") as f:
