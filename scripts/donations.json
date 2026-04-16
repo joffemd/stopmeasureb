@@ -1,12 +1,46 @@
 {
-  "filings_seen": ["216201295", "216492967", "216537041"],
-  "donations": [
-    {"filing_id": "216201295", "contributor": "IFPTE Local 21 Issues PAC", "location": "San Francisco, CA", "committee_id": "1362080", "date": "2026-03-16", "amount": 30000.0},
-    {"filing_id": "216492967", "contributor": "AFSCME Council 57 Issues PAC", "location": "Norwalk, CA", "committee_id": "1338455", "date": "2026-03-30", "amount": 25000.0},
-    {"filing_id": "216537041", "contributor": "IFPTE Local 21 Issues PAC", "location": "San Francisco, CA", "committee_id": "1362080", "date": "2026-04-01", "amount": 70000.0}
+  "filings_seen": [
+    "216492967",
+    "216633199",
+    "216537041",
+    "216201295"
   ],
-  "total": 125000.0,
-  "unique_donors": 2,
-  "last_checked": "2026-04-08",
-  "last_updated": "2026-04-08"
+  "donations": [
+    {
+      "filing_id": "216201295",
+      "contributor": "IFPTE Local 21 Issues PAC",
+      "location": "San Francisco, CA",
+      "committee_id": "1362080",
+      "date": "2026-03-16",
+      "amount": 30000.0
+    },
+    {
+      "filing_id": "216492967",
+      "contributor": "AFSCME Council 57 Issues PAC",
+      "location": "Norwalk, CA",
+      "committee_id": "1338455",
+      "date": "2026-03-30",
+      "amount": 25000.0
+    },
+    {
+      "filing_id": "216537041",
+      "contributor": "IFPTE Local 21 Issues PAC",
+      "location": "San Francisco, CA",
+      "committee_id": "1362080",
+      "date": "2026-04-01",
+      "amount": 70000.0
+    },
+    {
+      "filing_id": "216633199",
+      "contributor": "043997-VP 1 E-Filed 04/14/2026 16:58:55 Filing ID: 216633199 04/13/2026 Contra Costa United Working Families (CCUWF) Sponsored By Central Labor Council Of Contra Costa County, AFL-CIO",
+      "location": "Oakland, CA",
+      "committee_id": "1379624",
+      "date": "2026-04-14",
+      "amount": 50000.0
+    }
+  ],
+  "total": 175000.0,
+  "unique_donors": 3,
+  "last_checked": "2026-04-16",
+  "last_updated": "2026-04-16"
 }
