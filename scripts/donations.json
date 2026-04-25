@@ -1,8 +1,9 @@
 {
   "filings_seen": [
-    "216492967",
-    "216633199",
     "216537041",
+    "216633199",
+    "216692828",
+    "216492967",
     "216201295"
   ],
   "donations": [
@@ -37,10 +38,18 @@
       "committee_id": "1379624",
       "date": "2026-04-13",
       "amount": 50000.0
+    },
+    {
+      "filing_id": "216692828",
+      "contributor": "932450-KB E-Filed 04/24/2026 16:43:40 Filing ID: 216692828 Martinez CA 94553 04/23/2026 Service Employees International Union Local 1021",
+      "location": "Issues PAC Sacramento, CA",
+      "committee_id": "1296947",
+      "date": "2026-04-24",
+      "amount": 20000.0
     }
   ],
-  "total": 175000.0,
-  "unique_donors": 3,
-  "last_checked": "2026-04-16",
-  "last_updated": "2026-04-16"
+  "total": 195000.0,
+  "unique_donors": 4,
+  "last_checked": "2026-04-25",
+  "last_updated": "2026-04-25"
 }
