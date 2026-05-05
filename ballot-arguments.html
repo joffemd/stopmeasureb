@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ballot Arguments | Stop Measure B</title>
+  <meta name="description" content="Official arguments against Contra Costa County Measure B, including the rebuttal to the Yes on B argument, as submitted to the County Elections Division." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23ffffff' stroke='%23c0392b' stroke-width='4'/%3E%3Ctext x='32' y='38' text-anchor='middle' font-size='30' font-family='Arial, Helvetica, sans-serif' font-weight='700' fill='%2310233f'%3EB%3C/text%3E%3Cline x1='16' y1='16' x2='48' y2='48' stroke='%23c0392b' stroke-width='6'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #10233f; --blue: #1e4f8f; --text: #18212f; --muted: #5f6b7a;
+      --white: #ffffff; --card: rgba(255,255,255,0.92); --border: rgba(16,35,63,0.12);
+      --shadow: 0 18px 40px rgba(16,35,63,0.12); --radius: 22px; --max: 1080px;
+      --red: #b42318; --green: #157347;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; font-family: 'Inter', system-ui, sans-serif; color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(246,196,83,0.18), transparent 28%),
+        radial-gradient(circle at top right, rgba(90,149,230,0.14), transparent 26%),
+        linear-gradient(180deg, #f8fbff 0%, #eef5fd 42%, #ffffff 100%);
+      line-height: 1.65;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(calc(100% - 2rem), var(--max)); margin: 0 auto; }
+
+    .site-header {
+      position: sticky; top: 0; z-index: 50; backdrop-filter: blur(12px);
+      background: rgba(255,255,255,0.93); border-bottom: 2px solid rgba(180,35,24,0.14);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.7rem 0; }
+    .brand { display: flex; align-items: center; gap: 0.9rem; font-weight: 800; color: var(--navy); }
+    .brand-badge {
+      width: 60px; height: 60px; border-radius: 16px; display: grid; place-items: center;
+      background: linear-gradient(135deg, #c0392b, #96281b); color: white;
+      box-shadow: 0 10px 28px rgba(192,57,43,0.35); font-weight: 900; font-size: 1.55rem;
+      font-family: 'Merriweather', Georgia, serif;
+    }
+    .brand-text { font-size: 1.1rem; }
+    .brand small { display: block; color: var(--muted); font-size: 0.78rem; font-weight: 600; }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 0.7rem; align-items: center; }
+    .nav-links a { color: var(--muted); font-weight: 600; font-size: 0.87rem; }
+    .nav-links a.cta {
+      color: var(--white); background: linear-gradient(135deg, #c0392b, #96281b);
+      padding: 0.7rem 1.05rem; border-radius: 999px; box-shadow: 0 8px 20px rgba(192,57,43,0.28);
+    }
+
+    .hero { padding: 4rem 0 2rem; }
+    .hero-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 28px; box-shadow: var(--shadow);
+      padding: 2rem;
+    }
+    h1, h2 { font-family: 'Merriweather', Georgia, serif; color: var(--navy); letter-spacing: -0.02em; }
+    h1 { margin: 0 0 0.75rem; font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.08; }
+    .hero-card p { color: var(--muted); max-width: 52rem; margin: 0.7rem 0 0; font-size: 1.04rem; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1.25rem; }
+    .button {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-height: 48px; padding: 0.85rem 1.15rem; border-radius: 999px; font-weight: 700;
+      transition: transform 0.2s ease; font-family: inherit;
+    }
+    .button:hover { transform: translateY(-1px); }
+    .button-primary { background: linear-gradient(135deg, var(--navy), var(--blue)); color: white; }
+    .button-secondary { background: rgba(255,255,255,0.92); border: 1px solid rgba(16,35,63,0.1); color: var(--navy); }
+
+    main section { padding: 0 0 1.4rem; }
+
+    .argument-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 28px;
+      box-shadow: var(--shadow); padding: 2rem; margin-top: 1.5rem;
+    }
+    .argument-label {
+      display: inline-block; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.1em;
+      text-transform: uppercase; padding: 0.35rem 0.75rem; border-radius: 999px;
+      margin-bottom: 1rem;
+    }
+    .label-rebuttal { background: #fff0ee; color: var(--red); border: 1px solid #f5c3ba; }
+    .label-against  { background: #f0f6ff; color: var(--navy); border: 1px solid rgba(16,35,63,0.18); }
+
+    .argument-card h2 {
+      margin: 0 0 1rem; font-size: clamp(1.4rem, 2.5vw, 1.9rem); line-height: 1.15;
+    }
+    .argument-card .headline {
+      font-size: 1.05rem; font-weight: 700; color: var(--navy); margin: 0 0 1.1rem;
+    }
+    .argument-card ul {
+      margin: 0; padding-left: 1.2rem; color: var(--text);
+    }
+    .argument-card ul li { margin-bottom: 0.65rem; line-height: 1.6; }
+    .argument-card ul li:last-child { margin-bottom: 0; }
+
+    .section-heading {
+      font-size: 0.82rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--muted); margin: 1.4rem 0 0.5rem; border-top: 1px solid var(--border); padding-top: 1.2rem;
+    }
+    .section-heading:first-of-type { border-top: none; padding-top: 0; margin-top: 0; }
+
+    .signatories {
+      margin-top: 1.75rem; padding-top: 1.25rem; border-top: 1px solid var(--border);
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 0.5rem 1.5rem;
+    }
+    .signatory {
+      font-size: 0.86rem; line-height: 1.4; color: var(--muted);
+    }
+    .signatory strong { display: block; color: var(--navy); font-weight: 700; }
+    .signatory-title { font-size: 0.78rem; color: var(--muted); }
+
+    .legal-note {
+      font-size: 0.78rem; color: var(--muted); margin-top: 1.25rem; font-style: italic;
+      border-top: 1px solid var(--border); padding-top: 0.85rem;
+    }
+
+    .cta-strip {
+      background: linear-gradient(135deg, #10233f, #1e4f8f); border-radius: 22px;
+      padding: 2rem; margin-top: 2rem; color: white; display: flex;
+      align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap;
+    }
+    .cta-strip h2 { color: white; margin: 0 0 0.35rem; font-size: 1.35rem; }
+    .cta-strip p { margin: 0; opacity: 0.82; font-size: 0.95rem; }
+    .button-white { background: white; color: var(--navy); }
+
+    footer { padding: 2rem 0 3rem; color: var(--muted); }
+    .footer-card {
+      display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.1rem 1.2rem;
+      background: rgba(255,255,255,0.78); border: 1px solid rgba(16,35,63,0.08);
+      border-radius: 20px; box-shadow: var(--shadow);
+    }
+
+    @media (max-width: 760px) {
+      .nav { flex-direction: column; align-items: flex-start; }
+      .footer-card { flex-direction: column; align-items: flex-start; }
+      .cta-strip { flex-direction: column; }
+      .argument-card { padding: 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="Stop Measure B home">
+        <div class="brand-badge">NO</div>
+        <div class="brand-text">Stop Measure B<small>Contra Costa County</small></div>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="index.html#facts">Key Facts</a>
+        <a href="index.html#lookup">Tax Rate Lookup</a>
+        <a href="myths-facts.html">Myths v Facts</a>
+        <a href="county-reserves.html">County Reserves</a>
+        <a href="shrinking-revenue-loss.html">Revenue Loss</a>
+        <a class="cta" href="index.html#volunteer">Volunteer</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-card">
+          <h1>Ballot Arguments Against Measure B</h1>
+          <p>These are the official arguments submitted to Contra Costa County by the Contra Costa Taxpayers Association and co-signatories, exactly as they appear in the voter guide. The rebuttal to the Yes on B argument appears first, followed by the primary argument against.</p>
+          <div class="hero-actions">
+            <a class="button button-secondary" href="myths-facts.html">Myths v Facts &#8594;</a>
+            <a class="button button-secondary" href="index.html">Back to Home &#8594;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+
+        <!-- REBUTTAL FIRST -->
+        <article class="argument-card">
+          <div class="argument-label label-rebuttal">Rebuttal to Argument in Favor of Measure B</div>
+          <h2>Contra Costa County has a spending problem, not a revenue problem.</h2>
+
+          <ul>
+            <li>Measure B&#8217;s forerunner was 2020&#8217;s Measure X, a 0.500% sales-tax increase with similar advertised purposes &#8212; back then, an urgent, COVID-time focus on healthcare and &#8220;life-saving services.&#8221; Now, allegedly, &#8220;lives will be lost&#8221; without Measure B.</li>
+            <li>An Oct. 3, 2020 <em>East Bay Times</em> editorial said County Supervisors should &#8220;plan to make do with [Measure X&#8217;s] additional money; they shouldn&#8217;t expect support for an additional tax in the future.&#8221;</li>
+            <li>Measure B now seeks that additional tax anyway, though Measure X, only 5 years into its 20-year run, already supplies $120 Million annually &#8212; not just the $81 Million they projected in 2020.</li>
+            <li>Meanwhile, Measure X&#8217;s politically driven spending allocations (example: a $3.25 Million &#8220;Guaranteed Income Pilot&#8221; project) raise further doubts about the legitimacy of both Measure X and Measure B &#8212; also about &#8220;citizens oversight&#8221; reliability.</li>
+            <li>Measure B&#8217;s authorizing ordinance, like Measure X&#8217;s, again exposes this new tax as &#8220;solely for general governmental purposes and not for specific purposes.&#8221; They could spend Measure B&#8217;s millions on whatever they consider &#8220;governmental&#8221; &#8212; as they&#8217;ve already been doing in Measure X&#8217;s first 5 of 20 years.</li>
+            <li>Since 2020 (and Measure X), County salaries/benefits have risen 47.5%. Measure B could facilitate or directly bankroll more such increases.</li>
+            <li>Measure B is an Affordability Tax. Added atop rising prices, Measure B is itself inflationary. It&#8217;s also regressive, disproportionately burdening our poorest, most vulnerable residents.</li>
+          </ul>
+
+          <p style="margin-top:1.1rem; font-weight:600;">Instead of funding new pet projects and facilitating more compensation increases with Measure B, Contra Costa County should redirect Measure X&#8217;s millions to counterbalance any healthcare deficits that actually develop.</p>
+
+          <p style="margin-top:0.75rem; font-weight:800; color:var(--red); font-size:1.05rem;">NO on B!</p>
+
+          <p style="margin-top:0.25rem; font-size:0.9rem;">More information: <a href="https://StopMeasureB.com" style="color:var(--blue); font-weight:700;">StopMeasureB.com</a></p>
+
+          <div class="signatories">
+            <div class="signatory">
+              <strong>Contra Costa Taxpayers Association</strong>
+              <span class="signatory-title">Denise Kalm, President Pro Tem</span>
+            </div>
+            <div class="signatory">
+              <strong>Michael Arata</strong>
+              <span class="signatory-title">Executive Board Member, Contra Costa Taxpayers Association</span>
+            </div>
+            <div class="signatory">
+              <strong>Tracy Kasamoto</strong>
+              <span class="signatory-title">Courtroom Deputy Clerk, Retired, Brentwood</span>
+            </div>
+            <div class="signatory">
+              <strong>Brendan Radich</strong>
+              <span class="signatory-title">Retired Union Carpenter and Project Supervisor, San Ramon</span>
+            </div>
+            <div class="signatory">
+              <strong>Dianne Schneider</strong>
+              <span class="signatory-title">Export Company Secretary-Treasurer, Retired, Walnut Creek</span>
+            </div>
+          </div>
+          <p class="legal-note">The undersigned Argument Opponent(s) or Author(s) hereby state that such argument is true and correct to the best of their knowledge and belief.</p>
+        </article>
+
+        <!-- ARGUMENT AGAINST -->
+        <article class="argument-card">
+          <div class="argument-label label-against">Argument Against Measure B</div>
+          <h2>Given Contra Costa County&#8217;s existing revenue riches &#8212; and many residents&#8217; severe affordability burdens: At best, Measure B is premature.</h2>
+
+          <p class="section-heading">Spending &amp; Fiscal Facts</p>
+          <ul>
+            <li>Since Measure X&#8217;s 0.500% sales-tax increase passed in 2020, total County spending has risen from $4.51 Billion (FY20-21) to $7.37 Billion (FY25-26) &#8212; a 63.4% increase.</li>
+            <li>That&#8217;s 3&#x00BD;&times; the 18.4% Bay Area CPI inflation rate (Dec. 2020 to Dec. 2025), while population growth was flat.</li>
+            <li>The State Controller&#8217;s Office shows 2024 total Contra Costa County compensation exceeding $200,000 each for 3,041 employees. 1,005 exceeded $300,000; 252 exceeded $400,000.</li>
+          </ul>
+
+          <p class="section-heading">The Deficit Claims Don&#8217;t Add Up</p>
+          <ul>
+            <li>County Supervisors initially justified Measure B&#8217;s five-eighths percent (0.625%) sales-tax increase scheme (extracting at least $750 Million over five years) as partial makeup for allegedly annual $307 Million healthcare-funding deficiencies, FY25-26 through FY28-29.</li>
+            <li>After we showed that $307 Million was actually their analyst&#8217;s cumulative estimate for those fiscal years, the analyst introduced new state/federal funding-loss estimates, totaling $219 Million instead (with only a net $35 Million &#8220;Estimated Ending Fund Balance&#8221; deficiency), by FY28-29.</li>
+            <li>Most of their &#8220;$1 billion&#8221; projected deficit is a $596 Million total for FY29-30/FY30-31 &#8212; in a new Presidential administration, two Congressional sessions from now. Funding will likely improve.</li>
+            <li>But they want to bake in 5-year Measure B revenues of $150 Million annually anyway (likely going much higher, given Measure X&#8217;s 50% revenue growth in first 5 of 20 years).</li>
+          </ul>
+
+          <p class="section-heading">Sales Taxes Are Too High Already</p>
+          <ul>
+            <li>California&#8217;s statewide 7.25% sales-tax base rate is the nation&#8217;s highest. Counties, cities, and special districts can seek local additions, with a statutory 2.00% cap, total = 9.25%.</li>
+            <li>Unfortunately, lobbyists and on-call politicians have contrived larger add-ons &#8212; violating the 2.00% cap &#8212; while falsely proclaiming these abuses &#8220;declaratory of existing law.&#8221;</li>
+            <li>Thereby, ten Contra Costa County cities already exceed the statutory 9.25% sales-tax limit. Measure B would take all ten above 10%.</li>
+          </ul>
+
+          <p style="margin-top:1.1rem; font-weight:800; color:var(--red); font-size:1.05rem;">Vote NO on B!</p>
+
+          <p style="margin-top:0.25rem; font-size:0.9rem;">More information: <a href="https://StopMeasureB.com" style="color:var(--blue); font-weight:700;">StopMeasureB.com</a></p>
+
+          <div class="signatories">
+            <div class="signatory">
+              <strong>Contra Costa Taxpayers Association</strong>
+              <span class="signatory-title">Denise Kalm, President Pro Tem</span>
+            </div>
+            <div class="signatory">
+              <strong>Michael Arata</strong>
+              <span class="signatory-title">Executive Board Member, Contra Costa Taxpayers Association</span>
+            </div>
+            <div class="signatory">
+              <strong>Charles Barberini</strong>
+              <span class="signatory-title">Real Estate Broker, Martinez</span>
+            </div>
+            <div class="signatory">
+              <strong>Denise Gianni</strong>
+              <span class="signatory-title">Homemaker, El Sobrante</span>
+            </div>
+            <div class="signatory">
+              <strong>Andrew Rodgers, MD</strong>
+              <span class="signatory-title">Primary Care Physician, Retired, Danville</span>
+            </div>
+          </div>
+          <p class="legal-note">The undersigned Argument Opponent(s) or Author(s) hereby state that such argument is true and correct to the best of their knowledge and belief.</p>
+        </article>
+
+        <div class="cta-strip">
+          <div>
+            <h2>Vote NO on Measure B &#8212; June 3, 2026</h2>
+            <p>Share this page and help Contra Costa voters get the full picture before Election Day.</p>
+          </div>
+          <div style="display:flex; gap:0.75rem; flex-wrap:wrap;">
+            <a class="button button-white" href="myths-facts.html">Myths v Facts &#8594;</a>
+            <a class="button button-white" href="index.html#volunteer">Volunteer &#8594;</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-card">
+        <div><strong>Stop Measure B</strong><br><span>Ballot Arguments</span></div>
+        <div>Paid for by Contra Costa Taxpayers Association.</div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
