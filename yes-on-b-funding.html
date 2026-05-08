@@ -1,309 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18145377670"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-18145377670');
-</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yes on B: 100% Funded by Labor Unions | Stop Measure B</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23ffffff' stroke='%23c0392b' stroke-width='4'/%3E%3Ctext x='32' y='38' text-anchor='middle' font-size='30' font-family='Arial, Helvetica, sans-serif' font-weight='700' fill='%2310233f'%3EB%3C/text%3E%3Cline x1='16' y1='16' x2='48' y2='48' stroke='%23c0392b' stroke-width='6'/%3E%3C/svg%3E">
-  <meta name="description" content="100% of Yes on Measure B funding comes from public employee labor unions. Not one dollar from businesses, community groups, or ordinary taxpayers. Just union cash." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+  <meta name="description" content="Yes on Measure B funding comes overwhelmingly from labor unions, with a last-minute contribution from AMR Holdco — the for-profit ambulance company that holds Contra Costa's emergency services contract." />
+  <title>Yes on B: Funded by Unions and a For-Profit Ambulance Contractor | Stop Measure B</title>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18145377670"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18145377670');
+  </script>
   <style>
-    :root {
-      --navy: #10233f; --blue: #1e4f8f; --gold: #f6c453;
-      --text: #18212f; --muted: #5f6b7a; --white: #ffffff;
-      --card: rgba(255,255,255,0.88); --border: rgba(16,35,63,0.12);
-      --shadow: 0 18px 40px rgba(16,35,63,0.12);
-      --radius: 22px; --max: 860px; --red: #b42318;
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: 'Inter', system-ui, -apple-system, sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(246,196,83,0.18), transparent 30%),
-        linear-gradient(180deg, #f8fbff 0%, #eef5fd 50%, #ffffff 100%);
-      line-height: 1.7;
-    }
-    a { color: var(--blue); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .container { width: min(calc(100% - 2rem), var(--max)); margin: 0 auto; }
-    .site-header {
-      position: sticky; top: 0; z-index: 50;
-      backdrop-filter: blur(12px);
-      background: rgba(255,255,255,0.93);
-      border-bottom: 2px solid rgba(180,35,24,0.14);
-    }
-    .nav { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.7rem 0; }
-    .brand { display: flex; align-items: center; gap: 0.9rem; font-weight: 800; color: var(--navy); text-decoration: none; }
-    .brand-badge {
-      width: 52px; height: 52px; border-radius: 14px; display: grid; place-items: center;
-      background: linear-gradient(135deg, #c0392b, #96281b); color: white;
-      font-weight: 900; font-size: 1.3rem; font-family: 'Merriweather', Georgia, serif;
-      box-shadow: 0 8px 20px rgba(192,57,43,0.3);
-    }
-    .brand-text { font-size: 1rem; line-height: 1.2; }
-    .brand-text small { display: block; color: var(--muted); font-size: 0.76rem; font-weight: 600; }
-    .back-link { font-size: 0.87rem; font-weight: 600; color: var(--muted); }
-    .back-link:hover { color: var(--navy); text-decoration: none; }
-    .page-hero {
-      padding: 3rem 0 2rem;
-      border-bottom: 1px solid var(--border);
-      margin-bottom: 2.5rem;
-    }
-    .eyebrow {
-      display: inline-block;
-      font-size: 0.78rem; font-weight: 800; letter-spacing: 0.1em;
-      text-transform: uppercase; color: var(--red);
-      background: rgba(180,35,24,0.08); border-radius: 6px;
-      padding: 0.2rem 0.6rem; margin-bottom: 0.9rem;
-    }
-    h1 {
-      font-family: 'Merriweather', Georgia, serif;
-      font-size: clamp(1.7rem, 4vw, 2.6rem);
-      color: var(--navy); margin: 0 0 0.5rem; line-height: 1.12;
-    }
-    .subtitle {
-      font-size: 1.05rem; font-weight: 700; color: var(--red);
-      margin: 0 0 0.85rem;
-    }
-    .deck { font-size: 1rem; color: var(--muted); max-width: 44rem; margin: 0; }
-    .stat-row {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
-      margin: 2.5rem 0;
-    }
-    .stat-box {
-      background: var(--card); border: 1px solid var(--border);
-      border-radius: 18px; box-shadow: var(--shadow);
-      padding: 1.25rem 1rem; text-align: center;
-    }
-    .stat-box .num {
-      font-family: 'Merriweather', Georgia, serif;
-      font-size: clamp(1.6rem, 3vw, 2.4rem);
-      font-weight: 700; color: var(--red); line-height: 1;
-      margin-bottom: 0.3rem;
-    }
-    .stat-box .label { font-size: 0.82rem; color: var(--muted); font-weight: 600; line-height: 1.4; }
-    .prose { max-width: 100%; }
-    .prose p { margin: 0 0 1.1rem; }
-    .prose h2 {
-      font-family: 'Merriweather', Georgia, serif;
-      font-size: 1.25rem; color: var(--navy);
-      margin: 2rem 0 0.6rem; line-height: 1.2;
-    }
-    .prose ul { margin: 0 0 1.1rem; padding-left: 1.3rem; }
-    .prose ul li { margin-bottom: 0.35rem; }
-    .donor-table {
-      width: 100%; border-collapse: collapse; font-size: 0.92rem;
-      margin: 1.2rem 0 1.6rem; background: var(--card);
-      border-radius: 14px; overflow: hidden; box-shadow: var(--shadow);
-    }
-    .donor-table th {
-      background: var(--navy); color: white; font-weight: 700;
-      padding: 0.7rem 1rem; text-align: left; font-size: 0.83rem; letter-spacing: 0.04em;
-    }
-    .donor-table th.col-date  { text-align: center; }
-    .donor-table th.col-amount { text-align: right; }
-    .donor-table td { padding: 0.7rem 1rem; border-bottom: 1px solid var(--border); }
-    .donor-table td.col-date  { text-align: center; }
-    .donor-table td.col-amount { text-align: right; font-variant-numeric: tabular-nums; }
-    .donor-table tr:last-child td { border-bottom: none; }
-    .donor-table .total-row td { font-weight: 800; color: var(--red); background: rgba(180,35,24,0.05); }
-    .callout {
-      background: linear-gradient(145deg, rgba(16,35,63,0.97), rgba(30,79,143,0.95));
-      border-radius: 20px; padding: 1.6rem 1.75rem; color: white;
-      margin: 2rem 0;
-    }
-    .callout p { color: rgba(255,255,255,0.88); margin: 0 0 0.7rem; }
-    .callout p:last-child { margin: 0; }
-    .callout strong { color: var(--gold); }
-    .cycle-box {
-      background: rgba(180,35,24,0.06); border: 1px solid rgba(180,35,24,0.18);
-      border-radius: 16px; padding: 1.2rem 1.4rem; margin: 1.5rem 0;
-      font-size: 0.95rem;
-    }
-    .cycle-box p { margin: 0; color: var(--text); }
-    .cycle-box strong { color: var(--red); }
-    .cta-box {
-      background: linear-gradient(135deg, #c0392b, #96281b);
-      border-radius: 20px; padding: 1.75rem; text-align: center;
-      margin: 2rem 0;
-    }
-    .cta-box p { color: rgba(255,255,255,0.9); margin: 0 0 0.5rem; font-size: 1rem; }
-    .cta-box .cta-headline {
-      color: white; font-family: 'Merriweather', Georgia, serif;
-      font-size: 1.35rem; font-weight: 700; margin: 0 0 1rem; line-height: 1.2;
-    }
-    .cta-box .button {
-      display: inline-block; background: white; color: var(--red);
-      font-weight: 800; font-size: 1rem; padding: 0.85rem 1.75rem;
-      border-radius: 999px; text-decoration: none;
-    }
-    .source-box {
-      background: rgba(30,79,143,0.06); border: 1px solid rgba(30,79,143,0.14);
-      border-radius: 14px; padding: 1rem 1.2rem; margin: 1.5rem 0;
-      font-size: 0.88rem; color: var(--muted);
-    }
-    .source-box a { color: var(--blue); font-weight: 600; }
-    .footer { padding: 2.5rem 0 3.5rem; border-top: 1px solid var(--border); margin-top: 3rem; }
-    .footer-inner { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between; font-size: 0.88rem; color: var(--muted); }
-    .footer-inner a { color: var(--blue); }
-    @media (max-width: 640px) {
-      .stat-row { grid-template-columns: 1fr; }
-      .page-hero { padding: 2rem 0 1.5rem; }
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f9f9f9; color: #222; line-height: 1.6; }
+    header { background: #b30000; color: white; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+    header a { color: white; text-decoration: none; font-weight: 700; font-size: 1.1rem; }
+    header .back { font-size: 0.9rem; opacity: 0.85; }
+    .badge { display: inline-block; background: rgba(255,255,255,0.15); border-radius: 4px; padding: 2px 8px; font-size: 0.8rem; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 4px; }
+    .container { max-width: 860px; margin: 0 auto; padding: 40px 24px; }
+    h1 { font-size: 2rem; color: #b30000; margin-bottom: 6px; line-height: 1.2; }
+    .subtitle { font-size: 1.1rem; color: #555; margin-bottom: 32px; }
+    .stats { display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 36px; }
+    .stat-box { background: white; border: 2px solid #b30000; border-radius: 8px; padding: 20px 28px; text-align: center; flex: 1; min-width: 160px; }
+    .stat-box .number { font-size: 2.2rem; font-weight: 800; color: #b30000; }
+    .stat-box .label { font-size: 0.85rem; color: #555; margin-top: 4px; }
+    h2 { font-size: 1.35rem; color: #b30000; margin: 32px 0 12px; border-bottom: 2px solid #eee; padding-bottom: 6px; }
+    ul { margin: 12px 0 16px 20px; }
+    li { margin-bottom: 6px; }
+    p { margin-bottom: 14px; }
+    .callout { background: #fff3cd; border-left: 4px solid #e6a817; padding: 14px 18px; border-radius: 4px; margin: 20px 0; }
+    .callout strong { color: #7a4f00; }
+    table { width: 100%; border-collapse: collapse; margin: 16px 0 24px; font-size: 0.95rem; background: white; }
+    th { background: #b30000; color: white; text-align: left; padding: 10px 12px; }
+    td { padding: 10px 12px; border-bottom: 1px solid #eee; vertical-align: top; }
+    tr:last-child td { font-weight: 700; background: #fff8f8; border-top: 2px solid #b30000; }
+    tr.new-row td { background: #fff8e1; }
+    .sources { font-size: 0.82rem; color: #666; border-top: 1px solid #ddd; margin-top: 40px; padding-top: 16px; }
+    .sources a { color: #b30000; }
+    .cta { background: #b30000; color: white; text-align: center; padding: 20px; border-radius: 8px; margin: 32px 0; }
+    .cta a { color: white; font-size: 1.1rem; font-weight: 700; text-decoration: none; }
+    .insider { background: #fdf0f0; border: 1px solid #f5c6c6; border-radius: 8px; padding: 18px 20px; margin: 20px 0; line-height: 1.7; }
+    footer { text-align: center; font-size: 0.82rem; color: #888; padding: 24px; border-top: 1px solid #ddd; margin-top: 16px; }
+    footer a { color: #b30000; }
   </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="index.html" aria-label="Stop Measure B home">
-        <div class="brand-badge">NO</div>
-        <div class="brand-text">Stop Measure B<small>Contra Costa County</small></div>
-      </a>
-      <a class="back-link" href="index.html">&larr; Back to main page</a>
+
+<header>
+  <a href="index.html">&#128683; Stop Measure B &mdash; Contra Costa County</a>
+  <a class="back" href="index.html">&#8592; Back to main page</a>
+</header>
+
+<div class="container">
+
+  <span class="badge">Deep Dive</span>
+  <h1>Yes on Measure B: Unions and a For-Profit Ambulance Contractor</h1>
+  <p class="subtitle">A Self-Serving Power Grab for Higher Paychecks &mdash; Now With Corporate Cash</p>
+
+  <p>Measure B is a 0.625% sales tax increase that would pour roughly $150 million per year into Contra Costa County's general fund &mdash; unrestricted money that county leaders can (and will) use for salaries, benefits, and union contracts.</p>
+
+  <div class="stats">
+    <div class="stat-box">
+      <div class="number">$355K</div>
+      <div class="label">Total raised by Yes on B as of May 7, 2026</div>
     </div>
-  </header>
-
-  <main>
-    <div class="container">
-      <div class="page-hero">
-        <div class="eyebrow">Deep Dive</div>
-        <h1>Yes on Measure B: 100% Funded by Labor Unions</h1>
-        <p class="subtitle">A Self-Serving Power Grab for Higher Paychecks</p>
-        <p class="deck">Measure B is a 0.625% sales tax increase that would pour roughly $150 million per year into Contra Costa County&#8217;s general fund &mdash; unrestricted money that county leaders can (and will) use for salaries, benefits, and union contracts.</p>
-      </div>
-
-      <!-- AUTO:STATS-START -->
-      <div class="stat-row">
-        <div class="stat-box">
-          <div class="num"><!-- AUTO:TOTAL -->$195K<!-- /AUTO:TOTAL --></div>
-          <div class="label">Total raised by Yes on B as of <!-- AUTO:DATE -->April 25, 2026<!-- /AUTO:DATE --></div>
-        </div>
-        <div class="stat-box">
-          <div class="num">100%</div>
-          <div class="label">Share from public employee union PACs</div>
-        </div>
-        <div class="stat-box">
-          <div class="num"><!-- AUTO:DONORS -->4<!-- /AUTO:DONORS --></div>
-          <div class="label">Donors on record &mdash; both representing county workers</div>
-        </div>
-      </div>
-      <!-- AUTO:STATS-END -->
-
-      <div class="prose">
-
-        <h2>Who is bankrolling the entire &#8220;Yes on B&#8221; campaign?</h2>
-        <p>Three public employee labor unions that represent Contra Costa County workers:</p>
-        <ul>
-          <li><strong>IFPTE Local 21</strong> &mdash; $100,000</li>
-          <li><strong>AFSCME Council 57</strong> &mdash; $25,000</li>
-          <li><strong>Contra Costa United Working Families (CCUWP) / Central Labor Council of Contra Costa County, AFL-CIO</strong> &mdash; $50,000</li>
-        </ul>
-
-        <p><strong>Total: $175,000 &mdash; 100% of all reported funding</strong> for Yes on Measure B comes straight from these unions. Not one dollar from businesses, community groups, or ordinary taxpayers. Just union cash.</p>
-
-        <h2>The Donations</h2>
-        <!-- AUTO:TABLE-START -->
-        <table class="donor-table">
-          <thead>
-            <tr>
-              <th>Contributor</th>
-              <th class="col-date">Date</th>
-              <th class="col-amount">Amount</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>IFPTE Local 21 Issues PAC<br><small style="color:var(--muted);">Committee ID #1362080 &mdash; San Francisco, CA</small></td>
-              <td class="col-date">March 16, 2026</td>
-              <td class="col-amount">$30,000</td>
-            </tr>
-            <tr>
-              <td>AFSCME Council 57 Issues PAC<br><small style="color:var(--muted);">Committee ID #1338455 &mdash; Norwalk, CA</small></td>
-              <td class="col-date">March 30, 2026</td>
-              <td class="col-amount">$25,000</td>
-            </tr>
-            <tr>
-              <td>IFPTE Local 21 Issues PAC<br><small style="color:var(--muted);">Committee ID #1362080 &mdash; San Francisco, CA</small></td>
-              <td class="col-date">April 1, 2026</td>
-              <td class="col-amount">$70,000</td>
-            </tr>
-            <tr>
-              <td>Contra Costa United Working Families (CCUWP) Sponsored By Central Labor Council Of Contra Costa County, AFL-CIO<br><small style="color:var(--muted);">Committee ID #1379624 &mdash; Oakland, CA</small></td>
-              <td class="col-date">April 13, 2026</td>
-              <td class="col-amount">$50,000</td>
-            </tr>
-            <tr>
-              <td>932450-KB E-Filed 04/24/2026 16:43:40 Filing ID: 216692828 Martinez CA 94553 04/23/2026 Service Employees International Union Local 1021<br><small style="color:var(--muted);">Committee ID #1296947 &mdash; Issues PAC Sacramento, CA</small></td>
-              <td class="col-date">April 24, 2026</td>
-              <td class="col-amount">$20,000</td>
-            </tr>
-            <tr class="total-row">
-              <td colspan="2"><strong>Total raised</strong></td>
-              <td class="col-amount"><strong>$195,000</strong></td>
-            </tr>
-          </tbody>
-        </table>
-        <!-- AUTO:TABLE-END -->
-
-        <h2>Why are the unions spending big on a tax that hits every shopper in the county?</h2>
-
-        <p><strong>Because it&#8217;s self-serving.</strong></p>
-
-        <p>These same unions sit across the bargaining table from the county every few years to negotiate pay and benefits for thousands of county employees. More money in the general fund = more money available for higher wages, richer pensions, and better health benefits for their own members.</p>
-
-        <p>Measure B doesn&#8217;t lock the new revenue into any specific program with safeguards. It goes into the general fund, where county supervisors and union negotiators can redirect it straight into payroll. That&#8217;s not &#8220;funding healthcare&#8221; &mdash; that&#8217;s a union-funded ballot measure to fatten their own members&#8217; paychecks at the expense of every Contra Costa family that buys groceries, gas, or clothes.</p>
-
-        <p>The unions&#8217; own mission statements are clear: they exist to raise wages and benefits for the workers they represent. By pouring six-figure checks into Yes on B, they are openly investing in a new revenue stream they can later negotiate for themselves.</p>
-
-        <div class="cycle-box">
-          <p>This isn&#8217;t public service. This is a classic insider deal:<br>
-          <strong>Unions tax the public &rarr; more money flows to the county &rarr; unions negotiate bigger raises for their members &rarr; dues money flows back to the unions &rarr; repeat.</strong></p>
-        </div>
-
-        <div class="callout">
-          <p>If Measure B passes, the only guaranteed winners are the unions and the county employees they represent.</p>
-          <p><strong>Everyone else pays the bill every time they open their wallet.</strong></p>
-        </div>
-
-        <div class="cta-box">
-          <p class="cta-headline">Stop the self-serving tax.</p>
-          <a class="button" href="index.html#volunteer">Vote NO on Measure B &rarr;</a>
-        </div>
-
-        <div class="source-box">
-          <strong>Primary sources:</strong> All contribution figures are drawn from FPPC Form 497 filings by Safe and Healthy Contra Costa County, available via the <a href="https://public.netfile.com/Pub2/AllFilingsByFiler.aspx?id=215686834&aid=CCC" target="_blank" rel="noopener">Contra Costa County NetFile portal</a>. Union mission language from <a href="https://ifpte21.org/our-mission/" target="_blank" rel="noopener">IFPTE Local 21&#8217;s mission page</a> and <a href="https://www.afscme57.org/about" target="_blank" rel="noopener">AFSCME Council 57&#8217;s about page</a>. Compensation data from the California State Controller&#8217;s <a href="https://publicpay.ca.gov/Reports/Counties/Counties.aspx?entity=6" target="_blank" rel="noopener">Government Compensation in California database</a>.
-        </div>
-
-      </div>
+    <div class="stat-box">
+      <div class="number">91.5%</div>
+      <div class="label">Share from public employee union PACs</div>
     </div>
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-inner">
-        <span>Paid for by Contra Costa Taxpayers Association.</span>
-        <span>
-          <a href="index.html">StopMeasureB.com</a> &nbsp;&middot;&nbsp;
-          <a href="myths-facts.html">Myths v Facts</a> &nbsp;&middot;&nbsp;
-          <a href="county-reserves.html">County Reserves</a> &nbsp;&middot;&nbsp;
-          <a href="measure-x-history.html">Measure X History</a>
-        </span>
-      </div>
+    <div class="stat-box">
+      <div class="number">7</div>
+      <div class="label">Donors on record &mdash; unions and one ambulance contractor</div>
     </div>
-  </footer>
+  </div>
+
+  <h2>Who is bankrolling the "Yes on B" campaign?</h2>
+
+  <p>Five public employee labor unions that represent Contra Costa County workers, plus the California Nurses Association, account for $345,000 &mdash; 97% of all reported funding:</p>
+
+  <ul>
+    <li><strong>California Nurses Association PAC</strong> &mdash; $150,000</li>
+    <li><strong>IFPTE Local 21</strong> &mdash; $100,000</li>
+    <li><strong>Contra Costa United Working Families (CCUWP) / Central Labor Council of Contra Costa County, AFL-CIO</strong> &mdash; $50,000</li>
+    <li><strong>AFSCME Council 57</strong> &mdash; $25,000</li>
+    <li><strong>SEIU Local 1021</strong> &mdash; $20,000</li>
+  </ul>
+
+  <div class="callout">
+    <strong>&#9888; New: A For-Profit Corporation With a County Contract Joined the Campaign</strong><br />
+    On May 1, 2026, <strong>AMR Holdco, Inc.</strong> of Greenwood Village, Colorado contributed $10,000. AMR (American Medical Response) is the largest private ambulance company in the United States and holds Contra Costa County's emergency ambulance services contract. A for-profit contractor that directly profits from county health spending is now funding the campaign to increase county revenue. This is not a community organization or a concerned resident &mdash; it is a corporation with a direct financial stake in the outcome.
+  </div>
+
+  <h2>The Donations</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Contributor</th>
+        <th>Date</th>
+        <th>Amount</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>IFPTE Local 21 Issues PAC<br /><small>Committee ID #1362080 &mdash; San Francisco, CA</small></td>
+        <td>March 16, 2026</td>
+        <td>$30,000</td>
+      </tr>
+      <tr>
+        <td>AFSCME Council 57 Issues PAC<br /><small>Committee ID #1338455 &mdash; Norwalk, CA</small></td>
+        <td>March 30, 2026</td>
+        <td>$25,000</td>
+      </tr>
+      <tr>
+        <td>IFPTE Local 21 Issues PAC<br /><small>Committee ID #1362080 &mdash; San Francisco, CA</small></td>
+        <td>April 1, 2026</td>
+        <td>$70,000</td>
+      </tr>
+      <tr>
+        <td>Contra Costa United Working Families (CCUWP)<br /><small>Sponsored By Central Labor Council Of Contra Costa County, AFL-CIO &mdash; Committee ID #1379624 &mdash; Oakland, CA</small></td>
+        <td>April 13, 2026</td>
+        <td>$50,000</td>
+      </tr>
+      <tr>
+        <td>Service Employees International Union Local 1021 Issues PAC<br /><small>Committee ID #1296947 &mdash; Sacramento, CA</small></td>
+        <td>April 24, 2026</td>
+        <td>$20,000</td>
+      </tr>
+      <tr class="new-row">
+        <td>AMR Holdco, Inc. &#9888;<br /><small>Greenwood Village, CO 80111 &mdash; For-profit ambulance contractor (American Medical Response)</small></td>
+        <td>May 1, 2026</td>
+        <td>$10,000</td>
+      </tr>
+      <tr class="new-row">
+        <td>California Nurses Association PAC (CNA-PAC)<br /><small>Committee ID #780657 &mdash; Sacramento, CA</small></td>
+        <td>May 6, 2026</td>
+        <td>$150,000</td>
+      </tr>
+      <tr>
+        <td><strong>Total raised</strong></td>
+        <td></td>
+        <td><strong>$355,000</strong></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Why are unions and contractors spending big on a tax that hits every shopper?</h2>
+
+  <p><strong>Because it's self-serving.</strong></p>
+
+  <p>These same unions sit across the bargaining table from the county every few years to negotiate pay and benefits for thousands of county employees. More money in the general fund = more money available for higher wages, richer pensions, and better health benefits for their own members.</p>
+
+  <p>Measure B doesn't lock the new revenue into any specific program with safeguards. It goes into the general fund, where county supervisors and union negotiators can redirect it straight into payroll. That's not "funding healthcare" &mdash; that's a union-funded ballot measure to fatten their own members' paychecks at the expense of every Contra Costa family that buys groceries, gas, or clothes.</p>
+
+  <p>As for AMR Holdco: American Medical Response is paid by the county for ambulance services. More general fund revenue means more budget room for county contracts &mdash; including AMR's own. A Colorado-based ambulance corporation funding a Contra Costa sales tax measure is not civic-minded generosity. It is an investment.</p>
+
+  <div class="insider">
+    <strong>The insider loop:</strong><br />
+    Unions tax the public &rarr; more money flows to the county &rarr; unions negotiate bigger raises for their members &rarr; dues money flows back to the unions &rarr; repeat.<br /><br />
+    Contractors fund the ballot measure &rarr; more revenue flows into the general fund &rarr; county spending on contracted services increases &rarr; contractors profit &rarr; repeat.
+  </div>
+
+  <p>If Measure B passes, the only guaranteed winners are the unions, the county employees they represent, and contractors like AMR.</p>
+
+  <p><strong>Everyone else pays the bill every time they open their wallet.</strong></p>
+
+  <p>Stop the self-serving tax.</p>
+
+  <div class="cta">
+    <a href="index.html#volunteer">Vote NO on Measure B &rarr;</a>
+  </div>
+
+  <div class="sources">
+    <strong>Primary sources:</strong> All contribution figures are drawn from FPPC Form 497 filings by Safe and Healthy Contra Costa County, available via the <a href="https://public.netfile.com/Pub2/AllFilingsByFiler.aspx?id=215686834&aid=CCC">Contra Costa County NetFile portal</a>. Union mission language from <a href="https://ifpte21.org/our-mission/">IFPTE Local 21's mission page</a> and <a href="https://www.afscme57.org/about">AFSCME Council 57's about page</a>. Compensation data from the California State Controller's <a href="https://publicpay.ca.gov/Reports/Counties/Counties.aspx?entity=6">Government Compensation in California database</a>.
+  </div>
+
+</div>
+
+<footer>
+  Paid for by Contra Costa Taxpayers Association.
+  <a href="index.html">StopMeasureB.com</a> &middot;
+  <a href="myths-facts.html">Myths v Facts</a> &middot;
+  <a href="county-reserves.html">County Reserves</a> &middot;
+  <a href="measure-x-history.html">Measure X History</a>
+</footer>
+
 </body>
 </html>
